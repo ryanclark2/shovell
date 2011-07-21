@@ -655,3 +655,63 @@ Processing StoriesController#new (for 127.0.0.1 at 2011-07-11 20:26:00) [GET]
 Rendering template within layouts/stories
 Rendering stories/new
 Completed in 0.01604 (62 reqs/sec) | Rendering: 0.00350 (21%) | DB: 0.00000 (0%) | 200 OK [http://localhost/stories/new]
+
+
+Processing StoriesController#new (for 127.0.0.1 at 2011-07-19 19:54:10) [GET]
+  Session ID: 1170160ad2804b7041a825b38b3d2c92
+  Parameters: {"action"=>"new", "controller"=>"stories"}
+Rendering template within layouts/stories
+Rendering stories/new
+Completed in 0.07982 (12 reqs/sec) | Rendering: 0.05660 (70%) | DB: 0.00000 (0%) | 200 OK [http://localhost/stories/new]
+
+
+Processing StoriesController#create (for 127.0.0.1 at 2011-07-19 19:54:26) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMDZlOWMzODIxYzBlNDRhYmE0MmE1NDk2MDRiYzlk%0AMmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--849fa4a55a3f4290ac5b77fb94b71ceb0221146b
+  Parameters: {"commit"=>"Create", "story"=>{"name"=>"Google", "link"=>"http://www.google.com"}, "authenticity_token"=>"7691d85f1da679cb8d1ad019de8338405e71f6a5", "action"=>"create", "controller"=>"stories"}
+  [4;36;1mStory Create (0.000987)[0m   [0;1mINSERT INTO stories ("name", "updated_at", "link", "created_at") VALUES('Google', '2011-07-19 19:54:26', 'http://www.google.com', '2011-07-19 19:54:26')[0m
+Redirected to http://localhost:3000/stories
+Completed in 0.13261 (7 reqs/sec) | DB: 0.00099 (0%) | 302 Found [http://localhost/stories]
+
+
+Processing StoriesController#index (for 127.0.0.1 at 2011-07-19 19:54:26) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMDZlOWMzODIxYzBlNDRhYmE0MmE1NDk2MDRiYzlk%0AMmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--849fa4a55a3f4290ac5b77fb94b71ceb0221146b
+  Parameters: {"action"=>"index", "controller"=>"stories"}
+  [4;35;1mStory Load (0.000555)[0m   [0mSELECT * FROM stories WHERE (stories."name" = 'SitePoint Forums') LIMIT 1[0m
+Rendering template within layouts/stories
+Rendering stories/index
+Completed in 0.03256 (30 reqs/sec) | Rendering: 0.02120 (65%) | DB: 0.00056 (1%) | 200 OK [http://localhost/stories]
+
+
+Processing StoriesController#index (for 127.0.0.1 at 2011-07-19 19:54:30) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMDZlOWMzODIxYzBlNDRhYmE0MmE1NDk2MDRiYzlk%0AMmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--849fa4a55a3f4290ac5b77fb94b71ceb0221146b
+  Parameters: {"action"=>"index", "controller"=>"stories"}
+  [4;36;1mStory Load (0.000450)[0m   [0;1mSELECT * FROM stories WHERE (stories."name" = 'SitePoint Forums') LIMIT 1[0m
+Rendering template within layouts/stories
+Rendering stories/index
+Completed in 0.01524 (65 reqs/sec) | Rendering: 0.00211 (13%) | DB: 0.00045 (2%) | 200 OK [http://localhost/stories]
+
+
+Processing StoriesController#index (for 127.0.0.1 at 2011-07-19 19:54:34) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMDZlOWMzODIxYzBlNDRhYmE0MmE1NDk2MDRiYzlk%0AMmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--849fa4a55a3f4290ac5b77fb94b71ceb0221146b
+  Parameters: {"action"=>"index", "controller"=>"stories"}
+  [4;35;1mStory Load (0.000371)[0m   [0mSELECT * FROM stories WHERE (stories."name" = 'SitePoint Forums') LIMIT 1[0m
+Rendering template within layouts/stories
+Rendering stories/index
+Completed in 0.01040 (96 reqs/sec) | Rendering: 0.00207 (19%) | DB: 0.00037 (3%) | 200 OK [http://localhost/stories]
+
+
+Processing StoriesController#index (for 127.0.0.1 at 2011-07-19 19:54:37) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMDZlOWMzODIxYzBlNDRhYmE0MmE1NDk2MDRiYzlk%0AMmEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--849fa4a55a3f4290ac5b77fb94b71ceb0221146b
+  Parameters: {"action"=>"index", "controller"=>"stories"}
+  [4;36;1mStory Load (0.000333)[0m   [0;1mSELECT * FROM stories WHERE (stories."name" = 'SitePoint Forums') LIMIT 1[0m
+Rendering template within layouts/stories
+Rendering stories/index
+Completed in 0.01090 (91 reqs/sec) | Rendering: 0.00237 (21%) | DB: 0.00033 (3%) | 200 OK [http://localhost/stories]
+
+
+Processing StoriesController#new (for 127.0.0.1 at 2011-07-20 23:17:08) [GET]
+  Session ID: 19f53769388702cb22e7ecdfb97bb80a
+  Parameters: {"action"=>"new", "controller"=>"stories"}
+Rendering template within layouts/stories
+Rendering stories/new
+Completed in 0.06813 (14 reqs/sec) | Rendering: 0.04768 (69%) | DB: 0.00000 (0%) | 200 OK [http://localhost/stories/new]
