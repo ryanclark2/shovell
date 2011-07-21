@@ -715,3 +715,132 @@ Processing StoriesController#new (for 127.0.0.1 at 2011-07-20 23:17:08) [GET]
 Rendering template within layouts/stories
 Rendering stories/new
 Completed in 0.06813 (14 reqs/sec) | Rendering: 0.04768 (69%) | DB: 0.00000 (0%) | 200 OK [http://localhost/stories/new]
+
+
+Processing StoriesController#new (for 127.0.0.1 at 2011-07-21 12:40:43) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZTlkNGRjMmZmODA1YzBiNjRmMDNmYWYwYTQ3NGNk%0AM2IiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a18908ceb3d1b5c730813e26a7f49c70bd14cb6b
+  Parameters: {"action"=>"new", "controller"=>"stories"}
+Rendering template within layouts/stories
+Rendering stories/new
+Completed in 0.02791 (35 reqs/sec) | Rendering: 0.00701 (25%) | DB: 0.00000 (0%) | 200 OK [http://localhost/stories/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-07-21 12:40:44) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZTlkNGRjMmZmODA1YzBiNjRmMDNmYWYwYTQ3NGNk%0AM2IiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a18908ceb3d1b5c730813e26a7f49c70bd14cb6b
+  Parameters: {}
+
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/routing.rb:1441:in `recognize_path'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/routing.rb:1424:in `recognize'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:170:in `handle_request'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/webrick_server.rb:112:in `handle_dispatch'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/webrick_server.rb:78:in `service'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/webrick_server.rb:62:in `dispatch'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/commands/servers/webrick.rb:66
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/commands/server.rb:39
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendering /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing StoriesController#new (for 127.0.0.1 at 2011-07-21 12:42:57) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZTlkNGRjMmZmODA1YzBiNjRmMDNmYWYwYTQ3NGNk%0AM2IiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a18908ceb3d1b5c730813e26a7f49c70bd14cb6b
+  Parameters: {"action"=>"new", "controller"=>"stories"}
+Rendering template within layouts/stories
+Rendering stories/new
+Completed in 0.03978 (25 reqs/sec) | Rendering: 0.01788 (44%) | DB: 0.00000 (0%) | 200 OK [http://localhost/stories/new]
+
+
+Processing StoriesController#new (for 127.0.0.1 at 2011-07-21 12:44:01) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZTlkNGRjMmZmODA1YzBiNjRmMDNmYWYwYTQ3NGNk%0AM2IiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a18908ceb3d1b5c730813e26a7f49c70bd14cb6b
+  Parameters: {"action"=>"new", "controller"=>"stories"}
+Rendering template within layouts/stories
+Rendering stories/new
+Completed in 0.01092 (91 reqs/sec) | Rendering: 0.00331 (30%) | DB: 0.00000 (0%) | 200 OK [http://localhost/stories/new]
+
+
+Processing StoriesController#new (for 127.0.0.1 at 2011-07-21 12:44:04) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZTlkNGRjMmZmODA1YzBiNjRmMDNmYWYwYTQ3NGNk%0AM2IiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a18908ceb3d1b5c730813e26a7f49c70bd14cb6b
+  Parameters: {"action"=>"new", "controller"=>"stories"}
+Rendering template within layouts/stories
+Rendering stories/new
+Completed in 0.01171 (85 reqs/sec) | Rendering: 0.00337 (28%) | DB: 0.00000 (0%) | 200 OK [http://localhost/stories/new]
+
+
+Processing StoriesController#new (for 127.0.0.1 at 2011-07-21 12:44:07) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZTlkNGRjMmZmODA1YzBiNjRmMDNmYWYwYTQ3NGNk%0AM2IiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a18908ceb3d1b5c730813e26a7f49c70bd14cb6b
+  Parameters: {"action"=>"new", "controller"=>"stories"}
+Rendering template within layouts/stories
+Rendering stories/new
+Completed in 0.01142 (87 reqs/sec) | Rendering: 0.00348 (30%) | DB: 0.00000 (0%) | 200 OK [http://localhost/stories/new]
+
+
+Processing StoriesController#new (for 127.0.0.1 at 2011-07-21 12:44:08) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZTlkNGRjMmZmODA1YzBiNjRmMDNmYWYwYTQ3NGNk%0AM2IiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a18908ceb3d1b5c730813e26a7f49c70bd14cb6b
+  Parameters: {"action"=>"new", "controller"=>"stories"}
+Rendering template within layouts/stories
+Rendering stories/new
+Completed in 0.03099 (32 reqs/sec) | Rendering: 0.01202 (38%) | DB: 0.00000 (0%) | 200 OK [http://localhost/stories/new]
+
+
+Processing StoriesController#new (for 127.0.0.1 at 2011-07-21 12:45:04) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZTlkNGRjMmZmODA1YzBiNjRmMDNmYWYwYTQ3NGNk%0AM2IiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a18908ceb3d1b5c730813e26a7f49c70bd14cb6b
+  Parameters: {"action"=>"new", "controller"=>"stories"}
+Rendering template within layouts/stories
+Rendering stories/new
+Completed in 0.00983 (101 reqs/sec) | Rendering: 0.00315 (32%) | DB: 0.00000 (0%) | 200 OK [http://localhost/stories/new]
+
+
+Processing StoriesController#new (for 127.0.0.1 at 2011-07-21 12:45:06) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZTlkNGRjMmZmODA1YzBiNjRmMDNmYWYwYTQ3NGNk%0AM2IiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a18908ceb3d1b5c730813e26a7f49c70bd14cb6b
+  Parameters: {"action"=>"new", "controller"=>"stories"}
+Rendering template within layouts/stories
+Rendering stories/new
+Completed in 0.01494 (66 reqs/sec) | Rendering: 0.00341 (22%) | DB: 0.00000 (0%) | 200 OK [http://localhost/stories/new]
+
+
+Processing StoriesController#new (for 127.0.0.1 at 2011-07-21 12:45:07) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZTlkNGRjMmZmODA1YzBiNjRmMDNmYWYwYTQ3NGNk%0AM2IiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a18908ceb3d1b5c730813e26a7f49c70bd14cb6b
+  Parameters: {"action"=>"new", "controller"=>"stories"}
+Rendering template within layouts/stories
+Rendering stories/new
+Completed in 0.02146 (46 reqs/sec) | Rendering: 0.00788 (36%) | DB: 0.00000 (0%) | 200 OK [http://localhost/stories/new]
+
+
+Processing StoriesController#index (for 127.0.0.1 at 2011-07-21 12:47:33) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZTlkNGRjMmZmODA1YzBiNjRmMDNmYWYwYTQ3NGNk%0AM2IiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a18908ceb3d1b5c730813e26a7f49c70bd14cb6b
+  Parameters: {"action"=>"index", "controller"=>"stories"}
+  [4;36;1mStory Load (0.000395)[0m   [0;1mSELECT * FROM stories WHERE (stories."name" = 'SitePoint Forums') LIMIT 1[0m
+Rendering template within layouts/stories
+Rendering stories/index
+Completed in 0.02725 (36 reqs/sec) | Rendering: 0.00313 (11%) | DB: 0.00039 (1%) | 200 OK [http://localhost/stories/]
+
+
+Processing StoriesController#index (for 127.0.0.1 at 2011-07-21 12:47:36) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZTlkNGRjMmZmODA1YzBiNjRmMDNmYWYwYTQ3NGNk%0AM2IiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a18908ceb3d1b5c730813e26a7f49c70bd14cb6b
+  Parameters: {"action"=>"index", "controller"=>"stories"}
+  [4;35;1mStory Load (0.000346)[0m   [0mSELECT * FROM stories WHERE (stories."name" = 'SitePoint Forums') LIMIT 1[0m
+Rendering template within layouts/stories
+Rendering stories/index
+Completed in 0.01289 (77 reqs/sec) | Rendering: 0.00278 (21%) | DB: 0.00035 (2%) | 200 OK [http://localhost/stories/]
