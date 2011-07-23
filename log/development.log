@@ -1330,3 +1330,48 @@ Processing StoriesController#create (for 127.0.0.1 at 2011-07-21 21:00:01) [POST
 Rendering template within layouts/application
 Rendering stories/new
 Completed in 0.01241 (80 reqs/sec) | Rendering: 0.00284 (22%) | DB: 0.00000 (0%) | 200 OK [http://localhost/stories]
+  [4;36;1mSQL (0.015605)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000590)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000759)[0m   [0mSELECT * FROM schema_info[0m
+  [4;36;1mSQL (0.000964)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000163)[0m   [0mPRAGMA index_list(stories)[0m
+  [4;36;1mSQL (0.000252)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: no such table: stories: DROP TABLE stories[0m
+  [4;36;1mSQL (0.118404)[0m   [0;1mCREATE TABLE stories ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL, "link" varchar(255) DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL) [0m
+  [4;35;1mSQL (0.070939)[0m   [0mCREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.088447)[0m   [0;1mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;35;1mSQL (0.064230)[0m   [0mUPDATE schema_info SET version = 1[0m
+  [4;36;1mSQL (0.000320)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000266)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000302)[0m   [0mSELECT * FROM schema_info[0m
+  [4;36;1mSQL (0.000287)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000067)[0m   [0mPRAGMA index_list(stories)[0m
+  [4;36;1mSQL (0.000280)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: no such table: stories: DROP TABLE stories[0m
+  [4;36;1mSQL (0.100350)[0m   [0;1mCREATE TABLE stories ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL, "link" varchar(255) DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL) [0m
+  [4;35;1mSQL (0.076408)[0m   [0mCREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.066180)[0m   [0;1mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;35;1mSQL (0.064209)[0m   [0mUPDATE schema_info SET version = 1[0m
+  [4;36;1mSQL (0.000344)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000268)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000277)[0m   [0mSELECT * FROM schema_info[0m
+  [4;36;1mSQL (0.000286)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000069)[0m   [0mPRAGMA index_list(stories)[0m
+  [4;36;1mSQL (0.000255)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: no such table: stories: DROP TABLE stories[0m
+  [4;36;1mSQL (0.109055)[0m   [0;1mCREATE TABLE stories ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL, "link" varchar(255) DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL) [0m
+  [4;35;1mSQL (0.064928)[0m   [0mCREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.065996)[0m   [0;1mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;35;1mSQL (0.064229)[0m   [0mUPDATE schema_info SET version = 1[0m

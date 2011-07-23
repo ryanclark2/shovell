@@ -1,0 +1,1 @@
+  [4;36;1mStory Create (0.001910)[0m   [0;1mINSERT INTO stories ("name", "updated_at", "link", "created_at") VALUES('My test submission', '2011-07-23 10:54:11', 'http://www.testsubmission.com/', '2011-07-23 10:54:11')[0m
