@@ -1,1 +1,137 @@
   [4;36;1mStory Create (0.001910)[0m   [0;1mINSERT INTO stories ("name", "updated_at", "link", "created_at") VALUES('My test submission', '2011-07-23 10:54:11', 'http://www.testsubmission.com/', '2011-07-23 10:54:11')[0m
+  [4;36;1mStory Create (0.002027)[0m   [0;1mINSERT INTO stories ("name", "updated_at", "link", "created_at") VALUES('My test submission', '2011-07-23 11:00:30', 'http://www.testsubmission.com/', '2011-07-23 11:00:30')[0m
+
+
+Processing StoriesController#index (for 0.0.0.0 at 2011-07-23 11:09:21) [GET]
+  Session ID: 
+  Parameters: {"action"=>"index", "controller"=>"stories"}
+  [4;36;1mStory Load (0.000936)[0m   [0;1mSELECT * FROM stories WHERE (stories."name" = 'SitePoint Forums') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering stories/index
+Completed in 0.01499 (66 reqs/sec) | Rendering: 0.00666 (44%) | DB: 0.00094 (6%) | 200 OK [http://test.host/stories]
+  [4;36;1mStory Create (0.001822)[0m   [0;1mINSERT INTO stories ("name", "updated_at", "link", "created_at") VALUES('My test submission', '2011-07-23 11:58:30', 'http://www.testsubmission.com/', '2011-07-23 11:58:30')[0m
+
+
+Processing StoriesController#create (for 0.0.0.0 at 2011-07-23 11:58:31) [POST]
+  Session ID: 
+  Parameters: {"story"=>{"name"=>"test story", "link"=>"http://www.test.com/"}, "action"=>"create", "controller"=>"stories"}
+  [4;36;1mStory Create (0.001826)[0m   [0;1mINSERT INTO stories ("name", "updated_at", "link", "created_at") VALUES('test story', '2011-07-23 11:58:31', 'http://www.test.com/', '2011-07-23 11:58:31')[0m
+Redirected to http://test.host/stories
+Completed in 0.01623 (61 reqs/sec) | DB: 0.00183 (11%) | 302 Found [http://test.host/stories?story%5Blink%5D=http%3A%2F%2Fwww.test.com%2F&story%5Bname%5D=test+story]
+
+
+Processing StoriesController#create (for 0.0.0.0 at 2011-07-23 11:58:31) [POST]
+  Session ID: 
+  Parameters: {"story"=>{"name"=>"story without a link"}, "action"=>"create", "controller"=>"stories"}
+Rendering template within layouts/application
+Rendering stories/new
+Completed in 0.00766 (130 reqs/sec) | Rendering: 0.00715 (93%) | DB: 0.00000 (0%) | 200 OK [http://test.host/stories?story%5Bname%5D=story+without+a+link]
+
+
+Processing StoriesController#index (for 0.0.0.0 at 2011-07-23 11:58:31) [GET]
+  Session ID: 
+  Parameters: {"action"=>"index", "controller"=>"stories"}
+  [4;35;1mStory Load (0.000468)[0m   [0mSELECT * FROM stories WHERE (stories."name" = 'SitePoint Forums') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering stories/index
+Completed in 0.00371 (269 reqs/sec) | Rendering: 0.00223 (60%) | DB: 0.00047 (12%) | 200 OK [http://test.host/stories]
+
+
+Processing StoriesController#new (for 0.0.0.0 at 2011-07-23 11:58:31) [GET]
+  Session ID: 
+  Parameters: {"action"=>"new", "controller"=>"stories"}
+Rendering template within layouts/application
+Rendering stories/new
+Completed in 0.00201 (498 reqs/sec) | Rendering: 0.00182 (90%) | DB: 0.00000 (0%) | 200 OK [http://test.host/stories/new]
+
+
+Processing StoriesController#new (for 0.0.0.0 at 2011-07-23 11:58:31) [GET]
+  Session ID: 
+  Parameters: {"action"=>"new", "controller"=>"stories"}
+Rendering template within layouts/application
+Rendering stories/new
+Completed in 0.00206 (485 reqs/sec) | Rendering: 0.00188 (91%) | DB: 0.00000 (0%) | 200 OK [http://test.host/stories/new]
+  [4;36;1mStory Create (0.001789)[0m   [0;1mINSERT INTO stories ("name", "updated_at", "link", "created_at") VALUES('My test submission', '2011-07-23 11:59:22', 'http://www.testsubmission.com/', '2011-07-23 11:59:22')[0m
+
+
+Processing StoriesController#create (for 0.0.0.0 at 2011-07-23 11:59:23) [POST]
+  Session ID: 
+  Parameters: {"story"=>{"name"=>"test story", "link"=>"http://www.test.com/"}, "action"=>"create", "controller"=>"stories"}
+  [4;36;1mStory Create (0.000902)[0m   [0;1mINSERT INTO stories ("name", "updated_at", "link", "created_at") VALUES('test story', '2011-07-23 11:59:23', 'http://www.test.com/', '2011-07-23 11:59:23')[0m
+Redirected to http://test.host/stories
+Completed in 0.01130 (88 reqs/sec) | DB: 0.00090 (7%) | 302 Found [http://test.host/stories?story%5Blink%5D=http%3A%2F%2Fwww.test.com%2F&story%5Bname%5D=test+story]
+
+
+Processing StoriesController#create (for 0.0.0.0 at 2011-07-23 11:59:23) [POST]
+  Session ID: 
+  Parameters: {"story"=>{"name"=>"story without a link"}, "action"=>"create", "controller"=>"stories"}
+Rendering template within layouts/application
+Rendering stories/new
+Completed in 0.00590 (169 reqs/sec) | Rendering: 0.00470 (79%) | DB: 0.00000 (0%) | 200 OK [http://test.host/stories?story%5Bname%5D=story+without+a+link]
+
+
+Processing StoriesController#index (for 0.0.0.0 at 2011-07-23 11:59:23) [GET]
+  Session ID: 
+  Parameters: {"action"=>"index", "controller"=>"stories"}
+  [4;35;1mStory Load (0.000480)[0m   [0mSELECT * FROM stories WHERE (stories."name" = 'SitePoint Forums') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering stories/index
+Completed in 0.00724 (138 reqs/sec) | Rendering: 0.00572 (78%) | DB: 0.00048 (6%) | 200 OK [http://test.host/stories]
+
+
+Processing StoriesController#new (for 0.0.0.0 at 2011-07-23 11:59:23) [GET]
+  Session ID: 
+  Parameters: {"action"=>"new", "controller"=>"stories"}
+Rendering template within layouts/application
+Rendering stories/new
+Completed in 0.00295 (338 reqs/sec) | Rendering: 0.00191 (64%) | DB: 0.00000 (0%) | 200 OK [http://test.host/stories/new]
+
+
+Processing StoriesController#new (for 0.0.0.0 at 2011-07-23 11:59:23) [GET]
+  Session ID: 
+  Parameters: {"action"=>"new", "controller"=>"stories"}
+Rendering template within layouts/application
+Rendering stories/new
+Completed in 0.00301 (332 reqs/sec) | Rendering: 0.00279 (92%) | DB: 0.00000 (0%) | 200 OK [http://test.host/stories/new]
+  [4;36;1mStory Create (0.001721)[0m   [0;1mINSERT INTO stories ("name", "updated_at", "link", "created_at") VALUES('My test submission', '2011-07-23 12:00:26', 'http://www.testsubmission.com/', '2011-07-23 12:00:26')[0m
+
+
+Processing StoriesController#create (for 0.0.0.0 at 2011-07-23 12:00:28) [POST]
+  Session ID: 
+  Parameters: {"story"=>{"name"=>"test story", "link"=>"http://www.test.com/"}, "action"=>"create", "controller"=>"stories"}
+  [4;36;1mStory Create (0.000900)[0m   [0;1mINSERT INTO stories ("name", "updated_at", "link", "created_at") VALUES('test story', '2011-07-23 12:00:28', 'http://www.test.com/', '2011-07-23 12:00:28')[0m
+Redirected to http://test.host/stories
+Completed in 0.00845 (118 reqs/sec) | DB: 0.00090 (10%) | 302 Found [http://test.host/stories?story%5Blink%5D=http%3A%2F%2Fwww.test.com%2F&story%5Bname%5D=test+story]
+
+
+Processing StoriesController#create (for 0.0.0.0 at 2011-07-23 12:00:28) [POST]
+  Session ID: 
+  Parameters: {"story"=>{"name"=>"story without a link"}, "action"=>"create", "controller"=>"stories"}
+Rendering template within layouts/application
+Rendering stories/new
+Completed in 0.00561 (178 reqs/sec) | Rendering: 0.00509 (90%) | DB: 0.00000 (0%) | 200 OK [http://test.host/stories?story%5Bname%5D=story+without+a+link]
+
+
+Processing StoriesController#index (for 0.0.0.0 at 2011-07-23 12:00:28) [GET]
+  Session ID: 
+  Parameters: {"action"=>"index", "controller"=>"stories"}
+  [4;35;1mStory Load (0.000461)[0m   [0mSELECT * FROM stories WHERE (stories."name" = 'SitePoint Forums') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering stories/index
+Completed in 0.00282 (354 reqs/sec) | Rendering: 0.00150 (53%) | DB: 0.00046 (16%) | 200 OK [http://test.host/stories]
+
+
+Processing StoriesController#new (for 0.0.0.0 at 2011-07-23 12:00:28) [GET]
+  Session ID: 
+  Parameters: {"action"=>"new", "controller"=>"stories"}
+Rendering template within layouts/application
+Rendering stories/new
+Completed in 0.00184 (544 reqs/sec) | Rendering: 0.00164 (89%) | DB: 0.00000 (0%) | 200 OK [http://test.host/stories/new]
+
+
+Processing StoriesController#new (for 0.0.0.0 at 2011-07-23 12:00:28) [GET]
+  Session ID: 
+  Parameters: {"action"=>"new", "controller"=>"stories"}
+Rendering template within layouts/application
+Rendering stories/new
+Completed in 0.00182 (549 reqs/sec) | Rendering: 0.00163 (89%) | DB: 0.00000 (0%) | 200 OK [http://test.host/stories/new]
