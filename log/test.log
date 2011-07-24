@@ -135,3 +135,227 @@ Processing StoriesController#new (for 0.0.0.0 at 2011-07-23 12:00:28) [GET]
 Rendering template within layouts/application
 Rendering stories/new
 Completed in 0.00182 (549 reqs/sec) | Rendering: 0.00163 (89%) | DB: 0.00000 (0%) | 200 OK [http://test.host/stories/new]
+  [4;36;1mStory Create (0.001787)[0m   [0;1mINSERT INTO stories ("name", "updated_at", "link", "created_at") VALUES('My test submission', '2011-07-24 10:54:13', 'http://www.testsubmission.com/', '2011-07-24 10:54:13')[0m
+  [4;35;1mStory Load (0.000464)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;36;1mVote Load (0.000260)[0m   [0;1mSELECT * FROM votes WHERE (votes."id" = 953125641) [0m
+  [4;35;1mStory Load (0.000269)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+
+
+Processing StoriesController#create (for 0.0.0.0 at 2011-07-24 10:54:15) [POST]
+  Session ID: 
+  Parameters: {"story"=>{"name"=>"test story", "link"=>"http://www.test.com/"}, "action"=>"create", "controller"=>"stories"}
+  [4;36;1mStory Create (0.000934)[0m   [0;1mINSERT INTO stories ("name", "updated_at", "link", "created_at") VALUES('test story', '2011-07-24 10:54:15', 'http://www.test.com/', '2011-07-24 10:54:15')[0m
+Redirected to http://test.host/stories
+Completed in 0.00881 (113 reqs/sec) | DB: 0.00093 (10%) | 302 Found [http://test.host/stories?story%5Blink%5D=http%3A%2F%2Fwww.test.com%2F&story%5Bname%5D=test+story]
+
+
+Processing StoriesController#create (for 0.0.0.0 at 2011-07-24 10:54:15) [POST]
+  Session ID: 
+  Parameters: {"story"=>{"name"=>"story without a link"}, "action"=>"create", "controller"=>"stories"}
+Rendering template within layouts/application
+Rendering stories/new
+Completed in 0.10123 (9 reqs/sec) | Rendering: 0.10037 (99%) | DB: 0.00000 (0%) | 200 OK [http://test.host/stories?story%5Bname%5D=story+without+a+link]
+
+
+Processing StoriesController#index (for 0.0.0.0 at 2011-07-24 10:54:15) [GET]
+  Session ID: 
+  Parameters: {"action"=>"index", "controller"=>"stories"}
+  [4;35;1mStory Load (0.000942)[0m   [0mSELECT * FROM stories WHERE (stories."name" = 'SitePoint Forums') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering stories/index
+Completed in 0.00645 (154 reqs/sec) | Rendering: 0.00384 (59%) | DB: 0.00094 (14%) | 200 OK [http://test.host/stories]
+
+
+Processing StoriesController#new (for 0.0.0.0 at 2011-07-24 10:54:15) [GET]
+  Session ID: 
+  Parameters: {"action"=>"new", "controller"=>"stories"}
+Rendering template within layouts/application
+Rendering stories/new
+Completed in 0.00224 (446 reqs/sec) | Rendering: 0.00205 (91%) | DB: 0.00000 (0%) | 200 OK [http://test.host/stories/new]
+
+
+Processing StoriesController#new (for 0.0.0.0 at 2011-07-24 10:54:15) [GET]
+  Session ID: 
+  Parameters: {"action"=>"new", "controller"=>"stories"}
+Rendering template within layouts/application
+Rendering stories/new
+Completed in 0.00225 (444 reqs/sec) | Rendering: 0.00208 (92%) | DB: 0.00000 (0%) | 200 OK [http://test.host/stories/new]
+  [4;36;1mStory Load (0.000400)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;35;1mVote Create (0.001008)[0m   [0mINSERT INTO votes ("updated_at", "story_id", "created_at") VALUES('2011-07-24 11:19:03', 953125641, '2011-07-24 11:19:03')[0m
+  [4;36;1mVote Create (0.000126)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "created_at") VALUES('2011-07-24 11:19:03', 953125641, '2011-07-24 11:19:03')[0m
+  [4;35;1mVote Create (0.000112)[0m   [0mINSERT INTO votes ("updated_at", "story_id", "created_at") VALUES('2011-07-24 11:19:03', 953125641, '2011-07-24 11:19:03')[0m
+  [4;36;1mVote Create (0.000109)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "created_at") VALUES('2011-07-24 11:19:03', 953125641, '2011-07-24 11:19:03')[0m
+  [4;35;1mVote Create (0.000101)[0m   [0mINSERT INTO votes ("updated_at", "story_id", "created_at") VALUES('2011-07-24 11:19:03', 953125641, '2011-07-24 11:19:03')[0m
+  [4;36;1mVote Create (0.000099)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "created_at") VALUES('2011-07-24 11:19:03', 953125641, '2011-07-24 11:19:03')[0m
+  [4;35;1mVote Create (0.000147)[0m   [0mINSERT INTO votes ("updated_at", "story_id", "created_at") VALUES('2011-07-24 11:19:03', 953125641, '2011-07-24 11:19:03')[0m
+  [4;36;1mVote Create (0.000102)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "created_at") VALUES('2011-07-24 11:19:03', 953125641, '2011-07-24 11:19:03')[0m
+  [4;35;1mVote Create (0.000101)[0m   [0mINSERT INTO votes ("updated_at", "story_id", "created_at") VALUES('2011-07-24 11:19:03', 953125641, '2011-07-24 11:19:03')[0m
+  [4;36;1mVote Create (0.000101)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "created_at") VALUES('2011-07-24 11:19:03', 953125641, '2011-07-24 11:19:03')[0m
+  [4;35;1mVote Load (0.000556)[0m   [0mSELECT * FROM votes WHERE (votes.story_id = 953125641) ORDER BY id DESC LIMIT 3[0m
+  [4;36;1mStory Create (0.000807)[0m   [0;1mINSERT INTO stories ("name", "updated_at", "link", "created_at") VALUES('My test submission', '2011-07-24 11:19:03', 'http://www.testsubmission.com/', '2011-07-24 11:19:03')[0m
+  [4;35;1mVote Load (0.000346)[0m   [0mSELECT * FROM votes WHERE (votes."id" = 953125641) [0m
+  [4;36;1mVote Load (0.000247)[0m   [0;1mSELECT * FROM votes WHERE (votes."id" = 996332877) [0m
+  [4;35;1mStory Load (0.000251)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;36;1mVote Load (0.000254)[0m   [0;1mSELECT * FROM votes WHERE (votes.story_id = 953125641) [0m
+  [4;35;1mVote Load (0.000370)[0m   [0mSELECT * FROM votes WHERE (votes."id" = 996332877) [0m
+  [4;36;1mStory Load (0.000267)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;35;1mVote Load (0.000256)[0m   [0mSELECT * FROM votes WHERE (votes.story_id = 953125641) ORDER BY id DESC LIMIT 3[0m
+  [4;36;1mStory Load (0.000319)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;35;1mVote Load (0.000242)[0m   [0mSELECT * FROM votes WHERE (votes."id" = 953125641) [0m
+  [4;36;1mStory Load (0.000268)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;36;1mStory Create (0.002149)[0m   [0;1mINSERT INTO stories ("name", "updated_at", "link", "created_at") VALUES('My test submission', '2011-07-24 11:24:56', 'http://www.testsubmission.com/', '2011-07-24 11:24:56')[0m
+  [4;35;1mVote Load (0.000907)[0m   [0mSELECT * FROM votes WHERE (votes."id" = 953125641) [0m
+  [4;36;1mVote Load (0.000556)[0m   [0;1mSELECT * FROM votes WHERE (votes."id" = 996332877) [0m
+  [4;35;1mStory Load (0.000589)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;36;1mVote Load (0.000414)[0m   [0;1mSELECT * FROM votes WHERE (votes.story_id = 953125641) [0m
+  [4;35;1mStory Load (0.000384)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;36;1mVote Create (0.000774)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "created_at") VALUES('2011-07-24 11:24:56', 953125641, '2011-07-24 11:24:56')[0m
+  [4;35;1mVote Create (0.000112)[0m   [0mINSERT INTO votes ("updated_at", "story_id", "created_at") VALUES('2011-07-24 11:24:56', 953125641, '2011-07-24 11:24:56')[0m
+  [4;36;1mVote Create (0.000111)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "created_at") VALUES('2011-07-24 11:24:56', 953125641, '2011-07-24 11:24:56')[0m
+  [4;35;1mVote Create (0.000166)[0m   [0mINSERT INTO votes ("updated_at", "story_id", "created_at") VALUES('2011-07-24 11:24:56', 953125641, '2011-07-24 11:24:56')[0m
+  [4;36;1mVote Create (0.000108)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "created_at") VALUES('2011-07-24 11:24:56', 953125641, '2011-07-24 11:24:56')[0m
+  [4;35;1mVote Create (0.000110)[0m   [0mINSERT INTO votes ("updated_at", "story_id", "created_at") VALUES('2011-07-24 11:24:56', 953125641, '2011-07-24 11:24:56')[0m
+  [4;36;1mVote Create (0.000102)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "created_at") VALUES('2011-07-24 11:24:56', 953125641, '2011-07-24 11:24:56')[0m
+  [4;35;1mVote Create (0.000109)[0m   [0mINSERT INTO votes ("updated_at", "story_id", "created_at") VALUES('2011-07-24 11:24:56', 953125641, '2011-07-24 11:24:56')[0m
+  [4;36;1mVote Create (0.000100)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "created_at") VALUES('2011-07-24 11:24:56', 953125641, '2011-07-24 11:24:56')[0m
+  [4;35;1mVote Create (0.000103)[0m   [0mINSERT INTO votes ("updated_at", "story_id", "created_at") VALUES('2011-07-24 11:24:56', 953125641, '2011-07-24 11:24:56')[0m
+  [4;36;1mVote Load (0.000538)[0m   [0;1mSELECT * FROM votes WHERE (votes.story_id = 953125641) ORDER BY id DESC LIMIT 3[0m
+  [4;35;1mVote Load (0.000319)[0m   [0mSELECT * FROM votes WHERE (votes."id" = 996332877) [0m
+  [4;36;1mStory Load (0.000265)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;35;1mVote Load (0.000252)[0m   [0mSELECT * FROM votes WHERE (votes.story_id = 953125641) ORDER BY id DESC LIMIT 3[0m
+  [4;36;1mStory Load (0.000316)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;35;1mVote Load (0.000243)[0m   [0mSELECT * FROM votes WHERE (votes."id" = 953125641) [0m
+  [4;36;1mStory Load (0.000256)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;36;1mStory Create (0.001853)[0m   [0;1mINSERT INTO stories ("name", "updated_at", "link", "created_at") VALUES('My test submission', '2011-07-24 11:26:32', 'http://www.testsubmission.com/', '2011-07-24 11:26:32')[0m
+  [4;35;1mVote Load (0.001022)[0m   [0mSELECT * FROM votes WHERE (votes."id" = 953125641) [0m
+  [4;36;1mVote Load (0.000555)[0m   [0;1mSELECT * FROM votes WHERE (votes."id" = 996332877) [0m
+  [4;35;1mStory Load (0.000578)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;36;1mVote Load (0.000273)[0m   [0;1mSELECT * FROM votes WHERE (votes.story_id = 953125641) [0m
+  [4;35;1mStory Load (0.000487)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;36;1mVote Create (0.000774)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "created_at") VALUES('2011-07-24 11:26:32', 953125641, '2011-07-24 11:26:32')[0m
+  [4;35;1mVote Create (0.000109)[0m   [0mINSERT INTO votes ("updated_at", "story_id", "created_at") VALUES('2011-07-24 11:26:32', 953125641, '2011-07-24 11:26:32')[0m
+  [4;36;1mVote Create (0.000192)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "created_at") VALUES('2011-07-24 11:26:32', 953125641, '2011-07-24 11:26:32')[0m
+  [4;35;1mVote Create (0.000114)[0m   [0mINSERT INTO votes ("updated_at", "story_id", "created_at") VALUES('2011-07-24 11:26:32', 953125641, '2011-07-24 11:26:32')[0m
+  [4;36;1mVote Create (0.000107)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "created_at") VALUES('2011-07-24 11:26:32', 953125641, '2011-07-24 11:26:32')[0m
+  [4;35;1mVote Create (0.000113)[0m   [0mINSERT INTO votes ("updated_at", "story_id", "created_at") VALUES('2011-07-24 11:26:32', 953125641, '2011-07-24 11:26:32')[0m
+  [4;36;1mVote Create (0.000102)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "created_at") VALUES('2011-07-24 11:26:32', 953125641, '2011-07-24 11:26:32')[0m
+  [4;35;1mVote Create (0.000101)[0m   [0mINSERT INTO votes ("updated_at", "story_id", "created_at") VALUES('2011-07-24 11:26:32', 953125641, '2011-07-24 11:26:32')[0m
+  [4;36;1mVote Create (0.000102)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "created_at") VALUES('2011-07-24 11:26:32', 953125641, '2011-07-24 11:26:32')[0m
+  [4;35;1mVote Create (0.000102)[0m   [0mINSERT INTO votes ("updated_at", "story_id", "created_at") VALUES('2011-07-24 11:26:32', 953125641, '2011-07-24 11:26:32')[0m
+  [4;36;1mVote Load (0.000520)[0m   [0;1mSELECT * FROM votes WHERE (votes.story_id = 953125641) ORDER BY id DESC LIMIT 3[0m
+  [4;35;1mVote Load (0.000346)[0m   [0mSELECT * FROM votes WHERE (votes."id" = 996332877) [0m
+  [4;36;1mStory Load (0.000368)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;35;1mVote Load (0.000262)[0m   [0mSELECT * FROM votes WHERE (votes.story_id = 953125641) ORDER BY id DESC LIMIT 3[0m
+  [4;36;1mStory Load (0.000342)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;35;1mVote Load (0.000270)[0m   [0mSELECT * FROM votes WHERE (votes."id" = 953125641) [0m
+  [4;36;1mStory Load (0.000263)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;36;1mStory Create (0.001827)[0m   [0;1mINSERT INTO stories ("name", "updated_at", "link", "created_at") VALUES('My test submission', '2011-07-24 11:33:26', 'http://www.testsubmission.com/', '2011-07-24 11:33:26')[0m
+  [4;35;1mVote Load (0.000757)[0m   [0mSELECT * FROM votes WHERE (votes."id" = 953125641) [0m
+  [4;36;1mVote Load (0.000588)[0m   [0;1mSELECT * FROM votes WHERE (votes."id" = 996332877) [0m
+  [4;35;1mStory Load (0.000315)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;36;1mVote Load (0.000281)[0m   [0;1mSELECT * FROM votes WHERE (votes.story_id = 953125641) [0m
+  [4;35;1mStory Load (0.000384)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;36;1mVote Create (0.000782)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "created_at") VALUES('2011-07-24 11:33:26', 953125641, '2011-07-24 11:33:26')[0m
+  [4;35;1mVote Create (0.000124)[0m   [0mINSERT INTO votes ("updated_at", "story_id", "created_at") VALUES('2011-07-24 11:33:26', 953125641, '2011-07-24 11:33:26')[0m
+  [4;36;1mVote Create (0.000106)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "created_at") VALUES('2011-07-24 11:33:26', 953125641, '2011-07-24 11:33:26')[0m
+  [4;35;1mVote Create (0.000105)[0m   [0mINSERT INTO votes ("updated_at", "story_id", "created_at") VALUES('2011-07-24 11:33:26', 953125641, '2011-07-24 11:33:26')[0m
+  [4;36;1mVote Create (0.000102)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "created_at") VALUES('2011-07-24 11:33:26', 953125641, '2011-07-24 11:33:26')[0m
+  [4;35;1mVote Create (0.000109)[0m   [0mINSERT INTO votes ("updated_at", "story_id", "created_at") VALUES('2011-07-24 11:33:26', 953125641, '2011-07-24 11:33:26')[0m
+  [4;36;1mVote Create (0.001972)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "created_at") VALUES('2011-07-24 11:33:26', 953125641, '2011-07-24 11:33:26')[0m
+  [4;35;1mVote Create (0.000159)[0m   [0mINSERT INTO votes ("updated_at", "story_id", "created_at") VALUES('2011-07-24 11:33:26', 953125641, '2011-07-24 11:33:26')[0m
+  [4;36;1mVote Create (0.000117)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "created_at") VALUES('2011-07-24 11:33:26', 953125641, '2011-07-24 11:33:26')[0m
+  [4;35;1mVote Create (0.000109)[0m   [0mINSERT INTO votes ("updated_at", "story_id", "created_at") VALUES('2011-07-24 11:33:26', 953125641, '2011-07-24 11:33:26')[0m
+  [4;36;1mVote Load (0.000552)[0m   [0;1mSELECT * FROM votes WHERE (votes.story_id = 953125641) ORDER BY id DESC LIMIT 3[0m
+  [4;35;1mVote Load (0.000325)[0m   [0mSELECT * FROM votes WHERE (votes."id" = 996332877) [0m
+  [4;36;1mStory Load (0.000280)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;35;1mVote Load (0.000287)[0m   [0mSELECT * FROM votes WHERE (votes.story_id = 953125641) ORDER BY id DESC LIMIT 3[0m
+  [4;36;1mStory Load (0.000316)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;35;1mVote Load (0.000254)[0m   [0mSELECT * FROM votes WHERE (votes."id" = 953125641) [0m
+  [4;36;1mStory Load (0.000284)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;36;1mStory Create (0.001751)[0m   [0;1mINSERT INTO stories ("name", "updated_at", "link", "created_at") VALUES('My test submission', '2011-07-24 12:05:49', 'http://www.testsubmission.com/', '2011-07-24 12:05:49')[0m
+  [4;35;1mVote Load (0.000370)[0m   [0mSELECT * FROM votes WHERE (votes."id" = 953125641) [0m
+  [4;36;1mVote Load (0.000251)[0m   [0;1mSELECT * FROM votes WHERE (votes."id" = 996332877) [0m
+  [4;35;1mStory Load (0.000272)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;36;1mVote Load (0.000492)[0m   [0;1mSELECT * FROM votes WHERE (votes.story_id = 953125641) [0m
+  [4;35;1mStory Load (0.000343)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;36;1mVote Create (0.000782)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "created_at") VALUES('2011-07-24 12:05:49', 953125641, '2011-07-24 12:05:49')[0m
+  [4;35;1mVote Create (0.000116)[0m   [0mINSERT INTO votes ("updated_at", "story_id", "created_at") VALUES('2011-07-24 12:05:49', 953125641, '2011-07-24 12:05:49')[0m
+  [4;36;1mVote Create (0.000101)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "created_at") VALUES('2011-07-24 12:05:49', 953125641, '2011-07-24 12:05:49')[0m
+  [4;35;1mVote Create (0.000103)[0m   [0mINSERT INTO votes ("updated_at", "story_id", "created_at") VALUES('2011-07-24 12:05:49', 953125641, '2011-07-24 12:05:49')[0m
+  [4;36;1mVote Create (0.000110)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "created_at") VALUES('2011-07-24 12:05:49', 953125641, '2011-07-24 12:05:49')[0m
+  [4;35;1mVote Create (0.000111)[0m   [0mINSERT INTO votes ("updated_at", "story_id", "created_at") VALUES('2011-07-24 12:05:49', 953125641, '2011-07-24 12:05:49')[0m
+  [4;36;1mVote Create (0.000104)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "created_at") VALUES('2011-07-24 12:05:49', 953125641, '2011-07-24 12:05:49')[0m
+  [4;35;1mVote Create (0.000259)[0m   [0mINSERT INTO votes ("updated_at", "story_id", "created_at") VALUES('2011-07-24 12:05:49', 953125641, '2011-07-24 12:05:49')[0m
+  [4;36;1mVote Create (0.000107)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "created_at") VALUES('2011-07-24 12:05:49', 953125641, '2011-07-24 12:05:49')[0m
+  [4;35;1mVote Create (0.000102)[0m   [0mINSERT INTO votes ("updated_at", "story_id", "created_at") VALUES('2011-07-24 12:05:49', 953125641, '2011-07-24 12:05:49')[0m
+  [4;36;1mVote Load (0.000519)[0m   [0;1mSELECT * FROM votes WHERE (votes.story_id = 953125641) ORDER BY id DESC LIMIT 3[0m
+  [4;35;1mVote Load (0.000322)[0m   [0mSELECT * FROM votes WHERE (votes."id" = 996332877) [0m
+  [4;36;1mStory Load (0.000265)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;35;1mVote Load (0.000359)[0m   [0mSELECT * FROM votes WHERE (votes.story_id = 953125641) ORDER BY id DESC LIMIT 3[0m
+  [4;36;1mStory Load (0.000295)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;35;1mVote Load (0.000377)[0m   [0mSELECT * FROM votes WHERE (votes."id" = 953125641) [0m
+  [4;36;1mStory Load (0.000276)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;36;1mStory Create (0.002103)[0m   [0;1mINSERT INTO stories ("name", "updated_at", "link", "created_at") VALUES('My test submission', '2011-07-24 12:05:59', 'http://www.testsubmission.com/', '2011-07-24 12:05:59')[0m
+  [4;35;1mVote Load (0.000768)[0m   [0mSELECT * FROM votes WHERE (votes."id" = 953125641) [0m
+  [4;36;1mVote Load (0.000262)[0m   [0;1mSELECT * FROM votes WHERE (votes."id" = 996332877) [0m
+  [4;35;1mStory Load (0.000281)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;36;1mVote Load (0.000405)[0m   [0;1mSELECT * FROM votes WHERE (votes.story_id = 953125641) [0m
+  [4;35;1mStory Load (0.000360)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;36;1mVote Create (0.000779)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "created_at") VALUES('2011-07-24 12:05:59', 953125641, '2011-07-24 12:05:59')[0m
+  [4;35;1mVote Create (0.000121)[0m   [0mINSERT INTO votes ("updated_at", "story_id", "created_at") VALUES('2011-07-24 12:05:59', 953125641, '2011-07-24 12:05:59')[0m
+  [4;36;1mVote Create (0.000105)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "created_at") VALUES('2011-07-24 12:05:59', 953125641, '2011-07-24 12:05:59')[0m
+  [4;35;1mVote Create (0.000140)[0m   [0mINSERT INTO votes ("updated_at", "story_id", "created_at") VALUES('2011-07-24 12:05:59', 953125641, '2011-07-24 12:05:59')[0m
+  [4;36;1mVote Create (0.000116)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "created_at") VALUES('2011-07-24 12:05:59', 953125641, '2011-07-24 12:05:59')[0m
+  [4;35;1mVote Create (0.000243)[0m   [0mINSERT INTO votes ("updated_at", "story_id", "created_at") VALUES('2011-07-24 12:05:59', 953125641, '2011-07-24 12:05:59')[0m
+  [4;36;1mVote Create (0.000109)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "created_at") VALUES('2011-07-24 12:05:59', 953125641, '2011-07-24 12:05:59')[0m
+  [4;35;1mVote Create (0.000107)[0m   [0mINSERT INTO votes ("updated_at", "story_id", "created_at") VALUES('2011-07-24 12:05:59', 953125641, '2011-07-24 12:05:59')[0m
+  [4;36;1mVote Create (0.000104)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "created_at") VALUES('2011-07-24 12:05:59', 953125641, '2011-07-24 12:05:59')[0m
+  [4;35;1mVote Create (0.000103)[0m   [0mINSERT INTO votes ("updated_at", "story_id", "created_at") VALUES('2011-07-24 12:05:59', 953125641, '2011-07-24 12:05:59')[0m
+  [4;36;1mVote Load (0.000509)[0m   [0;1mSELECT * FROM votes WHERE (votes.story_id = 953125641) ORDER BY id DESC LIMIT 3[0m
+  [4;35;1mVote Load (0.000315)[0m   [0mSELECT * FROM votes WHERE (votes."id" = 996332877) [0m
+  [4;36;1mStory Load (0.000273)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;35;1mVote Load (0.000353)[0m   [0mSELECT * FROM votes WHERE (votes.story_id = 953125641) ORDER BY id DESC LIMIT 3[0m
+  [4;36;1mStory Load (0.000294)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;35;1mVote Load (0.000251)[0m   [0mSELECT * FROM votes WHERE (votes."id" = 953125641) [0m
+  [4;36;1mStory Load (0.000282)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+
+
+Processing StoriesController#create (for 0.0.0.0 at 2011-07-24 12:06:01) [POST]
+  Session ID: 
+  Parameters: {"story"=>{"name"=>"test story", "link"=>"http://www.test.com/"}, "action"=>"create", "controller"=>"stories"}
+  [4;36;1mStory Create (0.001209)[0m   [0;1mINSERT INTO stories ("name", "updated_at", "link", "created_at") VALUES('test story', '2011-07-24 12:06:01', 'http://www.test.com/', '2011-07-24 12:06:01')[0m
+Redirected to http://test.host/stories
+Completed in 0.00941 (106 reqs/sec) | DB: 0.00121 (12%) | 302 Found [http://test.host/stories?story%5Blink%5D=http%3A%2F%2Fwww.test.com%2F&story%5Bname%5D=test+story]
+
+
+Processing StoriesController#create (for 0.0.0.0 at 2011-07-24 12:06:01) [POST]
+  Session ID: 
+  Parameters: {"story"=>{"name"=>"story without a link"}, "action"=>"create", "controller"=>"stories"}
+Rendering template within layouts/application
+Rendering stories/new
+Completed in 0.00586 (170 reqs/sec) | Rendering: 0.00535 (91%) | DB: 0.00000 (0%) | 200 OK [http://test.host/stories?story%5Bname%5D=story+without+a+link]
+
+
+Processing StoriesController#index (for 0.0.0.0 at 2011-07-24 12:06:01) [GET]
+  Session ID: 
+  Parameters: {"action"=>"index", "controller"=>"stories"}
+  [4;35;1mStory Load (0.000480)[0m   [0mSELECT * FROM stories WHERE (stories."name" = 'SitePoint Forums') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering stories/index
+Completed in 0.00319 (313 reqs/sec) | Rendering: 0.00177 (55%) | DB: 0.00048 (15%) | 200 OK [http://test.host/stories]
+
+
+Processing StoriesController#new (for 0.0.0.0 at 2011-07-24 12:06:01) [GET]
+  Session ID: 
+  Parameters: {"action"=>"new", "controller"=>"stories"}
+Rendering template within layouts/application
+Rendering stories/new
+Completed in 0.00217 (461 reqs/sec) | Rendering: 0.00198 (91%) | DB: 0.00000 (0%) | 200 OK [http://test.host/stories/new]
+
+
+Processing StoriesController#new (for 0.0.0.0 at 2011-07-24 12:06:01) [GET]
+  Session ID: 
+  Parameters: {"action"=>"new", "controller"=>"stories"}
+Rendering template within layouts/application
+Rendering stories/new
+Completed in 0.00210 (475 reqs/sec) | Rendering: 0.00193 (91%) | DB: 0.00000 (0%) | 200 OK [http://test.host/stories/new]
