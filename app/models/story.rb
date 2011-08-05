@@ -1,4 +1,5 @@
 class Story < ActiveRecord::Base
+	belongs_to :user
 	validates_presence_of :name, :link
 	has_many :votes
 	def to_param
