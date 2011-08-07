@@ -56,3 +56,10 @@ body {
 	margin: 0;
 	text-align: center;
 }
+#navigation li {
+	display: inline;
+	padding: 0 5px;
+}
+#navigation li a {
+	color: #fff;
+}

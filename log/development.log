@@ -5943,3 +5943,11 @@ Processing StoriesController#new (for 127.0.0.1 at 2011-08-05 16:24:13) [GET]
 Rendering template within layouts/application
 Rendering stories/new
 Completed in 0.03190 (31 reqs/sec) | Rendering: 0.02137 (66%) | DB: 0.00000 (0%) | 200 OK [http://localhost/stories/new]
+
+
+Processing StoriesController#new (for 127.0.0.1 at 2011-08-05 16:33:20) [GET]
+  Session ID: BAh7CDoMY3NyZl9pZCIlOWI2MTg2OGM0ZmZlYTQ0MGUxYzJmMzFhMzgwNTYz%0AYzY6DHVzZXJfaWQwIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFz%0AaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--c6def0d942efef66915b00000445f183787035f6
+  Parameters: {"action"=>"new", "controller"=>"stories"}
+Rendering template within layouts/application
+Rendering stories/new
+Completed in 0.01568 (63 reqs/sec) | Rendering: 0.00589 (37%) | DB: 0.00000 (0%) | 200 OK [http://localhost/stories/new]
