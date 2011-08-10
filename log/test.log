@@ -359,3 +359,79 @@ Processing StoriesController#new (for 0.0.0.0 at 2011-07-24 12:06:01) [GET]
 Rendering template within layouts/application
 Rendering stories/new
 Completed in 0.00210 (475 reqs/sec) | Rendering: 0.00193 (91%) | DB: 0.00000 (0%) | 200 OK [http://test.host/stories/new]
+  [4;36;1mUser Load (0.001168)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 885306178) [0m
+  [4;35;1mStory Load (0.000679)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;36;1mUser Load (0.000767)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 885306178) [0m
+  [4;35;1mStory Create (0.001758)[0m   [0mINSERT INTO stories ("name", "updated_at", "link", "user_id", "created_at") VALUES('My test submission', '2011-08-10 13:18:47', 'http://www.testsubmission.com/', NULL, '2011-08-10 13:18:47')[0m
+  [4;36;1mVote Load (0.000380)[0m   [0;1mSELECT * FROM votes WHERE (votes."id" = 953125641) [0m
+  [4;35;1mVote Load (0.000286)[0m   [0mSELECT * FROM votes WHERE (votes."id" = 996332877) [0m
+  [4;36;1mStory Load (0.000285)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;35;1mVote Load (0.000395)[0m   [0mSELECT * FROM votes WHERE (votes.story_id = 953125641) [0m
+  [4;36;1mStory Load (0.000346)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;35;1mVote Create (0.000957)[0m   [0mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2011-08-10 13:18:47', 953125641, NULL, '2011-08-10 13:18:47')[0m
+  [4;36;1mVote Create (0.000128)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2011-08-10 13:18:47', 953125641, NULL, '2011-08-10 13:18:47')[0m
+  [4;35;1mVote Create (0.000112)[0m   [0mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2011-08-10 13:18:47', 953125641, NULL, '2011-08-10 13:18:47')[0m
+  [4;36;1mVote Create (0.000109)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2011-08-10 13:18:47', 953125641, NULL, '2011-08-10 13:18:47')[0m
+  [4;35;1mVote Create (0.000106)[0m   [0mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2011-08-10 13:18:47', 953125641, NULL, '2011-08-10 13:18:47')[0m
+  [4;36;1mVote Create (0.000105)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2011-08-10 13:18:47', 953125641, NULL, '2011-08-10 13:18:47')[0m
+  [4;35;1mVote Create (0.000103)[0m   [0mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2011-08-10 13:18:47', 953125641, NULL, '2011-08-10 13:18:47')[0m
+  [4;36;1mVote Create (0.000181)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2011-08-10 13:18:47', 953125641, NULL, '2011-08-10 13:18:47')[0m
+  [4;35;1mVote Create (0.000118)[0m   [0mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2011-08-10 13:18:47', 953125641, NULL, '2011-08-10 13:18:47')[0m
+  [4;36;1mVote Create (0.000121)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2011-08-10 13:18:47', 953125641, NULL, '2011-08-10 13:18:47')[0m
+  [4;35;1mVote Load (0.000549)[0m   [0mSELECT * FROM votes WHERE (votes.story_id = 953125641) ORDER BY id DESC LIMIT 3[0m
+  [4;36;1mVote Load (0.000347)[0m   [0;1mSELECT * FROM votes WHERE (votes."id" = 996332877) [0m
+  [4;35;1mStory Load (0.000430)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;36;1mVote Load (0.000398)[0m   [0;1mSELECT * FROM votes WHERE (votes.story_id = 953125641) ORDER BY id DESC LIMIT 3[0m
+  [4;35;1mUser Load (0.000336)[0m   [0mSELECT * FROM users WHERE (users."id" = 885306178) [0m
+  [4;36;1mSQL (0.000216)[0m   [0;1mSELECT count(*) AS count_all FROM stories WHERE (stories.user_id = 885306178) [0m
+  [4;35;1mStory Load (0.000301)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;36;1mStory Load (0.000424)[0m   [0;1mSELECT * FROM stories WHERE (stories.user_id = 885306178) [0m
+  [4;35;1mUser Load (0.000337)[0m   [0mSELECT * FROM users WHERE (users."id" = 885306178) [0m
+  [4;36;1mSQL (0.000217)[0m   [0;1mSELECT count(*) AS count_all FROM votes WHERE (votes.user_id = 885306178) [0m
+  [4;35;1mVote Load (0.000266)[0m   [0mSELECT * FROM votes WHERE (votes."id" = 996332877) [0m
+  [4;36;1mUser Load (0.000398)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 21341157) [0m
+  [4;35;1mVote Load (0.000280)[0m   [0mSELECT * FROM votes WHERE (votes.user_id = 21341157) [0m
+  [4;36;1mUser Load (0.000333)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 21341157) [0m
+  [4;35;1mVote Load (0.000265)[0m   [0mSELECT * FROM votes WHERE (votes."id" = 996332877) [0m
+  [4;36;1mUser Load (0.000301)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 21341157) [0m
+  [4;35;1mStory Load (0.000454)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;36;1mVote Load (0.000266)[0m   [0;1mSELECT * FROM votes WHERE (votes."id" = 953125641) [0m
+  [4;35;1mStory Load (0.000282)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;36;1mUser Load (0.001216)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 885306178) [0m
+  [4;35;1mStory Load (0.000695)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;36;1mUser Load (0.000683)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 885306178) [0m
+  [4;35;1mStory Create (0.001315)[0m   [0mINSERT INTO stories ("name", "updated_at", "link", "user_id", "created_at") VALUES('My test submission', '2011-08-10 13:18:57', 'http://www.testsubmission.com/', NULL, '2011-08-10 13:18:57')[0m
+  [4;36;1mVote Load (0.000371)[0m   [0;1mSELECT * FROM votes WHERE (votes."id" = 953125641) [0m
+  [4;35;1mVote Load (0.000284)[0m   [0mSELECT * FROM votes WHERE (votes."id" = 996332877) [0m
+  [4;36;1mStory Load (0.000284)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;35;1mVote Load (0.000409)[0m   [0mSELECT * FROM votes WHERE (votes.story_id = 953125641) [0m
+  [4;36;1mStory Load (0.000361)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;35;1mVote Create (0.000800)[0m   [0mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2011-08-10 13:18:57', 953125641, NULL, '2011-08-10 13:18:57')[0m
+  [4;36;1mVote Create (0.000122)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2011-08-10 13:18:57', 953125641, NULL, '2011-08-10 13:18:57')[0m
+  [4;35;1mVote Create (0.000121)[0m   [0mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2011-08-10 13:18:57', 953125641, NULL, '2011-08-10 13:18:57')[0m
+  [4;36;1mVote Create (0.000108)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2011-08-10 13:18:57', 953125641, NULL, '2011-08-10 13:18:57')[0m
+  [4;35;1mVote Create (0.000109)[0m   [0mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2011-08-10 13:18:57', 953125641, NULL, '2011-08-10 13:18:57')[0m
+  [4;36;1mVote Create (0.000108)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2011-08-10 13:18:57', 953125641, NULL, '2011-08-10 13:18:57')[0m
+  [4;35;1mVote Create (0.000114)[0m   [0mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2011-08-10 13:18:57', 953125641, NULL, '2011-08-10 13:18:57')[0m
+  [4;36;1mVote Create (0.000110)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2011-08-10 13:18:57', 953125641, NULL, '2011-08-10 13:18:57')[0m
+  [4;35;1mVote Create (0.000118)[0m   [0mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2011-08-10 13:18:57', 953125641, NULL, '2011-08-10 13:18:57')[0m
+  [4;36;1mVote Create (0.000112)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2011-08-10 13:18:57', 953125641, NULL, '2011-08-10 13:18:57')[0m
+  [4;35;1mVote Load (0.002108)[0m   [0mSELECT * FROM votes WHERE (votes.story_id = 953125641) ORDER BY id DESC LIMIT 3[0m
+  [4;36;1mVote Load (0.000397)[0m   [0;1mSELECT * FROM votes WHERE (votes."id" = 996332877) [0m
+  [4;35;1mStory Load (0.000303)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;36;1mVote Load (0.000393)[0m   [0;1mSELECT * FROM votes WHERE (votes.story_id = 953125641) ORDER BY id DESC LIMIT 3[0m
+  [4;35;1mUser Load (0.000346)[0m   [0mSELECT * FROM users WHERE (users."id" = 885306178) [0m
+  [4;36;1mSQL (0.000236)[0m   [0;1mSELECT count(*) AS count_all FROM stories WHERE (stories.user_id = 885306178) [0m
+  [4;35;1mStory Load (0.000299)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;36;1mStory Load (0.000411)[0m   [0;1mSELECT * FROM stories WHERE (stories.user_id = 885306178) [0m
+  [4;35;1mUser Load (0.000354)[0m   [0mSELECT * FROM users WHERE (users."id" = 885306178) [0m
+  [4;36;1mSQL (0.000316)[0m   [0;1mSELECT count(*) AS count_all FROM votes WHERE (votes.user_id = 885306178) [0m
+  [4;35;1mVote Load (0.000276)[0m   [0mSELECT * FROM votes WHERE (votes."id" = 996332877) [0m
+  [4;36;1mUser Load (0.000300)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 21341157) [0m
+  [4;35;1mVote Load (0.000267)[0m   [0mSELECT * FROM votes WHERE (votes.user_id = 21341157) [0m
+  [4;36;1mUser Load (0.000338)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 21341157) [0m
+  [4;35;1mVote Load (0.000264)[0m   [0mSELECT * FROM votes WHERE (votes."id" = 996332877) [0m
+  [4;36;1mUser Load (0.000314)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 21341157) [0m
+  [4;35;1mStory Load (0.000315)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;36;1mVote Load (0.000264)[0m   [0;1mSELECT * FROM votes WHERE (votes."id" = 953125641) [0m
+  [4;35;1mStory Load (0.000283)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
