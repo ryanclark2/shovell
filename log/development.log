@@ -6274,3 +6274,210 @@ Completed in 0.01568 (63 reqs/sec) | Rendering: 0.00589 (37%) | DB: 0.00000 (0%)
   [4;35;1mSQL (0.068630)[0m   [0mCREATE TABLE schema_info (version integer)[0m
   [4;36;1mSQL (0.066124)[0m   [0;1mINSERT INTO schema_info (version) VALUES(0)[0m
   [4;35;1mSQL (0.064254)[0m   [0mUPDATE schema_info SET version = 3[0m
+  [4;36;1mSQL (0.001137)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000394)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000217)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000223)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000962)[0m   [0mSELECT * FROM schema_info[0m
+  [4;36;1mSQL (0.001002)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000165)[0m   [0mPRAGMA index_list(stories)[0m
+  [4;36;1mSQL (0.000078)[0m   [0;1mPRAGMA index_list(users)[0m
+  [4;35;1mSQL (0.000068)[0m   [0mPRAGMA index_list(votes)[0m
+  [4;36;1mSQL (0.000264)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: no such table: stories: DROP TABLE stories[0m
+  [4;36;1mSQL (0.137774)[0m   [0;1mCREATE TABLE stories ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL, "link" varchar(255) DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL, "user_id" integer DEFAULT NULL) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: no such table: users: DROP TABLE users[0m
+  [4;36;1mSQL (0.078746)[0m   [0;1mCREATE TABLE users ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255) DEFAULT NULL, "password" varchar(255) DEFAULT NULL, "name" varchar(255) DEFAULT NULL, "email" varchar(255) DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: no such table: votes: DROP TABLE votes[0m
+  [4;36;1mSQL (0.084367)[0m   [0;1mCREATE TABLE votes ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "story_id" integer DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL, "user_id" integer DEFAULT NULL) [0m
+  [4;35;1mSQL (0.067146)[0m   [0mCREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.066025)[0m   [0;1mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;35;1mSQL (0.064614)[0m   [0mUPDATE schema_info SET version = 3[0m
+  [4;36;1mSQL (0.026426)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000375)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000209)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000194)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000453)[0m   [0mSELECT * FROM schema_info[0m
+  [4;36;1mSQL (0.000422)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000074)[0m   [0mPRAGMA index_list(stories)[0m
+  [4;36;1mSQL (0.000110)[0m   [0;1mPRAGMA index_list(users)[0m
+  [4;35;1mSQL (0.000068)[0m   [0mPRAGMA index_list(votes)[0m
+  [4;36;1mSQL (0.000267)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: no such table: stories: DROP TABLE stories[0m
+  [4;36;1mSQL (0.122768)[0m   [0;1mCREATE TABLE stories ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL, "link" varchar(255) DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL, "user_id" integer DEFAULT NULL) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: no such table: users: DROP TABLE users[0m
+  [4;36;1mSQL (0.069693)[0m   [0;1mCREATE TABLE users ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255) DEFAULT NULL, "password" varchar(255) DEFAULT NULL, "name" varchar(255) DEFAULT NULL, "email" varchar(255) DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: no such table: votes: DROP TABLE votes[0m
+  [4;36;1mSQL (0.085148)[0m   [0;1mCREATE TABLE votes ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "story_id" integer DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL, "user_id" integer DEFAULT NULL) [0m
+  [4;35;1mSQL (0.068911)[0m   [0mCREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.066415)[0m   [0;1mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;35;1mSQL (0.065509)[0m   [0mUPDATE schema_info SET version = 3[0m
+  [4;36;1mSQL (0.000378)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000329)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000208)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000427)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000334)[0m   [0mSELECT * FROM schema_info[0m
+  [4;36;1mSQL (0.000439)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000074)[0m   [0mPRAGMA index_list(stories)[0m
+  [4;36;1mSQL (0.000068)[0m   [0;1mPRAGMA index_list(users)[0m
+  [4;35;1mSQL (0.000106)[0m   [0mPRAGMA index_list(votes)[0m
+  [4;36;1mSQL (0.000258)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: no such table: stories: DROP TABLE stories[0m
+  [4;36;1mSQL (0.146568)[0m   [0;1mCREATE TABLE stories ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL, "link" varchar(255) DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL, "user_id" integer DEFAULT NULL) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: no such table: users: DROP TABLE users[0m
+  [4;36;1mSQL (0.073778)[0m   [0;1mCREATE TABLE users ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255) DEFAULT NULL, "password" varchar(255) DEFAULT NULL, "name" varchar(255) DEFAULT NULL, "email" varchar(255) DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: no such table: votes: DROP TABLE votes[0m
+  [4;36;1mSQL (0.091729)[0m   [0;1mCREATE TABLE votes ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "story_id" integer DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL, "user_id" integer DEFAULT NULL) [0m
+  [4;35;1mSQL (0.074889)[0m   [0mCREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.066406)[0m   [0;1mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;35;1mSQL (0.076496)[0m   [0mUPDATE schema_info SET version = 3[0m
+  [4;36;1mSQL (0.000356)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000372)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000206)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000196)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000305)[0m   [0mSELECT * FROM schema_info[0m
+  [4;36;1mSQL (0.000413)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.003277)[0m   [0mPRAGMA index_list(stories)[0m
+  [4;36;1mSQL (0.000110)[0m   [0;1mPRAGMA index_list(users)[0m
+  [4;35;1mSQL (0.000066)[0m   [0mPRAGMA index_list(votes)[0m
+  [4;36;1mSQL (0.000266)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: no such table: stories: DROP TABLE stories[0m
+  [4;36;1mSQL (0.098873)[0m   [0;1mCREATE TABLE stories ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL, "link" varchar(255) DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL, "user_id" integer DEFAULT NULL) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: no such table: users: DROP TABLE users[0m
+  [4;36;1mSQL (0.075848)[0m   [0;1mCREATE TABLE users ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255) DEFAULT NULL, "password" varchar(255) DEFAULT NULL, "name" varchar(255) DEFAULT NULL, "email" varchar(255) DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: no such table: votes: DROP TABLE votes[0m
+  [4;36;1mSQL (0.091145)[0m   [0;1mCREATE TABLE votes ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "story_id" integer DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL, "user_id" integer DEFAULT NULL) [0m
+  [4;35;1mSQL (0.085203)[0m   [0mCREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.077535)[0m   [0;1mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;35;1mSQL (0.076596)[0m   [0mUPDATE schema_info SET version = 3[0m
+  [4;36;1mSQL (0.000368)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.003730)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000331)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000200)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000316)[0m   [0mSELECT * FROM schema_info[0m
+  [4;36;1mSQL (0.008802)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000077)[0m   [0mPRAGMA index_list(stories)[0m
+  [4;36;1mSQL (0.000070)[0m   [0;1mPRAGMA index_list(users)[0m
+  [4;35;1mSQL (0.000064)[0m   [0mPRAGMA index_list(votes)[0m
+  [4;36;1mSQL (0.000271)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: no such table: stories: DROP TABLE stories[0m
+  [4;36;1mSQL (0.115632)[0m   [0;1mCREATE TABLE stories ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL, "link" varchar(255) DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL, "user_id" integer DEFAULT NULL) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: no such table: users: DROP TABLE users[0m
+  [4;36;1mSQL (0.067428)[0m   [0;1mCREATE TABLE users ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255) DEFAULT NULL, "password" varchar(255) DEFAULT NULL, "name" varchar(255) DEFAULT NULL, "email" varchar(255) DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: no such table: votes: DROP TABLE votes[0m
+  [4;36;1mSQL (0.088162)[0m   [0;1mCREATE TABLE votes ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "story_id" integer DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL, "user_id" integer DEFAULT NULL) [0m
+  [4;35;1mSQL (0.076712)[0m   [0mCREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.066407)[0m   [0;1mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;35;1mSQL (0.065598)[0m   [0mUPDATE schema_info SET version = 3[0m
+  [4;36;1mSQL (0.000340)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000324)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.003446)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.004819)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000337)[0m   [0mSELECT * FROM schema_info[0m
+  [4;36;1mSQL (0.000415)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000141)[0m   [0mPRAGMA index_list(stories)[0m
+  [4;36;1mSQL (0.000069)[0m   [0;1mPRAGMA index_list(users)[0m
+  [4;35;1mSQL (0.000066)[0m   [0mPRAGMA index_list(votes)[0m
+  [4;36;1mSQL (0.000286)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: no such table: stories: DROP TABLE stories[0m
+  [4;36;1mSQL (0.176227)[0m   [0;1mCREATE TABLE stories ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL, "link" varchar(255) DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL, "user_id" integer DEFAULT NULL) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: no such table: users: DROP TABLE users[0m
+  [4;36;1mSQL (0.097360)[0m   [0;1mCREATE TABLE users ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255) DEFAULT NULL, "password" varchar(255) DEFAULT NULL, "name" varchar(255) DEFAULT NULL, "email" varchar(255) DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: no such table: votes: DROP TABLE votes[0m
+  [4;36;1mSQL (0.144678)[0m   [0;1mCREATE TABLE votes ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "story_id" integer DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL, "user_id" integer DEFAULT NULL) [0m
+  [4;35;1mSQL (0.109408)[0m   [0mCREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.110827)[0m   [0;1mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;35;1mSQL (0.110077)[0m   [0mUPDATE schema_info SET version = 3[0m
+  [4;36;1mSQL (0.000443)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000380)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000208)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000196)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000372)[0m   [0mSELECT * FROM schema_info[0m
+  [4;36;1mSQL (0.000419)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000076)[0m   [0mPRAGMA index_list(stories)[0m
+  [4;36;1mSQL (0.000066)[0m   [0;1mPRAGMA index_list(users)[0m
+  [4;35;1mSQL (0.000080)[0m   [0mPRAGMA index_list(votes)[0m
+  [4;36;1mSQL (0.000313)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: no such table: stories: DROP TABLE stories[0m
+  [4;36;1mSQL (0.120856)[0m   [0;1mCREATE TABLE stories ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL, "link" varchar(255) DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL, "user_id" integer DEFAULT NULL) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: no such table: users: DROP TABLE users[0m
+  [4;36;1mSQL (0.073112)[0m   [0;1mCREATE TABLE users ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255) DEFAULT NULL, "password" varchar(255) DEFAULT NULL, "name" varchar(255) DEFAULT NULL, "email" varchar(255) DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: no such table: votes: DROP TABLE votes[0m
+  [4;36;1mSQL (0.103413)[0m   [0;1mCREATE TABLE votes ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "story_id" integer DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL, "user_id" integer DEFAULT NULL) [0m
+  [4;35;1mSQL (0.085359)[0m   [0mCREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.077527)[0m   [0;1mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;35;1mSQL (0.076749)[0m   [0mUPDATE schema_info SET version = 3[0m
+  [4;36;1mSQL (0.000346)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000356)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000205)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000543)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000314)[0m   [0mSELECT * FROM schema_info[0m
+  [4;36;1mSQL (0.000411)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000076)[0m   [0mPRAGMA index_list(stories)[0m
+  [4;36;1mSQL (0.000068)[0m   [0;1mPRAGMA index_list(users)[0m
+  [4;35;1mSQL (0.000066)[0m   [0mPRAGMA index_list(votes)[0m
+  [4;36;1mSQL (0.000269)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: no such table: stories: DROP TABLE stories[0m
+  [4;36;1mSQL (0.119251)[0m   [0;1mCREATE TABLE stories ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL, "link" varchar(255) DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL, "user_id" integer DEFAULT NULL) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: no such table: users: DROP TABLE users[0m
+  [4;36;1mSQL (0.082399)[0m   [0;1mCREATE TABLE users ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255) DEFAULT NULL, "password" varchar(255) DEFAULT NULL, "name" varchar(255) DEFAULT NULL, "email" varchar(255) DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: no such table: votes: DROP TABLE votes[0m
+  [4;36;1mSQL (0.094222)[0m   [0;1mCREATE TABLE votes ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "story_id" integer DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL, "user_id" integer DEFAULT NULL) [0m
+  [4;35;1mSQL (0.070783)[0m   [0mCREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.066468)[0m   [0;1mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;35;1mSQL (0.065566)[0m   [0mUPDATE schema_info SET version = 3[0m
+  [4;36;1mSQL (0.000354)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000363)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000207)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000195)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000377)[0m   [0mSELECT * FROM schema_info[0m
+  [4;36;1mSQL (0.000432)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000144)[0m   [0mPRAGMA index_list(stories)[0m
+  [4;36;1mSQL (0.000069)[0m   [0;1mPRAGMA index_list(users)[0m
+  [4;35;1mSQL (0.000069)[0m   [0mPRAGMA index_list(votes)[0m
+  [4;36;1mSQL (0.004436)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: no such table: stories: DROP TABLE stories[0m
+  [4;36;1mSQL (0.126982)[0m   [0;1mCREATE TABLE stories ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL, "link" varchar(255) DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL, "user_id" integer DEFAULT NULL) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: no such table: users: DROP TABLE users[0m
+  [4;36;1mSQL (0.082610)[0m   [0;1mCREATE TABLE users ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255) DEFAULT NULL, "password" varchar(255) DEFAULT NULL, "name" varchar(255) DEFAULT NULL, "email" varchar(255) DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: no such table: votes: DROP TABLE votes[0m
+  [4;36;1mSQL (0.105207)[0m   [0;1mCREATE TABLE votes ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "story_id" integer DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL, "user_id" integer DEFAULT NULL) [0m
+  [4;35;1mSQL (0.083695)[0m   [0mCREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.077490)[0m   [0;1mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;35;1mSQL (0.076677)[0m   [0mUPDATE schema_info SET version = 3[0m
