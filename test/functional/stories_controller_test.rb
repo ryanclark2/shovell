@@ -41,7 +41,7 @@ class StoriesControllerTest < ActionController::TestCase
 
 	def test_should_show_navigation_menu
 		get :index
-		assert_select 'li`#navigation li', 2
+		assert_select '#navigation li', 2
 	end
 	def test_should_indicate_logged_in_user
 		get_with_user :index
