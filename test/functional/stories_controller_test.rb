@@ -30,9 +30,9 @@ class StoriesControllerTest < ActionController::TestCase
 		post_with_user :create, :story => { :name => 'story without a link' }
 		assert assigns(:story).errors.on(:link)
 	end
-	def test_should_show_story_sumbitter
+	def test_should_show_story_submitter
 		get :show, :id => stories(:one)
-		assert_select 'p.sumbitted_by span', 'patrick'
+		assert_select 'p.submitted_by span', 'patrick'
 	end
 	def test_should_indicate_not_logged_in
 		get :index
