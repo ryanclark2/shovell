@@ -3,7 +3,9 @@ class StoriesController < ApplicationController
 	before_filter :login_required, :only => [ :new, :create ]
 	
   def index
-		@story = Story.find_by_name('SitePoint Forums')
+		@story = Story.find :all,
+			:order => 'id DESC',
+			:conditions => 'votes_count >= 5'
 	end
 	
 	def new 

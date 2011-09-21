@@ -6780,3 +6780,37 @@ Completed in 0.01568 (63 reqs/sec) | Rendering: 0.00589 (37%) | DB: 0.00000 (0%)
   [4;35;1mSQL (0.163765)[0m   [0mCREATE TABLE schema_info (version integer)[0m
   [4;36;1mSQL (0.077138)[0m   [0;1mINSERT INTO schema_info (version) VALUES(0)[0m
   [4;35;1mSQL (0.075633)[0m   [0mUPDATE schema_info SET version = 3[0m
+  [4;36;1mSQL (0.000388)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;35;1mSQL (0.001814)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000441)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000210)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000202)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to AddCounterCacheToStories (4)
+  [4;35;1mSQL (0.127765)[0m   [0mALTER TABLE stories ADD "votes_count" integer DEFAULT 0[0m
+  [4;36;1mSQL (0.134753)[0m   [0;1mVACUUM[0m
+  [4;35;1mStory Load (0.002770)[0m   [0mSELECT * FROM stories [0m
+  [4;36;1mVote Load (0.002497)[0m   [0;1mSELECT * FROM votes WHERE (votes.story_id = 2) [0m
+  [4;35;1mStory Update (0.000918)[0m   [0mUPDATE stories SET "created_at" = '2011-07-03 19:46:58', "name" = 'SitePoint Forums', "votes_count" = 16, "updated_at" = '2011-09-17 21:28:54', "user_id" = NULL, "link" = 'http://www.sitepoint.com/forums/' WHERE "id" = 2[0m
+  [4;36;1mVote Load (0.002665)[0m   [0;1mSELECT * FROM votes WHERE (votes.story_id = 3) [0m
+  [4;35;1mStory Update (0.000697)[0m   [0mUPDATE stories SET "created_at" = '2011-07-19 19:54:26', "name" = 'Google', "votes_count" = 8, "updated_at" = '2011-09-17 21:28:54', "user_id" = NULL, "link" = 'http://www.google.com' WHERE "id" = 3[0m
+  [4;36;1mVote Load (0.000531)[0m   [0;1mSELECT * FROM votes WHERE (votes.story_id = 4) [0m
+  [4;35;1mStory Update (0.000640)[0m   [0mUPDATE stories SET "created_at" = '2011-07-21 19:23:43', "name" = 'CleverSketch', "votes_count" = 0, "updated_at" = '2011-09-17 21:28:54', "user_id" = NULL, "link" = 'www.cleversketch.com' WHERE "id" = 4[0m
+  [4;36;1mVote Load (0.000301)[0m   [0;1mSELECT * FROM votes WHERE (votes.story_id = 5) [0m
+  [4;35;1mStory Update (0.000616)[0m   [0mUPDATE stories SET "created_at" = '2011-07-21 19:29:24', "name" = 'Buster', "votes_count" = 0, "updated_at" = '2011-09-17 21:28:54', "user_id" = NULL, "link" = 'Buster.com' WHERE "id" = 5[0m
+  [4;36;1mVote Load (0.001962)[0m   [0;1mSELECT * FROM votes WHERE (votes.story_id = 6) [0m
+  [4;35;1mStory Update (0.000652)[0m   [0mUPDATE stories SET "created_at" = '2011-07-21 19:29:57', "name" = 'BusterDog', "votes_count" = 14, "updated_at" = '2011-09-17 21:28:54', "user_id" = NULL, "link" = 'www.BusterDog.com' WHERE "id" = 6[0m
+  [4;36;1mVote Load (0.000657)[0m   [0;1mSELECT * FROM votes WHERE (votes.story_id = 7) [0m
+  [4;35;1mStory Update (0.001297)[0m   [0mUPDATE stories SET "created_at" = '2011-07-23 16:51:01', "name" = 'Michael', "votes_count" = 0, "updated_at" = '2011-09-17 21:28:54', "user_id" = NULL, "link" = 'Dad.com' WHERE "id" = 7[0m
+  [4;36;1mVote Load (0.001173)[0m   [0;1mSELECT * FROM votes WHERE (votes.story_id = 8) [0m
+  [4;35;1mStory Update (0.000985)[0m   [0mUPDATE stories SET "created_at" = '2011-07-23 16:54:27', "name" = 'Tahoe', "votes_count" = 0, "updated_at" = '2011-09-17 21:28:55', "user_id" = NULL, "link" = 'home.com' WHERE "id" = 8[0m
+  [4;36;1mSQL (0.110889)[0m   [0;1mUPDATE schema_info SET version = 4[0m
+  [4;35;1mSQL (0.000688)[0m   [0mSELECT * FROM schema_info[0m
+  [4;36;1mSQL (0.000919)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000161)[0m   [0mPRAGMA index_list(stories)[0m
+  [4;36;1mSQL (0.000070)[0m   [0;1mPRAGMA index_list(users)[0m
+  [4;35;1mSQL (0.000066)[0m   [0mPRAGMA index_list(votes)[0m
