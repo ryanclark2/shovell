@@ -6814,3 +6814,2026 @@ Migrating to AddCounterCacheToStories (4)
   [4;35;1mSQL (0.000161)[0m   [0mPRAGMA index_list(stories)[0m
   [4;36;1mSQL (0.000070)[0m   [0;1mPRAGMA index_list(users)[0m
   [4;35;1mSQL (0.000066)[0m   [0mPRAGMA index_list(votes)[0m
+
+
+Processing StoriesController#index (for 127.0.0.1 at 2011-10-03 18:06:30) [GET]
+  Session ID: e1e07d9bfa3df94220c7bf67b7d4f2d5
+  Parameters: {"action"=>"index", "controller"=>"stories"}
+  [4;36;1mStory Load (0.003693)[0m   [0;1mSELECT * FROM stories WHERE (votes_count >= 5) ORDER BY id DESC[0m
+Rendering template within layouts/application
+Rendering stories/index
+
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.size) on line #2 of stories/index.html.erb:
+1: <h2>
+2: 	<%= "Showing #{ pluralize(@stories.size, 'story') }" %>
+3: </h2>
+4: <%= render :partial => 'story', :collection => @stories %>
+
+    app/views/stories/index.html.erb:2:in `_run_erb_47app47views47stories47index46html46erb'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:637:in `send'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:637:in `compile_and_render_template'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:365:in `render_template'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:316:in `render_file'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:1100:in `render_for_file'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:836:in `render_with_no_layout'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/layout.rb:262:in `render_without_benchmark'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:1153:in `default_render'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:1159:in `perform_action_without_filters'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/webrick_server.rb:112:in `handle_dispatch'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/webrick_server.rb:78:in `service'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/webrick_server.rb:62:in `dispatch'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/commands/servers/webrick.rb:66
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/commands/server.rb:39
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendering /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing StoriesController#index (for 127.0.0.1 at 2011-10-03 18:06:37) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--3af36bdb6a0ef76fd25cfa456d38501c234d2298
+  Parameters: {"action"=>"index", "controller"=>"stories"}
+  [4;35;1mStory Load (0.001349)[0m   [0mSELECT * FROM stories WHERE (votes_count >= 5) ORDER BY id DESC[0m
+Rendering template within layouts/application
+Rendering stories/index
+
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.size) on line #2 of stories/index.html.erb:
+1: <h2>
+2: 	<%= "Showing #{ pluralize(@stories.size, 'story') }" %>
+3: </h2>
+4: <%= render :partial => 'story', :collection => @stories %>
+
+    app/views/stories/index.html.erb:2:in `_run_erb_47app47views47stories47index46html46erb'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:637:in `send'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:637:in `compile_and_render_template'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:365:in `render_template'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:316:in `render_file'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:1100:in `render_for_file'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:836:in `render_with_no_layout'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/layout.rb:262:in `render_without_benchmark'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:1153:in `default_render'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:1159:in `perform_action_without_filters'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/webrick_server.rb:112:in `handle_dispatch'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/webrick_server.rb:78:in `service'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/webrick_server.rb:62:in `dispatch'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/commands/servers/webrick.rb:66
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/commands/server.rb:39
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendering /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing StoriesController#index (for 127.0.0.1 at 2011-10-03 18:06:55) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--3af36bdb6a0ef76fd25cfa456d38501c234d2298
+  Parameters: {"action"=>"index", "controller"=>"stories"}
+  [4;36;1mStory Load (0.001234)[0m   [0;1mSELECT * FROM stories WHERE (votes_count >= 5) ORDER BY id DESC[0m
+Rendering template within layouts/application
+Rendering stories/index
+
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.size) on line #2 of stories/index.html.erb:
+1: <h2>
+2: 	<%= "Showing #{ pluralize(@stories.size, 'story') }" %>
+3: </h2>
+4: <%= render :partial => 'story', :collection => @stories %>
+
+    app/views/stories/index.html.erb:2:in `_run_erb_47app47views47stories47index46html46erb'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:637:in `send'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:637:in `compile_and_render_template'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:365:in `render_template'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:316:in `render_file'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:1100:in `render_for_file'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:836:in `render_with_no_layout'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/layout.rb:262:in `render_without_benchmark'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:1153:in `default_render'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:1159:in `perform_action_without_filters'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/webrick_server.rb:112:in `handle_dispatch'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/webrick_server.rb:78:in `service'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/webrick_server.rb:62:in `dispatch'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/commands/servers/webrick.rb:66
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/commands/server.rb:39
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendering /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing StoriesController#index (for 127.0.0.1 at 2011-10-03 18:08:53) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--3af36bdb6a0ef76fd25cfa456d38501c234d2298
+  Parameters: {"action"=>"index", "controller"=>"stories"}
+  [4;35;1mStory Load (0.000998)[0m   [0mSELECT * FROM stories WHERE (votes_count >= 5) ORDER BY id DESC[0m
+Rendering template within layouts/application
+Rendering stories/index
+
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.login) on line #4 of stories/_story.html.erb:
+1: <% div_for(story) do %>
+2: 	<h3><%- link_to story.name, story %></h3>
+3: 	<p>
+4: 		Submitted by: <%= story.user.login %> |
+5: 		Score: <%= story.votes_count %>
+6: 	</p>
+7: 	<% end %>
+
+    app/views/stories/_story.html.erb:4:in `_run_erb_47app47views47stories47_story46html46erb'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/helpers/capture_helper.rb:142:in `call'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/helpers/capture_helper.rb:142:in `capture_erb_with_buffer'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/helpers/capture_helper.rb:44:in `capture'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/helpers/record_tag_helper.rb:53:in `content_tag_for'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/helpers/record_tag_helper.rb:16:in `div_for'
+    app/views/stories/_story.html.erb:1:in `_run_erb_47app47views47stories47_story46html46erb'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:637:in `send'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:637:in `compile_and_render_template'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:365:in `render_template'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:316:in `render_file'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:331:in `render'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/partials.rb:117:in `render_partial'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:26:in `benchmark'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:26:in `benchmark'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/partials.rb:116:in `render_partial'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/partials.rb:143:in `render_partial_collection'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activerecord-2.0.2/lib/active_record/base.rb:1602:in `each_with_index'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/partials.rb:141:in `each'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/partials.rb:141:in `each_with_index'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/partials.rb:141:in `render_partial_collection'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:350:in `render'
+    app/views/stories/index.html.erb:4:in `_run_erb_47app47views47stories47index46html46erb'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:637:in `send'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:637:in `compile_and_render_template'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:365:in `render_template'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:316:in `render_file'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:1100:in `render_for_file'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:836:in `render_with_no_layout'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/layout.rb:262:in `render_without_benchmark'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:1153:in `default_render'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:1159:in `perform_action_without_filters'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/webrick_server.rb:112:in `handle_dispatch'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/webrick_server.rb:78:in `service'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/webrick_server.rb:62:in `dispatch'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/commands/servers/webrick.rb:66
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/commands/server.rb:39
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendering /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing StoriesController#index (for 127.0.0.1 at 2011-10-03 18:11:18) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--3af36bdb6a0ef76fd25cfa456d38501c234d2298
+  Parameters: {"action"=>"index", "controller"=>"stories"}
+  [4;36;1mStory Load (0.001021)[0m   [0;1mSELECT * FROM stories WHERE (votes_count >= 5) ORDER BY id DESC[0m
+Rendering template within layouts/application
+Rendering stories/index
+
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.login) on line #4 of stories/_story.html.erb:
+1: <% div_for(story) do %>
+2: 	<h3><%= link_to story.name, story %></h3>
+3: 	<p>
+4: 		Submitted by: <%= story.user.login %> |
+5: 		Score: <%= story.votes_count %>
+6: 	</p>
+7: 	<% end %>
+
+    app/views/stories/_story.html.erb:4:in `_run_erb_47app47views47stories47_story46html46erb'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/helpers/capture_helper.rb:142:in `call'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/helpers/capture_helper.rb:142:in `capture_erb_with_buffer'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/helpers/capture_helper.rb:44:in `capture'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/helpers/record_tag_helper.rb:53:in `content_tag_for'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/helpers/record_tag_helper.rb:16:in `div_for'
+    app/views/stories/_story.html.erb:1:in `_run_erb_47app47views47stories47_story46html46erb'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:637:in `send'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:637:in `compile_and_render_template'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:365:in `render_template'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:316:in `render_file'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:331:in `render'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/partials.rb:117:in `render_partial'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:26:in `benchmark'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:26:in `benchmark'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/partials.rb:116:in `render_partial'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/partials.rb:143:in `render_partial_collection'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activerecord-2.0.2/lib/active_record/base.rb:1602:in `each_with_index'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/partials.rb:141:in `each'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/partials.rb:141:in `each_with_index'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/partials.rb:141:in `render_partial_collection'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:350:in `render'
+    app/views/stories/index.html.erb:4:in `_run_erb_47app47views47stories47index46html46erb'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:637:in `send'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:637:in `compile_and_render_template'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:365:in `render_template'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:316:in `render_file'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:1100:in `render_for_file'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:836:in `render_with_no_layout'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/layout.rb:262:in `render_without_benchmark'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:1153:in `default_render'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:1159:in `perform_action_without_filters'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/webrick_server.rb:112:in `handle_dispatch'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/webrick_server.rb:78:in `service'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/webrick_server.rb:62:in `dispatch'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/commands/servers/webrick.rb:66
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/commands/server.rb:39
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendering /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-10-03 18:12:27) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--3af36bdb6a0ef76fd25cfa456d38501c234d2298
+  Parameters: {}
+
+
+ActionController::RoutingError (No route matches "/index.html" with {:method=>:get}):
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/routing.rb:1441:in `recognize_path'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/routing.rb:1424:in `recognize'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:170:in `handle_request'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/webrick_server.rb:112:in `handle_dispatch'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/webrick_server.rb:78:in `service'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/webrick_server.rb:62:in `dispatch'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/commands/servers/webrick.rb:66
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/commands/server.rb:39
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendering /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing StoriesController#index (for 127.0.0.1 at 2011-10-03 18:12:39) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--3af36bdb6a0ef76fd25cfa456d38501c234d2298
+  Parameters: {"action"=>"index", "controller"=>"stories"}
+  [4;35;1mStory Load (0.001492)[0m   [0mSELECT * FROM stories WHERE (votes_count >= 5) ORDER BY id DESC[0m
+Rendering template within layouts/application
+Rendering stories/index
+
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.login) on line #4 of stories/_story.html.erb:
+1: <% div_for(story) do %>
+2: 	<h3><%= link_to story.name, story %></h3>
+3: 	<p>
+4: 		Submitted by: <%= story.user.login %> |
+5: 		Score: <%= story.votes_count %>
+6: 	</p>
+7: 	<% end %>
+
+    app/views/stories/_story.html.erb:4:in `_run_erb_47app47views47stories47_story46html46erb'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/helpers/capture_helper.rb:142:in `call'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/helpers/capture_helper.rb:142:in `capture_erb_with_buffer'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/helpers/capture_helper.rb:44:in `capture'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/helpers/record_tag_helper.rb:53:in `content_tag_for'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/helpers/record_tag_helper.rb:16:in `div_for'
+    app/views/stories/_story.html.erb:1:in `_run_erb_47app47views47stories47_story46html46erb'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:637:in `send'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:637:in `compile_and_render_template'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:365:in `render_template'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:316:in `render_file'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:331:in `render'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/partials.rb:117:in `render_partial'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:26:in `benchmark'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:26:in `benchmark'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/partials.rb:116:in `render_partial'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/partials.rb:143:in `render_partial_collection'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activerecord-2.0.2/lib/active_record/base.rb:1602:in `each_with_index'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/partials.rb:141:in `each'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/partials.rb:141:in `each_with_index'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/partials.rb:141:in `render_partial_collection'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:350:in `render'
+    app/views/stories/index.html.erb:4:in `_run_erb_47app47views47stories47index46html46erb'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:637:in `send'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:637:in `compile_and_render_template'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:365:in `render_template'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:316:in `render_file'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:1100:in `render_for_file'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:836:in `render_with_no_layout'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/layout.rb:262:in `render_without_benchmark'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:1153:in `default_render'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:1159:in `perform_action_without_filters'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/webrick_server.rb:112:in `handle_dispatch'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/webrick_server.rb:78:in `service'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/webrick_server.rb:62:in `dispatch'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/commands/servers/webrick.rb:66
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/commands/server.rb:39
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendering /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing StoriesController#new (for 127.0.0.1 at 2011-10-03 18:28:18) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--3af36bdb6a0ef76fd25cfa456d38501c234d2298
+  Parameters: {"action"=>"new", "controller"=>"stories"}
+Redirected to http://localhost:3000/session/new
+Filter chain halted as [#<ActionController::Filters::ClassMethods::SymbolFilter:0xb71c04b4 @filter=:login_required>] rendered_or_redirected.
+Completed in 0.00065 (1526 reqs/sec) | DB: 0.00000 (0%) | 302 Found [http://localhost/stories/new]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2011-10-03 18:28:18) [GET]
+  Session ID: BAh7BzoOcmV0dXJuX3RvIhEvc3Rvcmllcy9uZXciCmZsYXNoSUM6J0FjdGlv%0AbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhhc2h7AAY6CkB1c2VkewA%3D--6ad7b01ce75db2eeb796145509641482a0b71b31
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 0.15163 (6 reqs/sec) | Rendering: 0.14929 (98%) | DB: 0.00000 (0%) | 200 OK [http://localhost/session/new]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2011-10-03 18:28:22) [POST]
+  Session ID: BAh7CDoOcmV0dXJuX3RvIhEvc3Rvcmllcy9uZXc6DGNzcmZfaWQiJTI3MWQ0%0AMWVlYTI5NDNlYmNmZmU5MWExYmFhY2NkZGZmIgpmbGFzaElDOidBY3Rpb25D%0Ab250cm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--fa79bb0cd782a1e15bb22e1adfa5bb56f8186c23
+  Parameters: {"commit"=>"login", "authenticity_token"=>"7e0aa48ac1749bf3f6500818be1811230b936a81", "action"=>"create", "controller"=>"sessions", "password"=>"butterd0g", "login"=>"iamryo"}
+  [4;36;1mUser Load (0.000374)[0m   [0;1mSELECT * FROM users WHERE (users."login" = 'iamryo' AND users."password" = 'butterd0g') LIMIT 1[0m
+Redirected to http://localhost:3000/stories/new
+Completed in 0.02869 (34 reqs/sec) | DB: 0.00037 (1%) | 302 Found [http://localhost/session]
+
+
+Processing StoriesController#new (for 127.0.0.1 at 2011-10-03 18:28:22) [GET]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiUyNzFkNDFl%0AZWEyOTQzZWJjZmZlOTFhMWJhYWNjZGRmZiIKZmxhc2hJQzonQWN0aW9uQ29u%0AdHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--fc881e3205b414c6282cd2fb44a465fd527d1275
+  Parameters: {"action"=>"new", "controller"=>"stories"}
+  [4;35;1mUser Load (0.000367)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering stories/new
+Completed in 0.06009 (16 reqs/sec) | Rendering: 0.02863 (47%) | DB: 0.00037 (0%) | 200 OK [http://localhost/stories/new]
+
+
+Processing StoriesController#index (for 127.0.0.1 at 2011-10-03 18:28:27) [GET]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiUyNzFkNDFl%0AZWEyOTQzZWJjZmZlOTFhMWJhYWNjZGRmZiIKZmxhc2hJQzonQWN0aW9uQ29u%0AdHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--fc881e3205b414c6282cd2fb44a465fd527d1275
+  Parameters: {"action"=>"index", "controller"=>"stories"}
+  [4;36;1mUser Load (0.000542)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;35;1mStory Load (0.000811)[0m   [0mSELECT * FROM stories WHERE (votes_count >= 5) ORDER BY id DESC[0m
+Rendering template within layouts/application
+Rendering stories/index
+
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.login) on line #4 of stories/_story.html.erb:
+1: <% div_for(story) do %>
+2: 	<h3><%= link_to story.name, story %></h3>
+3: 	<p>
+4: 		Submitted by: <%= story.user.login %> |
+5: 		Score: <%= story.votes_count %>
+6: 	</p>
+7: 	<% end %>
+
+    app/views/stories/_story.html.erb:4:in `_run_erb_47app47views47stories47_story46html46erb'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/helpers/capture_helper.rb:142:in `call'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/helpers/capture_helper.rb:142:in `capture_erb_with_buffer'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/helpers/capture_helper.rb:44:in `capture'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/helpers/record_tag_helper.rb:53:in `content_tag_for'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/helpers/record_tag_helper.rb:16:in `div_for'
+    app/views/stories/_story.html.erb:1:in `_run_erb_47app47views47stories47_story46html46erb'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:637:in `send'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:637:in `compile_and_render_template'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:365:in `render_template'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:316:in `render_file'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:331:in `render'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/partials.rb:117:in `render_partial'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:26:in `benchmark'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:26:in `benchmark'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/partials.rb:116:in `render_partial'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/partials.rb:143:in `render_partial_collection'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activerecord-2.0.2/lib/active_record/base.rb:1602:in `each_with_index'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/partials.rb:141:in `each'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/partials.rb:141:in `each_with_index'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/partials.rb:141:in `render_partial_collection'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:350:in `render'
+    app/views/stories/index.html.erb:4:in `_run_erb_47app47views47stories47index46html46erb'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:637:in `send'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:637:in `compile_and_render_template'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:365:in `render_template'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:316:in `render_file'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:1100:in `render_for_file'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:836:in `render_with_no_layout'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/layout.rb:262:in `render_without_benchmark'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:1153:in `default_render'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:1159:in `perform_action_without_filters'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/webrick_server.rb:112:in `handle_dispatch'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/webrick_server.rb:78:in `service'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/webrick_server.rb:62:in `dispatch'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/commands/servers/webrick.rb:66
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/commands/server.rb:39
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendering /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing StoriesController#index (for 127.0.0.1 at 2011-10-03 18:34:41) [GET]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiUyNzFkNDFl%0AZWEyOTQzZWJjZmZlOTFhMWJhYWNjZGRmZiIKZmxhc2hJQzonQWN0aW9uQ29u%0AdHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--fc881e3205b414c6282cd2fb44a465fd527d1275
+  Parameters: {"action"=>"index", "controller"=>"stories"}
+  [4;36;1mUser Load (0.000472)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;35;1mStory Load (0.000848)[0m   [0mSELECT * FROM stories WHERE (votes_count >= 5) ORDER BY id DESC[0m
+Rendering template within layouts/application
+Rendering stories/index
+Rendered stories/_story (0.00441)
+Rendered stories/_story (0.00138)
+Rendered stories/_story (0.00070)
+Completed in 0.03131 (31 reqs/sec) | Rendering: 0.01055 (33%) | DB: 0.00132 (4%) | 200 OK [http://localhost/stories]
+
+
+Processing StoriesController#index (for 127.0.0.1 at 2011-10-03 18:34:45) [GET]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiUyNzFkNDFl%0AZWEyOTQzZWJjZmZlOTFhMWJhYWNjZGRmZiIKZmxhc2hJQzonQWN0aW9uQ29u%0AdHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--fc881e3205b414c6282cd2fb44a465fd527d1275
+  Parameters: {"action"=>"index", "controller"=>"stories"}
+  [4;36;1mUser Load (0.000396)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;35;1mStory Load (0.000751)[0m   [0mSELECT * FROM stories WHERE (votes_count >= 5) ORDER BY id DESC[0m
+Rendering template within layouts/application
+Rendering stories/index
+Rendered stories/_story (0.00905)
+Rendered stories/_story (0.00435)
+Rendered stories/_story (0.00070)
+Completed in 0.06349 (15 reqs/sec) | Rendering: 0.03021 (47%) | DB: 0.00115 (1%) | 200 OK [http://localhost/stories]
+
+
+Processing StoriesController#new (for 127.0.0.1 at 2011-10-03 18:34:56) [GET]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiUyNzFkNDFl%0AZWEyOTQzZWJjZmZlOTFhMWJhYWNjZGRmZiIKZmxhc2hJQzonQWN0aW9uQ29u%0AdHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--fc881e3205b414c6282cd2fb44a465fd527d1275
+  Parameters: {"action"=>"new", "controller"=>"stories"}
+  [4;36;1mUser Load (0.000397)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering stories/new
+Completed in 0.03561 (28 reqs/sec) | Rendering: 0.01784 (50%) | DB: 0.00040 (1%) | 200 OK [http://localhost/stories/new]
+
+
+Processing StoriesController#create (for 127.0.0.1 at 2011-10-03 18:35:11) [POST]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiUyNzFkNDFl%0AZWEyOTQzZWJjZmZlOTFhMWJhYWNjZGRmZiIKZmxhc2hJQzonQWN0aW9uQ29u%0AdHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--fc881e3205b414c6282cd2fb44a465fd527d1275
+  Parameters: {"commit"=>"Create", "story"=>{"name"=>"The Name of a Website", "link"=>"www.thiswebsite.com"}, "authenticity_token"=>"7e0aa48ac1749bf3f6500818be1811230b936a81", "action"=>"create", "controller"=>"stories"}
+  [4;35;1mUser Load (0.000433)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;36;1mStory Create (0.016667)[0m   [0;1mINSERT INTO stories ("name", "updated_at", "votes_count", "link", "user_id", "created_at") VALUES('The Name of a Website', '2011-10-03 18:35:11', 0, 'www.thiswebsite.com', 1, '2011-10-03 18:35:11')[0m
+Redirected to http://localhost:3000/stories
+Completed in 0.14792 (6 reqs/sec) | DB: 0.01710 (11%) | 302 Found [http://localhost/stories]
+
+
+Processing StoriesController#index (for 127.0.0.1 at 2011-10-03 18:35:12) [GET]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiUyNzFkNDFl%0AZWEyOTQzZWJjZmZlOTFhMWJhYWNjZGRmZiIKZmxhc2hJQzonQWN0aW9uQ29u%0AdHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsGOgtub3RpY2UiH1N0b3J5IHN1%0AYm1pc3Npb24gc3VjY2VlZGVkBjoKQHVzZWR7BjsJVA%3D%3D--87a6bcc0a091bd23ec44c610a94c5a1d768c1615
+  Parameters: {"action"=>"index", "controller"=>"stories"}
+  [4;35;1mUser Load (0.000406)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;36;1mStory Load (0.003766)[0m   [0;1mSELECT * FROM stories WHERE (votes_count >= 5) ORDER BY id DESC[0m
+Rendering template within layouts/application
+Rendering stories/index
+Rendered stories/_story (0.00417)
+Rendered stories/_story (0.00075)
+Rendered stories/_story (0.00073)
+Completed in 0.02887 (34 reqs/sec) | Rendering: 0.00965 (33%) | DB: 0.00417 (14%) | 200 OK [http://localhost/stories]
+
+
+Processing StoriesController#show (for 127.0.0.1 at 2011-10-03 18:35:21) [GET]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiUyNzFkNDFl%0AZWEyOTQzZWJjZmZlOTFhMWJhYWNjZGRmZiIKZmxhc2hJQzonQWN0aW9uQ29u%0AdHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--fc881e3205b414c6282cd2fb44a465fd527d1275
+  Parameters: {"action"=>"show", "id"=>"6-busterdog", "controller"=>"stories"}
+  [4;35;1mUser Load (0.000372)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;36;1mStory Load (0.000401)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 6) [0m
+Rendering template within layouts/application
+Rendering stories/show
+  [4;35;1mVote Load (0.000671)[0m   [0mSELECT * FROM votes WHERE (votes.story_id = 6) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.02644)
+Rendered votes/_vote (0.00053)
+Rendered votes/_vote (0.00042)
+
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.login) on line #18 of stories/show.html.erb:
+15: 
+16: <p class="submitted_by">
+17: 	Submitted by:
+18: 	<span><%= @story.user.login %></span>
+19: </p>
+20: 
+21: <p>
+
+    app/views/stories/show.html.erb:18:in `_run_erb_47app47views47stories47show46html46erb'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:637:in `send'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:637:in `compile_and_render_template'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:365:in `render_template'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:316:in `render_file'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:1100:in `render_for_file'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:836:in `render_with_no_layout'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/layout.rb:262:in `render_without_benchmark'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:1153:in `default_render'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:1159:in `perform_action_without_filters'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/webrick_server.rb:112:in `handle_dispatch'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/webrick_server.rb:78:in `service'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/webrick_server.rb:62:in `dispatch'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/commands/servers/webrick.rb:66
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/commands/server.rb:39
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendering /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing StoriesController#show (for 127.0.0.1 at 2011-10-03 18:36:02) [GET]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiUyNzFkNDFl%0AZWEyOTQzZWJjZmZlOTFhMWJhYWNjZGRmZiIKZmxhc2hJQzonQWN0aW9uQ29u%0AdHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--fc881e3205b414c6282cd2fb44a465fd527d1275
+  Parameters: {"action"=>"show", "id"=>"7", "controller"=>"stories"}
+  [4;36;1mUser Load (0.000672)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;35;1mStory Load (0.000429)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 7) [0m
+Rendering template within layouts/application
+Rendering stories/show
+
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.login) on line #18 of stories/show.html.erb:
+15: 
+16: <p class="submitted_by">
+17: 	Submitted by:
+18: 	<span><%= @story.user.login %></span>
+19: </p>
+20: 
+21: <p>
+
+    app/views/stories/show.html.erb:18:in `_run_erb_47app47views47stories47show46html46erb'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:637:in `send'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:637:in `compile_and_render_template'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:365:in `render_template'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:316:in `render_file'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:1100:in `render_for_file'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:836:in `render_with_no_layout'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/layout.rb:262:in `render_without_benchmark'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:1153:in `default_render'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:1159:in `perform_action_without_filters'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/webrick_server.rb:112:in `handle_dispatch'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/webrick_server.rb:78:in `service'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/webrick_server.rb:62:in `dispatch'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/commands/servers/webrick.rb:66
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/commands/server.rb:39
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendering /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing StoriesController#show (for 127.0.0.1 at 2011-10-03 18:36:13) [GET]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiUyNzFkNDFl%0AZWEyOTQzZWJjZmZlOTFhMWJhYWNjZGRmZiIKZmxhc2hJQzonQWN0aW9uQ29u%0AdHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--fc881e3205b414c6282cd2fb44a465fd527d1275
+  Parameters: {"action"=>"show", "id"=>"8", "controller"=>"stories"}
+  [4;36;1mUser Load (0.000403)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;35;1mStory Load (0.000440)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 8) [0m
+Rendering template within layouts/application
+Rendering stories/show
+
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.login) on line #18 of stories/show.html.erb:
+15: 
+16: <p class="submitted_by">
+17: 	Submitted by:
+18: 	<span><%= @story.user.login %></span>
+19: </p>
+20: 
+21: <p>
+
+    app/views/stories/show.html.erb:18:in `_run_erb_47app47views47stories47show46html46erb'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:637:in `send'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:637:in `compile_and_render_template'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:365:in `render_template'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:316:in `render_file'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:1100:in `render_for_file'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:836:in `render_with_no_layout'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/layout.rb:262:in `render_without_benchmark'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:1153:in `default_render'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:1159:in `perform_action_without_filters'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/webrick_server.rb:112:in `handle_dispatch'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/webrick_server.rb:78:in `service'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/webrick_server.rb:62:in `dispatch'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/commands/servers/webrick.rb:66
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/commands/server.rb:39
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendering /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing StoriesController#show (for 127.0.0.1 at 2011-10-03 18:36:16) [GET]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiUyNzFkNDFl%0AZWEyOTQzZWJjZmZlOTFhMWJhYWNjZGRmZiIKZmxhc2hJQzonQWN0aW9uQ29u%0AdHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--fc881e3205b414c6282cd2fb44a465fd527d1275
+  Parameters: {"action"=>"show", "id"=>"9", "controller"=>"stories"}
+  [4;36;1mUser Load (0.000720)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;35;1mStory Load (0.000505)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 9) [0m
+Rendering template within layouts/application
+Rendering stories/show
+  [4;36;1mUser Load (0.000529)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) [0m
+Completed in 0.25513 (3 reqs/sec) | Rendering: 0.02351 (9%) | DB: 0.00175 (0%) | 200 OK [http://localhost/stories/9]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2011-10-03 18:36:21) [POST]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiUyNzFkNDFl%0AZWEyOTQzZWJjZmZlOTFhMWJhYWNjZGRmZiIKZmxhc2hJQzonQWN0aW9uQ29u%0AdHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--fc881e3205b414c6282cd2fb44a465fd527d1275
+  Parameters: {"commit"=>"shove it", "authenticity_token"=>"7e0aa48ac1749bf3f6500818be1811230b936a81", "action"=>"create", "story_id"=>"9-the-name-of-a-website", "controller"=>"votes"}
+  [4;35;1mUser Load (0.000386)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;36;1mStory Load (0.000668)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 9) [0m
+  [4;35;1mVote Create (0.000900)[0m   [0mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2011-10-03 18:36:21', 9, NULL, '2011-10-03 18:36:21')[0m
+  [4;36;1mStory Load (0.000360)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 9) [0m
+  [4;35;1mStory Update (0.000302)[0m   [0mUPDATE stories SET "votes_count" = "votes_count" + 1 WHERE ("id" = 9) [0m
+Rendering votes/create
+  [4;36;1mStory Load (0.001067)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 9) [0m
+  [4;35;1mVote Load (0.001764)[0m   [0mSELECT * FROM votes WHERE (votes.story_id = 9) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.00029)
+Completed in 0.16960 (5 reqs/sec) | Rendering: 0.03575 (21%) | DB: 0.00545 (3%) | 200 OK [http://localhost/stories/9-the-name-of-a-website/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2011-10-03 18:36:22) [POST]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiUyNzFkNDFl%0AZWEyOTQzZWJjZmZlOTFhMWJhYWNjZGRmZiIKZmxhc2hJQzonQWN0aW9uQ29u%0AdHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--fc881e3205b414c6282cd2fb44a465fd527d1275
+  Parameters: {"commit"=>"shove it", "authenticity_token"=>"7e0aa48ac1749bf3f6500818be1811230b936a81", "action"=>"create", "story_id"=>"9-the-name-of-a-website", "controller"=>"votes"}
+  [4;36;1mUser Load (0.000381)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;35;1mStory Load (0.000424)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 9) [0m
+  [4;36;1mVote Create (0.001383)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2011-10-03 18:36:22', 9, NULL, '2011-10-03 18:36:22')[0m
+  [4;35;1mStory Load (0.000363)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 9) [0m
+  [4;36;1mStory Update (0.000292)[0m   [0;1mUPDATE stories SET "votes_count" = "votes_count" + 1 WHERE ("id" = 9) [0m
+Rendering votes/create
+  [4;35;1mStory Load (0.000543)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 9) [0m
+  [4;36;1mVote Load (0.000465)[0m   [0;1mSELECT * FROM votes WHERE (votes.story_id = 9) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.00030)
+Rendered votes/_vote (0.00018)
+Completed in 0.15932 (6 reqs/sec) | Rendering: 0.01972 (12%) | DB: 0.00385 (2%) | 200 OK [http://localhost/stories/9-the-name-of-a-website/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2011-10-03 18:36:22) [POST]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiUyNzFkNDFl%0AZWEyOTQzZWJjZmZlOTFhMWJhYWNjZGRmZiIKZmxhc2hJQzonQWN0aW9uQ29u%0AdHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--fc881e3205b414c6282cd2fb44a465fd527d1275
+  Parameters: {"commit"=>"shove it", "authenticity_token"=>"7e0aa48ac1749bf3f6500818be1811230b936a81", "action"=>"create", "story_id"=>"9-the-name-of-a-website", "controller"=>"votes"}
+  [4;35;1mUser Load (0.000847)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;36;1mStory Load (0.000918)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 9) [0m
+  [4;35;1mVote Create (0.000850)[0m   [0mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2011-10-03 18:36:22', 9, NULL, '2011-10-03 18:36:22')[0m
+  [4;36;1mStory Load (0.003621)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 9) [0m
+  [4;35;1mStory Update (0.000346)[0m   [0mUPDATE stories SET "votes_count" = "votes_count" + 1 WHERE ("id" = 9) [0m
+Rendering votes/create
+  [4;36;1mStory Load (0.000594)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 9) [0m
+  [4;35;1mVote Load (0.000548)[0m   [0mSELECT * FROM votes WHERE (votes.story_id = 9) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.00091)
+Rendered votes/_vote (0.00020)
+Rendered votes/_vote (0.00056)
+Completed in 0.17924 (5 reqs/sec) | Rendering: 0.01793 (10%) | DB: 0.00772 (4%) | 200 OK [http://localhost/stories/9-the-name-of-a-website/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2011-10-03 18:36:23) [POST]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiUyNzFkNDFl%0AZWEyOTQzZWJjZmZlOTFhMWJhYWNjZGRmZiIKZmxhc2hJQzonQWN0aW9uQ29u%0AdHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--fc881e3205b414c6282cd2fb44a465fd527d1275
+  Parameters: {"commit"=>"shove it", "authenticity_token"=>"7e0aa48ac1749bf3f6500818be1811230b936a81", "action"=>"create", "story_id"=>"9-the-name-of-a-website", "controller"=>"votes"}
+  [4;36;1mUser Load (0.000406)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;35;1mStory Load (0.000467)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 9) [0m
+  [4;36;1mVote Create (0.000874)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2011-10-03 18:36:23', 9, NULL, '2011-10-03 18:36:23')[0m
+  [4;35;1mStory Load (0.000403)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 9) [0m
+  [4;36;1mStory Update (0.000359)[0m   [0;1mUPDATE stories SET "votes_count" = "votes_count" + 1 WHERE ("id" = 9) [0m
+Rendering votes/create
+  [4;35;1mStory Load (0.000573)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 9) [0m
+  [4;36;1mVote Load (0.000661)[0m   [0;1mSELECT * FROM votes WHERE (votes.story_id = 9) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.00033)
+Rendered votes/_vote (0.00024)
+Rendered votes/_vote (0.00022)
+Completed in 0.33495 (2 reqs/sec) | Rendering: 0.02768 (8%) | DB: 0.00374 (1%) | 200 OK [http://localhost/stories/9-the-name-of-a-website/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2011-10-03 18:36:23) [POST]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiUyNzFkNDFl%0AZWEyOTQzZWJjZmZlOTFhMWJhYWNjZGRmZiIKZmxhc2hJQzonQWN0aW9uQ29u%0AdHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--fc881e3205b414c6282cd2fb44a465fd527d1275
+  Parameters: {"commit"=>"shove it", "authenticity_token"=>"7e0aa48ac1749bf3f6500818be1811230b936a81", "action"=>"create", "story_id"=>"9-the-name-of-a-website", "controller"=>"votes"}
+  [4;35;1mUser Load (0.000489)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;36;1mStory Load (0.000414)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 9) [0m
+  [4;35;1mVote Create (0.001097)[0m   [0mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2011-10-03 18:36:23', 9, NULL, '2011-10-03 18:36:23')[0m
+  [4;36;1mStory Load (0.000387)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 9) [0m
+  [4;35;1mStory Update (0.001739)[0m   [0mUPDATE stories SET "votes_count" = "votes_count" + 1 WHERE ("id" = 9) [0m
+Rendering votes/create
+  [4;36;1mStory Load (0.000579)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 9) [0m
+  [4;35;1mVote Load (0.000686)[0m   [0mSELECT * FROM votes WHERE (votes.story_id = 9) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.00031)
+Rendered votes/_vote (0.00025)
+Rendered votes/_vote (0.00021)
+Completed in 0.22093 (4 reqs/sec) | Rendering: 0.04070 (18%) | DB: 0.00539 (2%) | 200 OK [http://localhost/stories/9-the-name-of-a-website/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2011-10-03 18:36:23) [POST]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiUyNzFkNDFl%0AZWEyOTQzZWJjZmZlOTFhMWJhYWNjZGRmZiIKZmxhc2hJQzonQWN0aW9uQ29u%0AdHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--fc881e3205b414c6282cd2fb44a465fd527d1275
+  Parameters: {"commit"=>"shove it", "authenticity_token"=>"7e0aa48ac1749bf3f6500818be1811230b936a81", "action"=>"create", "story_id"=>"9-the-name-of-a-website", "controller"=>"votes"}
+  [4;36;1mUser Load (0.000362)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;35;1mStory Load (0.000402)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 9) [0m
+  [4;36;1mVote Create (0.000834)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2011-10-03 18:36:23', 9, NULL, '2011-10-03 18:36:23')[0m
+  [4;35;1mStory Load (0.000375)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 9) [0m
+  [4;36;1mStory Update (0.000703)[0m   [0;1mUPDATE stories SET "votes_count" = "votes_count" + 1 WHERE ("id" = 9) [0m
+Rendering votes/create
+  [4;35;1mStory Load (0.000957)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 9) [0m
+  [4;36;1mVote Load (0.000639)[0m   [0;1mSELECT * FROM votes WHERE (votes.story_id = 9) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.00030)
+Rendered votes/_vote (0.00020)
+Rendered votes/_vote (0.00020)
+Completed in 0.16144 (6 reqs/sec) | Rendering: 0.01625 (10%) | DB: 0.00427 (2%) | 200 OK [http://localhost/stories/9-the-name-of-a-website/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2011-10-03 18:36:24) [POST]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiUyNzFkNDFl%0AZWEyOTQzZWJjZmZlOTFhMWJhYWNjZGRmZiIKZmxhc2hJQzonQWN0aW9uQ29u%0AdHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--fc881e3205b414c6282cd2fb44a465fd527d1275
+  Parameters: {"commit"=>"shove it", "authenticity_token"=>"7e0aa48ac1749bf3f6500818be1811230b936a81", "action"=>"create", "story_id"=>"9-the-name-of-a-website", "controller"=>"votes"}
+  [4;35;1mUser Load (0.000543)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;36;1mStory Load (0.000413)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 9) [0m
+  [4;35;1mVote Create (0.000857)[0m   [0mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2011-10-03 18:36:24', 9, NULL, '2011-10-03 18:36:24')[0m
+  [4;36;1mStory Load (0.000441)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 9) [0m
+  [4;35;1mStory Update (0.000356)[0m   [0mUPDATE stories SET "votes_count" = "votes_count" + 1 WHERE ("id" = 9) [0m
+Rendering votes/create
+  [4;36;1mStory Load (0.000575)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 9) [0m
+  [4;35;1mVote Load (0.000690)[0m   [0mSELECT * FROM votes WHERE (votes.story_id = 9) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.00032)
+Rendered votes/_vote (0.00026)
+Rendered votes/_vote (0.00022)
+Completed in 0.27724 (3 reqs/sec) | Rendering: 0.01515 (5%) | DB: 0.00387 (1%) | 200 OK [http://localhost/stories/9-the-name-of-a-website/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2011-10-03 18:36:24) [POST]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiUyNzFkNDFl%0AZWEyOTQzZWJjZmZlOTFhMWJhYWNjZGRmZiIKZmxhc2hJQzonQWN0aW9uQ29u%0AdHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--fc881e3205b414c6282cd2fb44a465fd527d1275
+  Parameters: {"commit"=>"shove it", "authenticity_token"=>"7e0aa48ac1749bf3f6500818be1811230b936a81", "action"=>"create", "story_id"=>"9-the-name-of-a-website", "controller"=>"votes"}
+  [4;36;1mUser Load (0.000789)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;35;1mStory Load (0.000596)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 9) [0m
+  [4;36;1mVote Create (0.001020)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2011-10-03 18:36:24', 9, NULL, '2011-10-03 18:36:24')[0m
+  [4;35;1mStory Load (0.000403)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 9) [0m
+  [4;36;1mStory Update (0.000336)[0m   [0;1mUPDATE stories SET "votes_count" = "votes_count" + 1 WHERE ("id" = 9) [0m
+Rendering votes/create
+  [4;35;1mStory Load (0.001067)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 9) [0m
+  [4;36;1mVote Load (0.000636)[0m   [0;1mSELECT * FROM votes WHERE (votes.story_id = 9) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.00033)
+Rendered votes/_vote (0.00020)
+Rendered votes/_vote (0.00025)
+Completed in 0.18537 (5 reqs/sec) | Rendering: 0.01439 (7%) | DB: 0.00485 (2%) | 200 OK [http://localhost/stories/9-the-name-of-a-website/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2011-10-03 18:36:24) [POST]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiUyNzFkNDFl%0AZWEyOTQzZWJjZmZlOTFhMWJhYWNjZGRmZiIKZmxhc2hJQzonQWN0aW9uQ29u%0AdHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--fc881e3205b414c6282cd2fb44a465fd527d1275
+  Parameters: {"commit"=>"shove it", "authenticity_token"=>"7e0aa48ac1749bf3f6500818be1811230b936a81", "action"=>"create", "story_id"=>"9-the-name-of-a-website", "controller"=>"votes"}
+  [4;35;1mUser Load (0.000390)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;36;1mStory Load (0.000617)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 9) [0m
+  [4;35;1mVote Create (0.000854)[0m   [0mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2011-10-03 18:36:24', 9, NULL, '2011-10-03 18:36:24')[0m
+  [4;36;1mStory Load (0.000423)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 9) [0m
+  [4;35;1mStory Update (0.008939)[0m   [0mUPDATE stories SET "votes_count" = "votes_count" + 1 WHERE ("id" = 9) [0m
+Rendering votes/create
+  [4;36;1mStory Load (0.000602)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 9) [0m
+  [4;35;1mVote Load (0.000614)[0m   [0mSELECT * FROM votes WHERE (votes.story_id = 9) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.00030)
+Rendered votes/_vote (0.00035)
+Rendered votes/_vote (0.00020)
+Completed in 0.19636 (5 reqs/sec) | Rendering: 0.02757 (14%) | DB: 0.01244 (6%) | 200 OK [http://localhost/stories/9-the-name-of-a-website/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2011-10-03 18:36:24) [POST]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiUyNzFkNDFl%0AZWEyOTQzZWJjZmZlOTFhMWJhYWNjZGRmZiIKZmxhc2hJQzonQWN0aW9uQ29u%0AdHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--fc881e3205b414c6282cd2fb44a465fd527d1275
+  Parameters: {"commit"=>"shove it", "authenticity_token"=>"7e0aa48ac1749bf3f6500818be1811230b936a81", "action"=>"create", "story_id"=>"9-the-name-of-a-website", "controller"=>"votes"}
+  [4;36;1mUser Load (0.000379)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;35;1mStory Load (0.000451)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 9) [0m
+  [4;36;1mVote Create (0.003801)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2011-10-03 18:36:25', 9, NULL, '2011-10-03 18:36:25')[0m
+  [4;35;1mStory Load (0.000421)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 9) [0m
+  [4;36;1mStory Update (0.000337)[0m   [0;1mUPDATE stories SET "votes_count" = "votes_count" + 1 WHERE ("id" = 9) [0m
+Rendering votes/create
+  [4;35;1mStory Load (0.000548)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 9) [0m
+  [4;36;1mVote Load (0.000890)[0m   [0;1mSELECT * FROM votes WHERE (votes.story_id = 9) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.00034)
+Rendered votes/_vote (0.00032)
+Rendered votes/_vote (0.00022)
+Completed in 0.23700 (4 reqs/sec) | Rendering: 0.03909 (16%) | DB: 0.00683 (2%) | 200 OK [http://localhost/stories/9-the-name-of-a-website/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2011-10-03 18:36:25) [POST]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiUyNzFkNDFl%0AZWEyOTQzZWJjZmZlOTFhMWJhYWNjZGRmZiIKZmxhc2hJQzonQWN0aW9uQ29u%0AdHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--fc881e3205b414c6282cd2fb44a465fd527d1275
+  Parameters: {"commit"=>"shove it", "authenticity_token"=>"7e0aa48ac1749bf3f6500818be1811230b936a81", "action"=>"create", "story_id"=>"9-the-name-of-a-website", "controller"=>"votes"}
+  [4;35;1mUser Load (0.000418)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;36;1mStory Load (0.000438)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 9) [0m
+  [4;35;1mVote Create (0.001631)[0m   [0mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2011-10-03 18:36:25', 9, NULL, '2011-10-03 18:36:25')[0m
+  [4;36;1mStory Load (0.000408)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 9) [0m
+  [4;35;1mStory Update (0.000375)[0m   [0mUPDATE stories SET "votes_count" = "votes_count" + 1 WHERE ("id" = 9) [0m
+Rendering votes/create
+  [4;36;1mStory Load (0.000595)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 9) [0m
+  [4;35;1mVote Load (0.000683)[0m   [0mSELECT * FROM votes WHERE (votes.story_id = 9) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.00031)
+Rendered votes/_vote (0.00027)
+Rendered votes/_vote (0.00021)
+Completed in 0.18103 (5 reqs/sec) | Rendering: 0.01679 (9%) | DB: 0.00455 (2%) | 200 OK [http://localhost/stories/9-the-name-of-a-website/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2011-10-03 18:36:25) [POST]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiUyNzFkNDFl%0AZWEyOTQzZWJjZmZlOTFhMWJhYWNjZGRmZiIKZmxhc2hJQzonQWN0aW9uQ29u%0AdHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--fc881e3205b414c6282cd2fb44a465fd527d1275
+  Parameters: {"commit"=>"shove it", "authenticity_token"=>"7e0aa48ac1749bf3f6500818be1811230b936a81", "action"=>"create", "story_id"=>"9-the-name-of-a-website", "controller"=>"votes"}
+  [4;36;1mUser Load (0.000796)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;35;1mStory Load (0.000464)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 9) [0m
+  [4;36;1mVote Create (0.001604)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2011-10-03 18:36:25', 9, NULL, '2011-10-03 18:36:25')[0m
+  [4;35;1mStory Load (0.000401)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 9) [0m
+  [4;36;1mStory Update (0.000345)[0m   [0;1mUPDATE stories SET "votes_count" = "votes_count" + 1 WHERE ("id" = 9) [0m
+Rendering votes/create
+  [4;35;1mStory Load (0.000557)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 9) [0m
+  [4;36;1mVote Load (0.000604)[0m   [0;1mSELECT * FROM votes WHERE (votes.story_id = 9) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.00031)
+Rendered votes/_vote (0.00021)
+Rendered votes/_vote (0.00024)
+Completed in 0.17314 (5 reqs/sec) | Rendering: 0.01936 (11%) | DB: 0.00477 (2%) | 200 OK [http://localhost/stories/9-the-name-of-a-website/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2011-10-03 18:36:25) [POST]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiUyNzFkNDFl%0AZWEyOTQzZWJjZmZlOTFhMWJhYWNjZGRmZiIKZmxhc2hJQzonQWN0aW9uQ29u%0AdHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--fc881e3205b414c6282cd2fb44a465fd527d1275
+  Parameters: {"commit"=>"shove it", "authenticity_token"=>"7e0aa48ac1749bf3f6500818be1811230b936a81", "action"=>"create", "story_id"=>"9-the-name-of-a-website", "controller"=>"votes"}
+  [4;35;1mUser Load (0.000468)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;36;1mStory Load (0.000428)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 9) [0m
+  [4;35;1mVote Create (0.000853)[0m   [0mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2011-10-03 18:36:25', 9, NULL, '2011-10-03 18:36:25')[0m
+  [4;36;1mStory Load (0.000374)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 9) [0m
+  [4;35;1mStory Update (0.000325)[0m   [0mUPDATE stories SET "votes_count" = "votes_count" + 1 WHERE ("id" = 9) [0m
+Rendering votes/create
+  [4;36;1mStory Load (0.000556)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 9) [0m
+  [4;35;1mVote Load (0.000687)[0m   [0mSELECT * FROM votes WHERE (votes.story_id = 9) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.00031)
+Rendered votes/_vote (0.00021)
+Rendered votes/_vote (0.00020)
+Completed in 0.20193 (4 reqs/sec) | Rendering: 0.02647 (13%) | DB: 0.00369 (1%) | 200 OK [http://localhost/stories/9-the-name-of-a-website/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2011-10-03 18:36:25) [POST]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiUyNzFkNDFl%0AZWEyOTQzZWJjZmZlOTFhMWJhYWNjZGRmZiIKZmxhc2hJQzonQWN0aW9uQ29u%0AdHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--fc881e3205b414c6282cd2fb44a465fd527d1275
+  Parameters: {"commit"=>"shove it", "authenticity_token"=>"7e0aa48ac1749bf3f6500818be1811230b936a81", "action"=>"create", "story_id"=>"9-the-name-of-a-website", "controller"=>"votes"}
+  [4;36;1mUser Load (0.000370)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;35;1mStory Load (0.000410)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 9) [0m
+  [4;36;1mVote Create (0.000864)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2011-10-03 18:36:26', 9, NULL, '2011-10-03 18:36:26')[0m
+  [4;35;1mStory Load (0.000370)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 9) [0m
+  [4;36;1mStory Update (0.000319)[0m   [0;1mUPDATE stories SET "votes_count" = "votes_count" + 1 WHERE ("id" = 9) [0m
+Rendering votes/create
+  [4;35;1mStory Load (0.097970)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 9) [0m
+  [4;36;1mVote Load (0.000664)[0m   [0;1mSELECT * FROM votes WHERE (votes.story_id = 9) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.00033)
+Rendered votes/_vote (0.00020)
+Rendered votes/_vote (0.00019)
+Completed in 0.27522 (3 reqs/sec) | Rendering: 0.01651 (5%) | DB: 0.10097 (36%) | 200 OK [http://localhost/stories/9-the-name-of-a-website/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2011-10-03 18:36:26) [POST]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiUyNzFkNDFl%0AZWEyOTQzZWJjZmZlOTFhMWJhYWNjZGRmZiIKZmxhc2hJQzonQWN0aW9uQ29u%0AdHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--fc881e3205b414c6282cd2fb44a465fd527d1275
+  Parameters: {"commit"=>"shove it", "authenticity_token"=>"7e0aa48ac1749bf3f6500818be1811230b936a81", "action"=>"create", "story_id"=>"9-the-name-of-a-website", "controller"=>"votes"}
+  [4;35;1mUser Load (0.000414)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;36;1mStory Load (0.001518)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 9) [0m
+  [4;35;1mVote Create (0.000896)[0m   [0mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2011-10-03 18:36:26', 9, NULL, '2011-10-03 18:36:26')[0m
+  [4;36;1mStory Load (0.000363)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 9) [0m
+  [4;35;1mStory Update (0.000297)[0m   [0mUPDATE stories SET "votes_count" = "votes_count" + 1 WHERE ("id" = 9) [0m
+Rendering votes/create
+  [4;36;1mStory Load (0.000686)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 9) [0m
+  [4;35;1mVote Load (0.000762)[0m   [0mSELECT * FROM votes WHERE (votes.story_id = 9) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.00038)
+Rendered votes/_vote (0.00026)
+Rendered votes/_vote (0.00026)
+Completed in 0.33245 (3 reqs/sec) | Rendering: 0.01146 (3%) | DB: 0.00494 (1%) | 200 OK [http://localhost/stories/9-the-name-of-a-website/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2011-10-03 18:36:26) [POST]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiUyNzFkNDFl%0AZWEyOTQzZWJjZmZlOTFhMWJhYWNjZGRmZiIKZmxhc2hJQzonQWN0aW9uQ29u%0AdHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--fc881e3205b414c6282cd2fb44a465fd527d1275
+  Parameters: {"commit"=>"shove it", "authenticity_token"=>"7e0aa48ac1749bf3f6500818be1811230b936a81", "action"=>"create", "story_id"=>"9-the-name-of-a-website", "controller"=>"votes"}
+  [4;36;1mUser Load (0.000731)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;35;1mStory Load (0.000472)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 9) [0m
+  [4;36;1mVote Create (0.000841)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2011-10-03 18:36:26', 9, NULL, '2011-10-03 18:36:26')[0m
+  [4;35;1mStory Load (0.000349)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 9) [0m
+  [4;36;1mStory Update (0.000294)[0m   [0;1mUPDATE stories SET "votes_count" = "votes_count" + 1 WHERE ("id" = 9) [0m
+Rendering votes/create
+  [4;35;1mStory Load (0.000891)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 9) [0m
+  [4;36;1mVote Load (0.000565)[0m   [0;1mSELECT * FROM votes WHERE (votes.story_id = 9) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.00028)
+Rendered votes/_vote (0.00018)
+Rendered votes/_vote (0.00022)
+Completed in 0.16928 (5 reqs/sec) | Rendering: 0.01068 (6%) | DB: 0.00414 (2%) | 200 OK [http://localhost/stories/9-the-name-of-a-website/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2011-10-03 18:36:26) [POST]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiUyNzFkNDFl%0AZWEyOTQzZWJjZmZlOTFhMWJhYWNjZGRmZiIKZmxhc2hJQzonQWN0aW9uQ29u%0AdHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--fc881e3205b414c6282cd2fb44a465fd527d1275
+  Parameters: {"commit"=>"shove it", "authenticity_token"=>"7e0aa48ac1749bf3f6500818be1811230b936a81", "action"=>"create", "story_id"=>"9-the-name-of-a-website", "controller"=>"votes"}
+  [4;35;1mUser Load (0.000414)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;36;1mStory Load (0.000411)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 9) [0m
+  [4;35;1mVote Create (0.000850)[0m   [0mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2011-10-03 18:36:26', 9, NULL, '2011-10-03 18:36:26')[0m
+  [4;36;1mStory Load (0.000352)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 9) [0m
+  [4;35;1mStory Update (0.000326)[0m   [0mUPDATE stories SET "votes_count" = "votes_count" + 1 WHERE ("id" = 9) [0m
+Rendering votes/create
+  [4;36;1mStory Load (0.001261)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 9) [0m
+  [4;35;1mVote Load (0.000579)[0m   [0mSELECT * FROM votes WHERE (votes.story_id = 9) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.00029)
+Rendered votes/_vote (0.00018)
+Rendered votes/_vote (0.00018)
+Completed in 0.17158 (5 reqs/sec) | Rendering: 0.00899 (5%) | DB: 0.00419 (2%) | 200 OK [http://localhost/stories/9-the-name-of-a-website/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2011-10-03 18:36:27) [POST]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiUyNzFkNDFl%0AZWEyOTQzZWJjZmZlOTFhMWJhYWNjZGRmZiIKZmxhc2hJQzonQWN0aW9uQ29u%0AdHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--fc881e3205b414c6282cd2fb44a465fd527d1275
+  Parameters: {"commit"=>"shove it", "authenticity_token"=>"7e0aa48ac1749bf3f6500818be1811230b936a81", "action"=>"create", "story_id"=>"9-the-name-of-a-website", "controller"=>"votes"}
+  [4;36;1mUser Load (0.057150)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;35;1mStory Load (0.000440)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 9) [0m
+  [4;36;1mVote Create (0.001033)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2011-10-03 18:36:27', 9, NULL, '2011-10-03 18:36:27')[0m
+  [4;35;1mStory Load (0.001715)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 9) [0m
+  [4;36;1mStory Update (0.000368)[0m   [0;1mUPDATE stories SET "votes_count" = "votes_count" + 1 WHERE ("id" = 9) [0m
+Rendering votes/create
+  [4;35;1mStory Load (0.000711)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 9) [0m
+  [4;36;1mVote Load (0.000736)[0m   [0;1mSELECT * FROM votes WHERE (votes.story_id = 9) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.00041)
+Rendered votes/_vote (0.00021)
+Rendered votes/_vote (0.00054)
+Completed in 0.31639 (3 reqs/sec) | Rendering: 0.02653 (8%) | DB: 0.06215 (19%) | 200 OK [http://localhost/stories/9-the-name-of-a-website/votes]
+
+
+Processing StoriesController#index (for 127.0.0.1 at 2011-10-03 18:36:30) [GET]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiUyNzFkNDFl%0AZWEyOTQzZWJjZmZlOTFhMWJhYWNjZGRmZiIKZmxhc2hJQzonQWN0aW9uQ29u%0AdHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--fc881e3205b414c6282cd2fb44a465fd527d1275
+  Parameters: {"action"=>"index", "controller"=>"stories"}
+  [4;35;1mUser Load (0.000442)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;36;1mStory Load (0.000971)[0m   [0;1mSELECT * FROM stories WHERE (votes_count >= 5) ORDER BY id DESC[0m
+Rendering template within layouts/application
+Rendering stories/index
+  [4;35;1mUser Load (0.000448)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) [0m
+Rendered stories/_story (0.00431)
+Rendered stories/_story (0.00082)
+Rendered stories/_story (0.00264)
+Rendered stories/_story (0.00135)
+Completed in 0.03834 (26 reqs/sec) | Rendering: 0.01358 (35%) | DB: 0.00186 (4%) | 200 OK [http://localhost/stories]
+
+
+Processing StoriesController#show (for 127.0.0.1 at 2011-10-03 18:52:37) [GET]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiUyNzFkNDFl%0AZWEyOTQzZWJjZmZlOTFhMWJhYWNjZGRmZiIKZmxhc2hJQzonQWN0aW9uQ29u%0AdHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--fc881e3205b414c6282cd2fb44a465fd527d1275
+  Parameters: {"action"=>"show", "id"=>"9-the-name-of-a-website", "controller"=>"stories"}
+  [4;36;1mUser Load (0.000411)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;35;1mStory Load (0.000608)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 9) [0m
+Rendering template within layouts/application
+Rendering stories/show
+  [4;36;1mVote Load (0.000661)[0m   [0;1mSELECT * FROM votes WHERE (votes.story_id = 9) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.00266)
+Rendered votes/_vote (0.00024)
+Rendered votes/_vote (0.00018)
+  [4;35;1mUser Load (0.000443)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) [0m
+Completed in 0.06164 (16 reqs/sec) | Rendering: 0.01349 (21%) | DB: 0.00212 (3%) | 200 OK [http://localhost/stories/9-the-name-of-a-website]
+
+
+Processing StoriesController#index (for 127.0.0.1 at 2011-10-03 18:52:44) [GET]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiUyNzFkNDFl%0AZWEyOTQzZWJjZmZlOTFhMWJhYWNjZGRmZiIKZmxhc2hJQzonQWN0aW9uQ29u%0AdHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--fc881e3205b414c6282cd2fb44a465fd527d1275
+  Parameters: {"action"=>"index", "controller"=>"stories"}
+  [4;36;1mUser Load (0.000371)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;35;1mStory Load (0.000880)[0m   [0mSELECT * FROM stories WHERE (votes_count >= 5) ORDER BY id DESC[0m
+Rendering template within layouts/application
+Rendering stories/index
+  [4;36;1mUser Load (0.000447)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) [0m
+Rendered stories/_story (0.00431)
+Rendered stories/_story (0.00088)
+Rendered stories/_story (0.00066)
+Rendered stories/_story (0.00065)
+Completed in 0.03664 (27 reqs/sec) | Rendering: 0.01348 (36%) | DB: 0.00170 (4%) | 200 OK [http://localhost/stories]
+
+
+Processing StoriesController#show (for 127.0.0.1 at 2011-10-03 18:52:48) [GET]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiUyNzFkNDFl%0AZWEyOTQzZWJjZmZlOTFhMWJhYWNjZGRmZiIKZmxhc2hJQzonQWN0aW9uQ29u%0AdHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--fc881e3205b414c6282cd2fb44a465fd527d1275
+  Parameters: {"action"=>"show", "id"=>"3-google", "controller"=>"stories"}
+  [4;35;1mUser Load (0.001794)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;36;1mStory Load (0.005643)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 3) [0m
+Rendering template within layouts/application
+Rendering stories/show
+  [4;35;1mVote Load (0.003174)[0m   [0mSELECT * FROM votes WHERE (votes.story_id = 3) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.00221)
+Rendered votes/_vote (0.00024)
+Rendered votes/_vote (0.00019)
+
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.login) on line #18 of stories/show.html.erb:
+15: 
+16: <p class="submitted_by">
+17: 	Submitted by:
+18: 	<span><%= @story.user.login %></span>
+19: </p>
+20: 
+21: <p>
+
+    app/views/stories/show.html.erb:18:in `_run_erb_47app47views47stories47show46html46erb'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:637:in `send'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:637:in `compile_and_render_template'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:365:in `render_template'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:316:in `render_file'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:1100:in `render_for_file'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:836:in `render_with_no_layout'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/layout.rb:262:in `render_without_benchmark'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:1153:in `default_render'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:1159:in `perform_action_without_filters'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/webrick_server.rb:112:in `handle_dispatch'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/webrick_server.rb:78:in `service'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/webrick_server.rb:62:in `dispatch'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/commands/servers/webrick.rb:66
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/commands/server.rb:39
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendering /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+  [4;36;1mStory Load (0.000810)[0m   [0;1mSELECT * FROM stories LIMIT 1[0m
+  [4;35;1mStory Update (0.036982)[0m   [0mUPDATE stories SET "created_at" = '2011-07-03 19:46:58', "name" = 'SitePoint Forums', "votes_count" = 16, "updated_at" = '2011-10-03 18:56:47', "user_id" = 0, "link" = 'http://www.sitepoint.com/forums/' WHERE "id" = 2[0m
+  [4;36;1mStory Load (0.000800)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 3) [0m
+  [4;35;1mStory Update (0.002466)[0m   [0mUPDATE stories SET "created_at" = '2011-07-19 19:54:26', "name" = 'Google', "votes_count" = 8, "updated_at" = '2011-10-03 18:58:03', "user_id" = 0, "link" = 'http://www.google.com' WHERE "id" = 3[0m
+  [4;36;1mStory Load (0.000556)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 4) [0m
+  [4;35;1mStory Update (0.003495)[0m   [0mUPDATE stories SET "created_at" = '2011-07-21 19:23:43', "name" = 'CleverSketch', "votes_count" = 0, "updated_at" = '2011-10-03 18:58:16', "user_id" = 0, "link" = 'www.cleversketch.com' WHERE "id" = 4[0m
+  [4;36;1mStory Load (0.002788)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 5) [0m
+  [4;35;1mStory Update (0.005774)[0m   [0mUPDATE stories SET "created_at" = '2011-07-21 19:29:24', "name" = 'Buster', "votes_count" = 0, "updated_at" = '2011-10-03 18:58:26', "user_id" = 0, "link" = 'Buster.com' WHERE "id" = 5[0m
+  [4;36;1mStory Load (0.000557)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 6) [0m
+  [4;35;1mStory Update (0.002422)[0m   [0mUPDATE stories SET "created_at" = '2011-07-21 19:29:57', "name" = 'BusterDog', "votes_count" = 14, "updated_at" = '2011-10-03 18:58:35', "user_id" = 0, "link" = 'www.BusterDog.com' WHERE "id" = 6[0m
+  [4;36;1mStory Load (0.000563)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 7) [0m
+  [4;35;1mStory Update (0.001568)[0m   [0mUPDATE stories SET "created_at" = '2011-07-23 16:51:01', "name" = 'Michael', "votes_count" = 0, "updated_at" = '2011-10-03 18:58:47', "user_id" = 0, "link" = 'Dad.com' WHERE "id" = 7[0m
+  [4;36;1mStory Load (0.001008)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 8) [0m
+  [4;35;1mStory Update (0.003587)[0m   [0mUPDATE stories SET "created_at" = '2011-07-23 16:54:27', "name" = 'Tahoe', "votes_count" = 0, "updated_at" = '2011-10-03 18:58:59', "user_id" = 0, "link" = 'home.com' WHERE "id" = 8[0m
+  [4;36;1mStory Load (0.001030)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 9) [0m
+  [4;35;1mStory Update (0.002309)[0m   [0mUPDATE stories SET "created_at" = '2011-10-03 18:35:11', "name" = 'The Name of a Website', "votes_count" = 18, "updated_at" = '2011-10-03 18:59:10', "user_id" = 0, "link" = 'www.thiswebsite.com' WHERE "id" = 9[0m
+
+
+Processing StoriesController#index (for 127.0.0.1 at 2011-10-03 18:59:54) [GET]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiUyNzFkNDFl%0AZWEyOTQzZWJjZmZlOTFhMWJhYWNjZGRmZiIKZmxhc2hJQzonQWN0aW9uQ29u%0AdHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--fc881e3205b414c6282cd2fb44a465fd527d1275
+  Parameters: {"action"=>"index", "controller"=>"stories"}
+  [4;36;1mUser Load (0.000405)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;35;1mStory Load (0.000899)[0m   [0mSELECT * FROM stories WHERE (votes_count >= 5) ORDER BY id DESC[0m
+Rendering template within layouts/application
+Rendering stories/index
+  [4;36;1mUser Load (0.000244)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 0) [0m
+
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.login) on line #4 of stories/_story.html.erb:
+1: <% div_for(story) do %>
+2: 	<h3><%= link_to story.name, story %></h3>
+3: 	<p>
+4: 		Submitted by: <%= story.user.login %> |
+5: 		Score: <%= story.votes_count %>
+6: 	</p>
+7: 	<% end %>
+
+    app/views/stories/_story.html.erb:4:in `_run_erb_47app47views47stories47_story46html46erb'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/helpers/capture_helper.rb:142:in `call'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/helpers/capture_helper.rb:142:in `capture_erb_with_buffer'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/helpers/capture_helper.rb:44:in `capture'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/helpers/record_tag_helper.rb:53:in `content_tag_for'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/helpers/record_tag_helper.rb:16:in `div_for'
+    app/views/stories/_story.html.erb:1:in `_run_erb_47app47views47stories47_story46html46erb'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:637:in `send'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:637:in `compile_and_render_template'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:365:in `render_template'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:316:in `render_file'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:331:in `render'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/partials.rb:117:in `render_partial'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:26:in `benchmark'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:26:in `benchmark'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/partials.rb:116:in `render_partial'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/partials.rb:143:in `render_partial_collection'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activerecord-2.0.2/lib/active_record/base.rb:1602:in `each_with_index'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/partials.rb:141:in `each'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/partials.rb:141:in `each_with_index'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/partials.rb:141:in `render_partial_collection'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:350:in `render'
+    app/views/stories/index.html.erb:4:in `_run_erb_47app47views47stories47index46html46erb'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:637:in `send'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:637:in `compile_and_render_template'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:365:in `render_template'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_view/base.rb:316:in `render_file'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:1100:in `render_for_file'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:836:in `render_with_no_layout'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/layout.rb:262:in `render_without_benchmark'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:1153:in `default_render'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:1159:in `perform_action_without_filters'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/webrick_server.rb:112:in `handle_dispatch'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/webrick_server.rb:78:in `service'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/webrick_server.rb:62:in `dispatch'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/commands/servers/webrick.rb:66
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/commands/server.rb:39
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendering /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+  [4;36;1mStory Load (0.001713)[0m   [0;1mSELECT * FROM stories [0m
+  [4;35;1mStory Load (0.000920)[0m   [0mSELECT * FROM stories LIMIT 1[0m
+  [4;36;1mStory Destroy (0.018612)[0m   [0;1m DELETE FROM stories
+ WHERE "id" = 2
+[0m
+  [4;36;1mStory Load (0.001655)[0m   [0;1mSELECT * FROM stories LIMIT 1[0m
+  [4;35;1mStory Update (0.002339)[0m   [0mUPDATE stories SET "created_at" = '2011-07-19 19:54:26', "name" = 'Google', "votes_count" = 8, "updated_at" = '2011-10-03 19:06:33', "user_id" = 0, "link" = 'http://www.google.com' WHERE "id" = 3[0m
+  [4;36;1mStory Destroy (0.001359)[0m   [0;1m DELETE FROM stories
+ WHERE "id" = 3
+[0m
+  [4;36;1mSQL (0.015542)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000639)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000460)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000444)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000443)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000368)[0m   [0;1mSELECT * FROM schema_info[0m
+  [4;35;1mSQL (0.000772)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.000082)[0m   [0;1mPRAGMA index_list(stories)[0m
+  [4;35;1mSQL (0.000067)[0m   [0mPRAGMA index_list(users)[0m
+  [4;36;1mSQL (0.000068)[0m   [0;1mPRAGMA index_list(votes)[0m
+  [4;35;1mSQL (0.000260)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: no such table: stories: DROP TABLE stories[0m
+  [4;35;1mSQL (0.140563)[0m   [0mCREATE TABLE stories ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL, "link" varchar(255) DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL, "user_id" integer DEFAULT NULL, "votes_count" integer DEFAULT 0) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: no such table: users: DROP TABLE users[0m
+  [4;35;1mSQL (0.141700)[0m   [0mCREATE TABLE users ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255) DEFAULT NULL, "password" varchar(255) DEFAULT NULL, "name" varchar(255) DEFAULT NULL, "email" varchar(255) DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: no such table: votes: DROP TABLE votes[0m
+  [4;35;1mSQL (0.092398)[0m   [0mCREATE TABLE votes ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "story_id" integer DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL, "user_id" integer DEFAULT NULL) [0m
+  [4;36;1mSQL (0.074510)[0m   [0;1mCREATE TABLE schema_info (version integer)[0m
+  [4;35;1mSQL (0.088607)[0m   [0mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;36;1mSQL (0.088091)[0m   [0;1mUPDATE schema_info SET version = 4[0m
+  [4;36;1mStory Load (0.001005)[0m   [0;1mSELECT * FROM stories LIMIT 1[0m
+  [4;35;1mStory Destroy (0.001635)[0m   [0m DELETE FROM stories
+ WHERE "id" = 4
+[0m
+  [4;36;1mSQL (0.000352)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000335)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000211)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000194)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000194)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000813)[0m   [0;1mSELECT * FROM schema_info[0m
+  [4;35;1mSQL (0.000416)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.000075)[0m   [0;1mPRAGMA index_list(stories)[0m
+  [4;35;1mSQL (0.000071)[0m   [0mPRAGMA index_list(users)[0m
+  [4;36;1mSQL (0.000073)[0m   [0;1mPRAGMA index_list(votes)[0m
+  [4;35;1mSQL (0.000259)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: no such table: stories: DROP TABLE stories[0m
+  [4;35;1mSQL (0.117035)[0m   [0mCREATE TABLE stories ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL, "link" varchar(255) DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL, "user_id" integer DEFAULT NULL, "votes_count" integer DEFAULT 0) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: no such table: users: DROP TABLE users[0m
+  [4;35;1mSQL (0.074465)[0m   [0mCREATE TABLE users ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255) DEFAULT NULL, "password" varchar(255) DEFAULT NULL, "name" varchar(255) DEFAULT NULL, "email" varchar(255) DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: no such table: votes: DROP TABLE votes[0m
+  [4;35;1mSQL (0.087204)[0m   [0mCREATE TABLE votes ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "story_id" integer DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL, "user_id" integer DEFAULT NULL) [0m
+  [4;36;1mSQL (0.077084)[0m   [0;1mCREATE TABLE schema_info (version integer)[0m
+  [4;35;1mSQL (0.066278)[0m   [0mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;36;1mSQL (0.064653)[0m   [0;1mUPDATE schema_info SET version = 4[0m
+  [4;36;1mStory Load (0.001439)[0m   [0;1mSELECT * FROM stories LIMIT 1[0m
+  [4;35;1mStory Destroy (0.002766)[0m   [0m DELETE FROM stories
+ WHERE "id" = 5
+[0m
+  [4;36;1mStory Destroy (0.000407)[0m   [0;1m DELETE FROM stories
+ WHERE "id" = 5
+[0m
+  [4;36;1mStory Load (0.000821)[0m   [0;1mSELECT * FROM stories LIMIT 1[0m
+  [4;35;1mStory Destroy (0.000894)[0m   [0m DELETE FROM stories
+ WHERE "id" = 6
+[0m
+  [4;36;1mSQL (0.000340)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;35;1mSQL (0.000386)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000227)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000215)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000216)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000546)[0m   [0mSELECT * FROM schema_info[0m
+  [4;36;1mSQL (0.000442)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000094)[0m   [0mPRAGMA index_list(stories)[0m
+  [4;36;1mSQL (0.000072)[0m   [0;1mPRAGMA index_list(users)[0m
+  [4;35;1mSQL (0.000069)[0m   [0mPRAGMA index_list(votes)[0m
+  [4;36;1mStory Load (0.000816)[0m   [0;1mSELECT * FROM stories LIMIT 1[0m
+  [4;35;1mStory Destroy (0.001676)[0m   [0m DELETE FROM stories
+ WHERE "id" = 7
+[0m
+  [4;36;1mStory Load (0.001018)[0m   [0;1mSELECT * FROM stories LIMIT 1[0m
+  [4;35;1mStory Destroy (0.001332)[0m   [0m DELETE FROM stories
+ WHERE "id" = 8
+[0m
+  [4;36;1mStory Load (0.001060)[0m   [0;1mSELECT * FROM stories LIMIT 1[0m
+  [4;35;1mStory Destroy (0.001299)[0m   [0m DELETE FROM stories
+ WHERE "id" = 9
+[0m
+  [4;36;1mStory Load (0.000521)[0m   [0;1mSELECT * FROM stories LIMIT 1[0m
+
+
+Processing StoriesController#index (for 127.0.0.1 at 2011-10-03 19:23:10) [GET]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiUyNzFkNDFl%0AZWEyOTQzZWJjZmZlOTFhMWJhYWNjZGRmZiIKZmxhc2hJQzonQWN0aW9uQ29u%0AdHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--fc881e3205b414c6282cd2fb44a465fd527d1275
+  Parameters: {"action"=>"index", "controller"=>"stories"}
+  [4;36;1mUser Load (0.000494)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;35;1mStory Load (0.000276)[0m   [0mSELECT * FROM stories WHERE (votes_count >= 5) ORDER BY id DESC[0m
+Rendering template within layouts/application
+Rendering stories/index
+Completed in 0.03502 (28 reqs/sec) | Rendering: 0.00811 (23%) | DB: 0.00077 (2%) | 200 OK [http://localhost/stories]
+
+
+Processing StoriesController#index (for 127.0.0.1 at 2011-10-03 19:23:15) [GET]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiUyNzFkNDFl%0AZWEyOTQzZWJjZmZlOTFhMWJhYWNjZGRmZiIKZmxhc2hJQzonQWN0aW9uQ29u%0AdHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--fc881e3205b414c6282cd2fb44a465fd527d1275
+  Parameters: {"action"=>"index", "controller"=>"stories"}
+  [4;36;1mUser Load (0.000511)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;35;1mStory Load (0.000299)[0m   [0mSELECT * FROM stories WHERE (votes_count >= 5) ORDER BY id DESC[0m
+Rendering template within layouts/application
+Rendering stories/index
+Completed in 0.05337 (18 reqs/sec) | Rendering: 0.00418 (7%) | DB: 0.00081 (1%) | 200 OK [http://localhost/stories]
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2011-10-03 19:23:20) [DELETE]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiUyNzFkNDFl%0AZWEyOTQzZWJjZmZlOTFhMWJhYWNjZGRmZiIKZmxhc2hJQzonQWN0aW9uQ29u%0AdHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--fc881e3205b414c6282cd2fb44a465fd527d1275
+  Parameters: {"authenticity_token"=>"7e0aa48ac1749bf3f6500818be1811230b936a81", "_method"=>"delete", "action"=>"destroy", "controller"=>"sessions"}
+  [4;36;1mUser Load (0.000382)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering sessions/destroy
+Completed in 0.01314 (76 reqs/sec) | Rendering: 0.00243 (18%) | DB: 0.00038 (2%) | 200 OK [http://localhost/session]
+
+
+Processing StoriesController#index (for 127.0.0.1 at 2011-10-03 19:23:24) [GET]
+  Session ID: BAh7CToMdXNlcl9pZDA6DnJldHVybl90bzA6DGNzcmZfaWQiJTI3MWQ0MWVl%0AYTI5NDNlYmNmZmU5MWExYmFhY2NkZGZmIgpmbGFzaElDOidBY3Rpb25Db250%0Acm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--0b2c91613b3aa9be882473649b20056dc81d78b5
+  Parameters: {"action"=>"index", "controller"=>"stories"}
+  [4;35;1mStory Load (0.000555)[0m   [0mSELECT * FROM stories WHERE (votes_count >= 5) ORDER BY id DESC[0m
+Rendering template within layouts/application
+Rendering stories/index
+Completed in 0.02810 (35 reqs/sec) | Rendering: 0.00513 (18%) | DB: 0.00056 (1%) | 200 OK [http://localhost/stories]
+
+
+Processing StoriesController#new (for 127.0.0.1 at 2011-10-03 19:23:28) [GET]
+  Session ID: BAh7CToMdXNlcl9pZDA6DnJldHVybl90bzA6DGNzcmZfaWQiJTI3MWQ0MWVl%0AYTI5NDNlYmNmZmU5MWExYmFhY2NkZGZmIgpmbGFzaElDOidBY3Rpb25Db250%0Acm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--0b2c91613b3aa9be882473649b20056dc81d78b5
+  Parameters: {"action"=>"new", "controller"=>"stories"}
+Redirected to http://localhost:3000/session/new
+Filter chain halted as [#<ActionController::Filters::ClassMethods::SymbolFilter:0xb6fee960 @filter=:login_required>] rendered_or_redirected.
+Completed in 0.00051 (1957 reqs/sec) | DB: 0.00000 (0%) | 302 Found [http://localhost/stories/new]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2011-10-03 19:23:28) [GET]
+  Session ID: BAh7CToMdXNlcl9pZDA6DnJldHVybl90byIRL3N0b3JpZXMvbmV3Ogxjc3Jm%0AX2lkIiUyNzFkNDFlZWEyOTQzZWJjZmZlOTFhMWJhYWNjZGRmZiIKZmxhc2hJ%0AQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVz%0AZWR7AA%3D%3D--b6e8ada76ad1b883623d22e8549dca09c0755343
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 0.00554 (180 reqs/sec) | Rendering: 0.00315 (56%) | DB: 0.00000 (0%) | 200 OK [http://localhost/session/new]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2011-10-03 19:23:37) [POST]
+  Session ID: BAh7CToMdXNlcl9pZDA6DnJldHVybl90byIRL3N0b3JpZXMvbmV3Ogxjc3Jm%0AX2lkIiUyNzFkNDFlZWEyOTQzZWJjZmZlOTFhMWJhYWNjZGRmZiIKZmxhc2hJ%0AQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVz%0AZWR7AA%3D%3D--b6e8ada76ad1b883623d22e8549dca09c0755343
+  Parameters: {"commit"=>"login", "authenticity_token"=>"7e0aa48ac1749bf3f6500818be1811230b936a81", "action"=>"create", "controller"=>"sessions", "password"=>"butterd0g", "login"=>"iamryo"}
+  [4;36;1mUser Load (0.000473)[0m   [0;1mSELECT * FROM users WHERE (users."login" = 'iamryo' AND users."password" = 'butterd0g') LIMIT 1[0m
+Redirected to http://localhost:3000/stories/new
+Completed in 0.08895 (11 reqs/sec) | DB: 0.00047 (0%) | 302 Found [http://localhost/session]
+
+
+Processing StoriesController#new (for 127.0.0.1 at 2011-10-03 19:23:37) [GET]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiUyNzFkNDFl%0AZWEyOTQzZWJjZmZlOTFhMWJhYWNjZGRmZiIKZmxhc2hJQzonQWN0aW9uQ29u%0AdHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--fc881e3205b414c6282cd2fb44a465fd527d1275
+  Parameters: {"action"=>"new", "controller"=>"stories"}
+  [4;35;1mUser Load (0.000509)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering stories/new
+Completed in 0.12060 (8 reqs/sec) | Rendering: 0.04124 (34%) | DB: 0.00051 (0%) | 200 OK [http://localhost/stories/new]
+  [4;36;1mSQL (0.000390)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000368)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000239)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000225)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000224)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000324)[0m   [0;1mSELECT * FROM schema_info[0m
+  [4;35;1mSQL (0.000471)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.000078)[0m   [0;1mPRAGMA index_list(stories)[0m
+  [4;35;1mSQL (0.000071)[0m   [0mPRAGMA index_list(users)[0m
+  [4;36;1mSQL (0.000068)[0m   [0;1mPRAGMA index_list(votes)[0m
+  [4;35;1mSQL (0.000260)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: no such table: stories: DROP TABLE stories[0m
+  [4;35;1mSQL (0.137529)[0m   [0mCREATE TABLE stories ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL, "link" varchar(255) DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL, "user_id" integer DEFAULT NULL, "votes_count" integer DEFAULT 0) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: no such table: users: DROP TABLE users[0m
+  [4;35;1mSQL (0.132686)[0m   [0mCREATE TABLE users ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255) DEFAULT NULL, "password" varchar(255) DEFAULT NULL, "name" varchar(255) DEFAULT NULL, "email" varchar(255) DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: no such table: votes: DROP TABLE votes[0m
+  [4;35;1mSQL (0.085379)[0m   [0mCREATE TABLE votes ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "story_id" integer DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL, "user_id" integer DEFAULT NULL) [0m
+  [4;36;1mSQL (0.067493)[0m   [0;1mCREATE TABLE schema_info (version integer)[0m
+  [4;35;1mSQL (0.066453)[0m   [0mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;36;1mSQL (0.065297)[0m   [0;1mUPDATE schema_info SET version = 4[0m
+
+
+Processing ApplicationController#new (for 127.0.0.1 at 2011-10-03 20:24:52) [GET]
+  Session ID: 75f833e40996a8754d4b930379304787
+  Parameters: {"action"=>"new", "controller"=>"stories"}
+
+
+SyntaxError (/home/ryan/Projects/shovell/app/controllers/stories_controller.rb:40: syntax error, unexpected kEND, expecting $end):
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:203:in `load_without_new_constant_marking'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:203:in `load_file'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:202:in `load_file'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:94:in `require_or_load'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:248:in `load_missing_constant'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:453:in `const_missing'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:465:in `const_missing'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.2/lib/active_support/inflector.rb:257:in `constantize'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.2/lib/active_support/core_ext/string/inflections.rb:148:in `constantize'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/routing.rb:1426:in `recognize'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:170:in `handle_request'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/webrick_server.rb:112:in `handle_dispatch'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/webrick_server.rb:78:in `service'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/webrick_server.rb:62:in `dispatch'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/commands/servers/webrick.rb:66
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/commands/server.rb:39
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendering /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing StoriesController#new (for 127.0.0.1 at 2011-10-03 20:25:33) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--3af36bdb6a0ef76fd25cfa456d38501c234d2298
+  Parameters: {"action"=>"new", "controller"=>"stories"}
+Redirected to http://localhost:3000/session/new
+Filter chain halted as [#<ActionController::Filters::ClassMethods::SymbolFilter:0xb74ab6d8 @filter=:login_required>] rendered_or_redirected.
+Completed in 0.00083 (1206 reqs/sec) | DB: 0.00000 (0%) | 302 Found [http://localhost/stories/new]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2011-10-03 20:25:34) [GET]
+  Session ID: BAh7BzoOcmV0dXJuX3RvIhEvc3Rvcmllcy9uZXciCmZsYXNoSUM6J0FjdGlv%0AbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhhc2h7AAY6CkB1c2VkewA%3D--6ad7b01ce75db2eeb796145509641482a0b71b31
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 0.03786 (26 reqs/sec) | Rendering: 0.03338 (88%) | DB: 0.00000 (0%) | 200 OK [http://localhost/session/new]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2011-10-03 21:15:19) [GET]
+  Session ID: 66784ab3e8c63c81cc9125c26d6b2dcd
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 0.29944 (3 reqs/sec) | Rendering: 0.29646 (99%) | DB: 0.00000 (0%) | 200 OK [http://localhost/session/new]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2011-10-03 22:40:58) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNzE0YWMzMzAxMDE4ZmIwMzk1NjcyNmI0OGVhNDc1%0AMTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--c10b8ebd08f1c537c77f193f4884d63b603ebe34
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 0.00686 (145 reqs/sec) | Rendering: 0.00461 (67%) | DB: 0.00000 (0%) | 200 OK [http://localhost/session/new]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2011-10-03 22:41:03) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNzE0YWMzMzAxMDE4ZmIwMzk1NjcyNmI0OGVhNDc1%0AMTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--c10b8ebd08f1c537c77f193f4884d63b603ebe34
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 0.00527 (189 reqs/sec) | Rendering: 0.00233 (44%) | DB: 0.00000 (0%) | 200 OK [http://localhost/session/new]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2011-10-03 22:41:07) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNzE0YWMzMzAxMDE4ZmIwMzk1NjcyNmI0OGVhNDc1%0AMTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--c10b8ebd08f1c537c77f193f4884d63b603ebe34
+  Parameters: {"commit"=>"login", "authenticity_token"=>"09a9129fce5d51a37576152405d9bf1ffae0af06", "action"=>"create", "controller"=>"sessions", "password"=>"butterd0g", "login"=>"iamryo"}
+  [4;36;1mUser Load (0.000443)[0m   [0;1mSELECT * FROM users WHERE (users."login" = 'iamryo' AND users."password" = 'butterd0g') LIMIT 1[0m
+Redirected to http://localhost:3000/stories
+Completed in 0.04734 (21 reqs/sec) | DB: 0.00044 (0%) | 302 Found [http://localhost/session]
+
+
+Processing StoriesController#index (for 127.0.0.1 at 2011-10-03 22:41:07) [GET]
+  Session ID: BAh7CDoMdXNlcl9pZGkGOgxjc3JmX2lkIiU3MTRhYzMzMDEwMThmYjAzOTU2%0ANzI2YjQ4ZWE0NzUxMSIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh%0Ac2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--ec10b774d4d92ca78e35439dd4e092fa2007cc1d
+  Parameters: {"action"=>"index", "controller"=>"stories"}
+  [4;35;1mUser Load (0.001523)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;36;1mStory Load (0.000298)[0m   [0;1mSELECT * FROM stories WHERE (votes_count < 5) ORDER BY id DESC[0m
+Rendering template within layouts/application
+Rendering stories/index
+Completed in 0.05065 (19 reqs/sec) | Rendering: 0.00906 (17%) | DB: 0.00182 (3%) | 200 OK [http://localhost/stories]
+
+
+Processing StoriesController#bin (for 127.0.0.1 at 2011-10-03 22:42:08) [GET]
+  Session ID: BAh7CDoMdXNlcl9pZGkGOgxjc3JmX2lkIiU3MTRhYzMzMDEwMThmYjAzOTU2%0ANzI2YjQ4ZWE0NzUxMSIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh%0Ac2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--ec10b774d4d92ca78e35439dd4e092fa2007cc1d
+  Parameters: {"action"=>"bin", "controller"=>"stories"}
+  [4;35;1mUser Load (0.000387)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;36;1mStory Load (0.000272)[0m   [0;1mSELECT * FROM stories WHERE (votes_count < 5) ORDER BY id DESC[0m
+Rendering template within layouts/application
+Rendering stories/index
+Completed in 0.02473 (40 reqs/sec) | Rendering: 0.00550 (22%) | DB: 0.00066 (2%) | 200 OK [http://localhost/stories/bin]
+
+
+Processing StoriesController#new (for 127.0.0.1 at 2011-10-03 22:42:34) [GET]
+  Session ID: BAh7CDoMdXNlcl9pZGkGOgxjc3JmX2lkIiU3MTRhYzMzMDEwMThmYjAzOTU2%0ANzI2YjQ4ZWE0NzUxMSIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh%0Ac2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--ec10b774d4d92ca78e35439dd4e092fa2007cc1d
+  Parameters: {"action"=>"new", "controller"=>"stories"}
+  [4;35;1mUser Load (0.000390)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering stories/new
+Completed in 0.04617 (21 reqs/sec) | Rendering: 0.02855 (61%) | DB: 0.00039 (0%) | 200 OK [http://localhost/stories/new]
+
+
+Processing StoriesController#create (for 127.0.0.1 at 2011-10-03 22:42:51) [POST]
+  Session ID: BAh7CDoMdXNlcl9pZGkGOgxjc3JmX2lkIiU3MTRhYzMzMDEwMThmYjAzOTU2%0ANzI2YjQ4ZWE0NzUxMSIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh%0Ac2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--ec10b774d4d92ca78e35439dd4e092fa2007cc1d
+  Parameters: {"commit"=>"Create", "story"=>{"name"=>"Awesome Comic", "link"=>"www.xkcd.com"}, "authenticity_token"=>"09a9129fce5d51a37576152405d9bf1ffae0af06", "action"=>"create", "controller"=>"stories"}
+  [4;36;1mUser Load (0.000439)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;35;1mStory Create (0.023908)[0m   [0mINSERT INTO stories ("name", "updated_at", "votes_count", "link", "user_id", "created_at") VALUES('Awesome Comic', '2011-10-03 22:42:51', 0, 'www.xkcd.com', 1, '2011-10-03 22:42:51')[0m
+Redirected to http://localhost:3000/stories
+Completed in 0.29722 (3 reqs/sec) | DB: 0.02435 (8%) | 302 Found [http://localhost/stories]
+
+
+Processing StoriesController#index (for 127.0.0.1 at 2011-10-03 22:42:52) [GET]
+  Session ID: BAh7CDoMdXNlcl9pZGkGOgxjc3JmX2lkIiU3MTRhYzMzMDEwMThmYjAzOTU2%0ANzI2YjQ4ZWE0NzUxMSIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh%0Ac2g6OkZsYXNoSGFzaHsGOgtub3RpY2UiH1N0b3J5IHN1Ym1pc3Npb24gc3Vj%0AY2VlZGVkBjoKQHVzZWR7BjsIVA%3D%3D--54aa7e5ecb63fb93935a82bbdc35a58d4e42a86b
+  Parameters: {"action"=>"index", "controller"=>"stories"}
+  [4;36;1mUser Load (0.000433)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;35;1mStory Load (0.000502)[0m   [0mSELECT * FROM stories WHERE (votes_count < 5) ORDER BY id DESC[0m
+Rendering template within layouts/application
+Rendering stories/index
+  [4;36;1mUser Load (0.000921)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) [0m
+Rendered stories/_story (0.02400)
+Completed in 0.04478 (22 reqs/sec) | Rendering: 0.02556 (57%) | DB: 0.00186 (4%) | 200 OK [http://localhost/stories]
+
+
+Processing StoriesController#index (for 127.0.0.1 at 2011-10-03 22:42:56) [GET]
+  Session ID: BAh7CDoMdXNlcl9pZGkGOgxjc3JmX2lkIiU3MTRhYzMzMDEwMThmYjAzOTU2%0ANzI2YjQ4ZWE0NzUxMSIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh%0Ac2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--ec10b774d4d92ca78e35439dd4e092fa2007cc1d
+  Parameters: {"action"=>"index", "controller"=>"stories"}
+  [4;35;1mUser Load (0.000371)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;36;1mStory Load (0.001280)[0m   [0;1mSELECT * FROM stories WHERE (votes_count < 5) ORDER BY id DESC[0m
+Rendering template within layouts/application
+Rendering stories/index
+  [4;35;1mUser Load (0.000421)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) [0m
+Rendered stories/_story (0.00509)
+Completed in 0.06283 (15 reqs/sec) | Rendering: 0.00725 (11%) | DB: 0.00207 (3%) | 200 OK [http://localhost/stories]
+
+
+Processing StoriesController#show (for 127.0.0.1 at 2011-10-03 22:42:59) [GET]
+  Session ID: BAh7CDoMdXNlcl9pZGkGOgxjc3JmX2lkIiU3MTRhYzMzMDEwMThmYjAzOTU2%0ANzI2YjQ4ZWE0NzUxMSIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh%0Ac2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--ec10b774d4d92ca78e35439dd4e092fa2007cc1d
+  Parameters: {"action"=>"show", "id"=>"10-awesome-comic", "controller"=>"stories"}
+  [4;36;1mUser Load (0.000372)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;35;1mStory Load (0.000424)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 10) [0m
+Rendering template within layouts/application
+Rendering stories/show
+  [4;36;1mUser Load (0.000476)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) [0m
+Completed in 0.05261 (19 reqs/sec) | Rendering: 0.03178 (60%) | DB: 0.00127 (2%) | 200 OK [http://localhost/stories/10-awesome-comic]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2011-10-03 22:43:02) [POST]
+  Session ID: BAh7CDoMdXNlcl9pZGkGOgxjc3JmX2lkIiU3MTRhYzMzMDEwMThmYjAzOTU2%0ANzI2YjQ4ZWE0NzUxMSIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh%0Ac2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--ec10b774d4d92ca78e35439dd4e092fa2007cc1d
+  Parameters: {"commit"=>"shove it", "authenticity_token"=>"09a9129fce5d51a37576152405d9bf1ffae0af06", "action"=>"create", "story_id"=>"10-awesome-comic", "controller"=>"votes"}
+  [4;35;1mUser Load (0.000874)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;36;1mStory Load (0.000636)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 10) [0m
+  [4;35;1mVote Create (0.001033)[0m   [0mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2011-10-03 22:43:02', 10, NULL, '2011-10-03 22:43:02')[0m
+  [4;36;1mStory Load (0.000425)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 10) [0m
+  [4;35;1mStory Update (0.000312)[0m   [0mUPDATE stories SET "votes_count" = "votes_count" + 1 WHERE ("id" = 10) [0m
+Rendering votes/create
+  [4;36;1mStory Load (0.000578)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 10) [0m
+  [4;35;1mVote Load (0.000396)[0m   [0mSELECT * FROM votes WHERE (votes.story_id = 10) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.00970)
+Completed in 0.28076 (3 reqs/sec) | Rendering: 0.03712 (13%) | DB: 0.00425 (1%) | 200 OK [http://localhost/stories/10-awesome-comic/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2011-10-03 22:43:04) [POST]
+  Session ID: BAh7CDoMdXNlcl9pZGkGOgxjc3JmX2lkIiU3MTRhYzMzMDEwMThmYjAzOTU2%0ANzI2YjQ4ZWE0NzUxMSIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh%0Ac2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--ec10b774d4d92ca78e35439dd4e092fa2007cc1d
+  Parameters: {"commit"=>"shove it", "authenticity_token"=>"09a9129fce5d51a37576152405d9bf1ffae0af06", "action"=>"create", "story_id"=>"10-awesome-comic", "controller"=>"votes"}
+  [4;36;1mUser Load (0.000404)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;35;1mStory Load (0.000533)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 10) [0m
+  [4;36;1mVote Create (0.000844)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2011-10-03 22:43:04', 10, NULL, '2011-10-03 22:43:04')[0m
+  [4;35;1mStory Load (0.000360)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 10) [0m
+  [4;36;1mStory Update (0.000292)[0m   [0;1mUPDATE stories SET "votes_count" = "votes_count" + 1 WHERE ("id" = 10) [0m
+Rendering votes/create
+  [4;35;1mStory Load (0.000558)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 10) [0m
+  [4;36;1mVote Load (0.000493)[0m   [0;1mSELECT * FROM votes WHERE (votes.story_id = 10) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.00030)
+Rendered votes/_vote (0.00022)
+Completed in 0.13864 (7 reqs/sec) | Rendering: 0.01295 (9%) | DB: 0.00348 (2%) | 200 OK [http://localhost/stories/10-awesome-comic/votes]
+  [4;36;1mStory Load (0.002041)[0m   [0;1mSELECT * FROM stories LIMIT 1[0m
+  [4;35;1mStory Destroy (0.001622)[0m   [0m DELETE FROM stories
+ WHERE "id" = 10
+[0m
+  [4;36;1mStory Load (0.000516)[0m   [0;1mSELECT * FROM stories LIMIT 1[0m
+
+
+Processing StoriesController#show (for 127.0.0.1 at 2011-10-03 22:51:55) [GET]
+  Session ID: BAh7CDoMdXNlcl9pZGkGOgxjc3JmX2lkIiU3MTRhYzMzMDEwMThmYjAzOTU2%0ANzI2YjQ4ZWE0NzUxMSIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh%0Ac2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--ec10b774d4d92ca78e35439dd4e092fa2007cc1d
+  Parameters: {"action"=>"show", "id"=>"10-awesome-comic", "controller"=>"stories"}
+  [4;35;1mUser Load (0.000456)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;36;1mStory Load (0.000211)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 10) [0m
+
+
+ActiveRecord::RecordNotFound (Couldn't find Story with ID=10-awesome-comic):
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activerecord-2.0.2/lib/active_record/base.rb:1267:in `find_one'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activerecord-2.0.2/lib/active_record/base.rb:1250:in `find_from_ids'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activerecord-2.0.2/lib/active_record/base.rb:504:in `find'
+    /app/controllers/stories_controller.rb:29:in `show'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:1158:in `send'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:1158:in `perform_action_without_filters'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/webrick_server.rb:112:in `handle_dispatch'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/webrick_server.rb:78:in `service'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/webrick_server.rb:62:in `dispatch'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/commands/servers/webrick.rb:66
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.2/lib/commands/server.rb:39
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /home/ryan/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendering /home/ryan/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing StoriesController#index (for 127.0.0.1 at 2011-10-03 22:52:09) [GET]
+  Session ID: BAh7CDoMdXNlcl9pZGkGOgxjc3JmX2lkIiU3MTRhYzMzMDEwMThmYjAzOTU2%0ANzI2YjQ4ZWE0NzUxMSIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh%0Ac2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--ec10b774d4d92ca78e35439dd4e092fa2007cc1d
+  Parameters: {"action"=>"index", "controller"=>"stories"}
+  [4;35;1mUser Load (0.000425)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;36;1mStory Load (0.000290)[0m   [0;1mSELECT * FROM stories WHERE (votes_count < 5) ORDER BY id DESC[0m
+Rendering template within layouts/application
+Rendering stories/index
+Completed in 0.08590 (11 reqs/sec) | Rendering: 0.00315 (3%) | DB: 0.00071 (0%) | 200 OK [http://localhost/stories/]

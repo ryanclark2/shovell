@@ -3,11 +3,14 @@ class StoriesController < ApplicationController
 	before_filter :login_required, :only => [ :new, :create ]
 	
   def index
-		@story = Story.find :all,
-			:order => 'id DESC',
-			:conditions => 'votes_count >= 5'
+		fetch_stories 'votes_count >= 5'
 	end
 	
+	def bin
+		fetch_stories 'votes_count < 5'
+		render :action => 'index'
+	end
+
 	def new 
 		@story = Story.new
 	end
@@ -24,6 +27,13 @@ class StoriesController < ApplicationController
 	
 	def show 
 		@story = Story.find(params[:id])
+	end
+
+	protected
+	def fetch_stories(conditions)
+		@stories = Story.find :all,
+			:order => 'id DESC',
+			:conditions => 'votes_count < 5'
 	end
 
 end

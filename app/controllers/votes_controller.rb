@@ -1,5 +1,7 @@
 class VotesController < ApplicationController
 
+	before_filter :login_required
+
   def create
 		@story = Story.find(params[:story_id])
 		@story.votes.create
