@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 4) do
+ActiveRecord::Schema.define(:version => 5) do
 
   create_table "stories", :force => true do |t|
     t.string   "name"
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(:version => 4) do
     t.datetime "updated_at"
     t.integer  "user_id"
     t.integer  "votes_count", :default => 0
+    t.text     "description"
   end
 
   create_table "users", :force => true do |t|

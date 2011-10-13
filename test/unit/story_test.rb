@@ -29,4 +29,9 @@ class StoryTest < ActiveSupport::TestCase
 	def test_should_be_associated_with_user
 		assert_equal users(:patrick), stories(:one).user
 	end
+	def test_should_increment_votes_counter_cache
+		stories(:two).votes.create
+		stories(:two).reload
+		assert_equal 1, stories(:two).attributes['votes_count']
+	end
 end

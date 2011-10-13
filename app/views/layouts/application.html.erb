@@ -9,7 +9,9 @@
 		<%= javascript_include_tag :defaults %>
 		<%= stylesheet_link_tag 'style' %>
 	</head>
-	<body>
+
+<body>
+
 		<div id="content">
 			<div id="login_logout">
 				<% if @current_user %>
@@ -22,12 +24,17 @@
 					<%= link_to 'Login', new_session_path %>
 				<% end %>
 			</div>	
-			<h1>Shovell</h1>
-			<% unless flash[:notice].blank? %>
+		
+		<h1>Shovell</h1>
+		
+		<% unless flash[:notice].blank? %>
 				<div id="notification"><%= flash[:notice] %></div>
 			<% end %>
-			<%= yield %>
+		
+		<%= yield %>
+		
 		</div>
+		
 		<ul id="navigation">
 			<li><%= link_to 'Front page stories', stories_path %></li>
 			<li><%= link_to 'Upcoming stories', bin_stories_path %></li>
