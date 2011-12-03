@@ -10283,3 +10283,285 @@ Rendered stories/_story (0.01405)
   [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) [0m
 Rendered stories/_story (0.00096)
 Completed in 0.05673 (17 reqs/sec) | Rendering: 0.01732 (30%) | DB: 0.00193 (3%) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.000710)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000234)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000141)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000134)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000131)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000131)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000234)[0m   [0mSELECT * FROM schema_info[0m
+  [4;36;1mSQL (0.000369)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000049)[0m   [0mPRAGMA index_list(stories)[0m
+  [4;36;1mSQL (0.000046)[0m   [0;1mPRAGMA index_list(users)[0m
+  [4;35;1mSQL (0.000048)[0m   [0mPRAGMA index_list(votes)[0m
+  [4;36;1mSQL (0.000139)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: no such table: stories: DROP TABLE stories[0m
+  [4;36;1mSQL (0.002055)[0m   [0;1mCREATE TABLE stories ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL, "link" varchar(255) DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL, "user_id" integer DEFAULT NULL, "votes_count" integer DEFAULT 0, "description" text DEFAULT NULL) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: no such table: users: DROP TABLE users[0m
+  [4;36;1mSQL (0.000852)[0m   [0;1mCREATE TABLE users ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255) DEFAULT NULL, "password" varchar(255) DEFAULT NULL, "name" varchar(255) DEFAULT NULL, "email" varchar(255) DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: no such table: votes: DROP TABLE votes[0m
+  [4;36;1mSQL (0.000901)[0m   [0;1mCREATE TABLE votes ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "story_id" integer DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL, "user_id" integer DEFAULT NULL) [0m
+  [4;35;1mSQL (0.000786)[0m   [0mCREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000740)[0m   [0;1mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;35;1mSQL (0.000688)[0m   [0mUPDATE schema_info SET version = 5[0m
+
+
+Processing StoriesController#index (for 127.0.0.1 at 2011-11-05 18:55:27) [GET]
+  Session ID: 62762342a0d5b690ace90b453da987ec
+  Parameters: {"action"=>"index", "controller"=>"stories"}
+  [4;36;1mStory Load (0.001938)[0m   [0;1mSELECT * FROM stories WHERE (votes_count < 5) ORDER BY id DESC[0m
+Rendering template within layouts/application
+Rendering stories/index
+  [4;35;1mUser Load (0.000301)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) [0m
+Rendered stories/_story (0.00848)
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) [0m
+Rendered stories/_story (0.00064)
+Completed in 0.01938 (51 reqs/sec) | Rendering: 0.01246 (64%) | DB: 0.00224 (11%) | 200 OK [http://localhost/]
+
+
+Processing StoriesController#new (for 127.0.0.1 at 2011-11-05 18:55:48) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--3af36bdb6a0ef76fd25cfa456d38501c234d2298
+  Parameters: {"action"=>"new", "controller"=>"stories"}
+Redirected to http://localhost:3000/session/new
+Filter chain halted as [#<ActionController::Filters::ClassMethods::SymbolFilter:0x101a69328 @filter=:login_required>] rendered_or_redirected.
+Completed in 0.00022 (4544 reqs/sec) | DB: 0.00000 (0%) | 302 Found [http://localhost/stories/new]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2011-11-05 18:55:48) [GET]
+  Session ID: BAh7BzoOcmV0dXJuX3RvIhEvc3Rvcmllcy9uZXciCmZsYXNoSUM6J0FjdGlv%0AbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhhc2h7AAY6CkB1c2VkewA%3D--6ad7b01ce75db2eeb796145509641482a0b71b31
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 0.00354 (282 reqs/sec) | Rendering: 0.00213 (60%) | DB: 0.00000 (0%) | 200 OK [http://localhost/session/new]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2011-11-05 18:55:50) [POST]
+  Session ID: BAh7CDoOcmV0dXJuX3RvIhEvc3Rvcmllcy9uZXc6DGNzcmZfaWQiJTU0N2Qw%0AODIzZmE4NTBhMGM2ZTQ0NDk1MDFhNWRjNzJkIgpmbGFzaElDOidBY3Rpb25D%0Ab250cm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--10c01f8e242ce75bfca07447b28213e681f2a8ba
+  Parameters: {"commit"=>"login", "authenticity_token"=>"cda1d7ae6d54968343419d8c268db41528941ead", "action"=>"create", "controller"=>"sessions", "password"=>"butterd0g", "login"=>"iamryo"}
+  [4;35;1mUser Load (0.000292)[0m   [0mSELECT * FROM users WHERE (users."password" = 'butterd0g' AND users."login" = 'iamryo') LIMIT 1[0m
+Redirected to http://localhost:3000/stories/new
+Completed in 0.00608 (164 reqs/sec) | DB: 0.00029 (4%) | 302 Found [http://localhost/session]
+
+
+Processing StoriesController#new (for 127.0.0.1 at 2011-11-05 18:55:50) [GET]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiU1NDdkMDgy%0AM2ZhODUwYTBjNmU0NDQ5NTAxYTVkYzcyZCIKZmxhc2hJQzonQWN0aW9uQ29u%0AdHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--59624faa9b971fe481fe7d25e41f1abf8427eeae
+  Parameters: {"action"=>"new", "controller"=>"stories"}
+  [4;36;1mUser Load (0.000240)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering stories/new
+Completed in 0.01362 (73 reqs/sec) | Rendering: 0.00411 (30%) | DB: 0.00024 (1%) | 200 OK [http://localhost/stories/new]
+
+
+Processing StoriesController#create (for 127.0.0.1 at 2011-11-05 18:56:01) [POST]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiU1NDdkMDgy%0AM2ZhODUwYTBjNmU0NDQ5NTAxYTVkYzcyZCIKZmxhc2hJQzonQWN0aW9uQ29u%0AdHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--59624faa9b971fe481fe7d25e41f1abf8427eeae
+  Parameters: {"commit"=>"Create", "story"=>{"name"=>"Scouter", "description"=>"Blah blah", "link"=>"Scooter.com"}, "authenticity_token"=>"cda1d7ae6d54968343419d8c268db41528941ead", "action"=>"create", "controller"=>"stories"}
+  [4;35;1mUser Load (0.000240)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;36;1mStory Create (0.000577)[0m   [0;1mINSERT INTO stories ("name", "updated_at", "votes_count", "description", "link", "user_id", "created_at") VALUES('Scouter', '2011-11-05 18:56:01', 0, 'Blah blah', 'Scooter.com', 1, '2011-11-05 18:56:01')[0m
+  [4;35;1mUser Load (0.000280)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) [0m
+  [4;36;1mVote Create (0.000144)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2011-11-05 18:56:01', 15, 1, '2011-11-05 18:56:01')[0m
+  [4;35;1mStory Load (0.000231)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 15) [0m
+  [4;36;1mStory Update (0.000166)[0m   [0;1mUPDATE stories SET "votes_count" = "votes_count" + 1 WHERE ("id" = 15) [0m
+  [4;35;1mVote Load (0.000207)[0m   [0mSELECT * FROM votes WHERE (votes.story_id = 15) [0m
+  [4;36;1mVote Update (0.000083)[0m   [0;1mUPDATE votes SET "created_at" = '2011-11-05 18:56:01', "story_id" = 15, "updated_at" = '2011-11-05 18:56:01', "user_id" = 1 WHERE "id" = 65[0m
+Redirected to http://localhost:3000/stories
+Completed in 0.02245 (44 reqs/sec) | DB: 0.00193 (8%) | 302 Found [http://localhost/stories]
+
+
+Processing StoriesController#index (for 127.0.0.1 at 2011-11-05 18:56:01) [GET]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiU1NDdkMDgy%0AM2ZhODUwYTBjNmU0NDQ5NTAxYTVkYzcyZCIKZmxhc2hJQzonQWN0aW9uQ29u%0AdHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsGOgtub3RpY2UiH1N0b3J5IHN1%0AYm1pc3Npb24gc3VjY2VlZGVkBjoKQHVzZWR7BjsJVA%3D%3D--5218d2c8b38ed31d9d0170be772822132c7c2753
+  Parameters: {"action"=>"index", "controller"=>"stories"}
+  [4;35;1mUser Load (0.000235)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;36;1mStory Load (0.000454)[0m   [0;1mSELECT * FROM stories WHERE (votes_count < 5) ORDER BY id DESC[0m
+Rendering template within layouts/application
+Rendering stories/index
+  [4;35;1mUser Load (0.000228)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) [0m
+Rendered stories/_story (0.00368)
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) [0m
+Rendered stories/_story (0.00049)
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) [0m
+Rendered stories/_story (0.00044)
+Completed in 0.01503 (66 reqs/sec) | Rendering: 0.00589 (39%) | DB: 0.00092 (6%) | 200 OK [http://localhost/stories]
+
+
+Processing StoriesController#show (for 127.0.0.1 at 2011-11-05 18:56:04) [GET]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiU1NDdkMDgy%0AM2ZhODUwYTBjNmU0NDQ5NTAxYTVkYzcyZCIKZmxhc2hJQzonQWN0aW9uQ29u%0AdHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--59624faa9b971fe481fe7d25e41f1abf8427eeae
+  Parameters: {"action"=>"show", "id"=>"15-scouter", "controller"=>"stories"}
+  [4;36;1mUser Load (0.000236)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;35;1mStory Load (0.000236)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 15) [0m
+Rendering template within layouts/application
+Rendering stories/show
+  [4;36;1mVote Load (0.000334)[0m   [0;1mSELECT * FROM votes WHERE (votes.story_id = 15) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.00173)
+  [4;35;1mUser Load (0.000251)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) [0m
+Completed in 0.02023 (49 reqs/sec) | Rendering: 0.00990 (48%) | DB: 0.00106 (5%) | 200 OK [http://localhost/stories/15-scouter]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2011-11-05 18:56:06) [POST]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiU1NDdkMDgy%0AM2ZhODUwYTBjNmU0NDQ5NTAxYTVkYzcyZCIKZmxhc2hJQzonQWN0aW9uQ29u%0AdHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--59624faa9b971fe481fe7d25e41f1abf8427eeae
+  Parameters: {"commit"=>"shove it", "authenticity_token"=>"cda1d7ae6d54968343419d8c268db41528941ead", "action"=>"create", "story_id"=>"15-scouter", "controller"=>"votes"}
+  [4;36;1mUser Load (0.000236)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;35;1mStory Load (0.000256)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 15) [0m
+  [4;36;1mVote Create (0.000265)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2011-11-05 18:56:06', 15, 1, '2011-11-05 18:56:06')[0m
+  [4;35;1mStory Load (0.000296)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 15) [0m
+  [4;36;1mStory Update (0.000110)[0m   [0;1mUPDATE stories SET "votes_count" = "votes_count" + 1 WHERE ("id" = 15) [0m
+Rendering votes/create
+  [4;35;1mStory Load (0.000346)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 15) [0m
+  [4;36;1mVote Load (0.000315)[0m   [0;1mSELECT * FROM votes WHERE (votes.story_id = 15) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.00020)
+Rendered votes/_vote (0.00013)
+Completed in 0.02240 (44 reqs/sec) | Rendering: 0.00415 (18%) | DB: 0.00182 (8%) | 200 OK [http://localhost/stories/15-scouter/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2011-11-05 18:56:06) [POST]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiU1NDdkMDgy%0AM2ZhODUwYTBjNmU0NDQ5NTAxYTVkYzcyZCIKZmxhc2hJQzonQWN0aW9uQ29u%0AdHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--59624faa9b971fe481fe7d25e41f1abf8427eeae
+  Parameters: {"commit"=>"shove it", "authenticity_token"=>"cda1d7ae6d54968343419d8c268db41528941ead", "action"=>"create", "story_id"=>"15-scouter", "controller"=>"votes"}
+  [4;35;1mUser Load (0.000289)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;36;1mStory Load (0.000271)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 15) [0m
+  [4;35;1mVote Create (0.000298)[0m   [0mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2011-11-05 18:56:06', 15, 1, '2011-11-05 18:56:06')[0m
+  [4;36;1mStory Load (0.000233)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 15) [0m
+  [4;35;1mStory Update (0.000108)[0m   [0mUPDATE stories SET "votes_count" = "votes_count" + 1 WHERE ("id" = 15) [0m
+Rendering votes/create
+  [4;36;1mStory Load (0.000465)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 15) [0m
+  [4;35;1mVote Load (0.000454)[0m   [0mSELECT * FROM votes WHERE (votes.story_id = 15) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.00021)
+Rendered votes/_vote (0.00014)
+Rendered votes/_vote (0.00011)
+Completed in 0.02458 (40 reqs/sec) | Rendering: 0.00452 (18%) | DB: 0.00212 (8%) | 200 OK [http://localhost/stories/15-scouter/votes]
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2011-11-05 18:56:10) [DELETE]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiU1NDdkMDgy%0AM2ZhODUwYTBjNmU0NDQ5NTAxYTVkYzcyZCIKZmxhc2hJQzonQWN0aW9uQ29u%0AdHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--59624faa9b971fe481fe7d25e41f1abf8427eeae
+  Parameters: {"authenticity_token"=>"cda1d7ae6d54968343419d8c268db41528941ead", "_method"=>"delete", "action"=>"destroy", "controller"=>"sessions"}
+  [4;36;1mUser Load (0.000256)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering sessions/destroy
+Completed in 0.00844 (118 reqs/sec) | Rendering: 0.00141 (16%) | DB: 0.00026 (3%) | 200 OK [http://localhost/session]
+  [4;36;1mSQL (0.004593)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000186)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000138)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000134)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000132)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000134)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000145)[0m   [0mSELECT * FROM schema_info[0m
+  [4;36;1mSQL (0.000360)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000049)[0m   [0mPRAGMA index_list(stories)[0m
+  [4;36;1mSQL (0.000046)[0m   [0;1mPRAGMA index_list(users)[0m
+  [4;35;1mSQL (0.000046)[0m   [0mPRAGMA index_list(votes)[0m
+  [4;36;1mSQL (0.000132)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: no such table: stories: DROP TABLE stories[0m
+  [4;36;1mSQL (0.002258)[0m   [0;1mCREATE TABLE stories ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL, "link" varchar(255) DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL, "user_id" integer DEFAULT NULL, "votes_count" integer DEFAULT 0, "description" text DEFAULT NULL) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: no such table: users: DROP TABLE users[0m
+  [4;36;1mSQL (0.000844)[0m   [0;1mCREATE TABLE users ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255) DEFAULT NULL, "password" varchar(255) DEFAULT NULL, "name" varchar(255) DEFAULT NULL, "email" varchar(255) DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: no such table: votes: DROP TABLE votes[0m
+  [4;36;1mSQL (0.000816)[0m   [0;1mCREATE TABLE votes ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "story_id" integer DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL, "user_id" integer DEFAULT NULL) [0m
+  [4;35;1mSQL (0.000794)[0m   [0mCREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.001093)[0m   [0;1mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;35;1mSQL (0.000719)[0m   [0mUPDATE schema_info SET version = 5[0m
+  [4;36;1mSQL (0.000751)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000167)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000130)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000126)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000676)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000126)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000149)[0m   [0mSELECT * FROM schema_info[0m
+  [4;36;1mSQL (0.000420)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000050)[0m   [0mPRAGMA index_list(stories)[0m
+  [4;36;1mSQL (0.000043)[0m   [0;1mPRAGMA index_list(users)[0m
+  [4;35;1mSQL (0.000048)[0m   [0mPRAGMA index_list(votes)[0m
+  [4;36;1mSQL (0.000161)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: no such table: stories: DROP TABLE stories[0m
+  [4;36;1mSQL (0.001409)[0m   [0;1mCREATE TABLE stories ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL, "link" varchar(255) DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL, "user_id" integer DEFAULT NULL, "votes_count" integer DEFAULT 0, "description" text DEFAULT NULL) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: no such table: users: DROP TABLE users[0m
+  [4;36;1mSQL (0.001279)[0m   [0;1mCREATE TABLE users ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255) DEFAULT NULL, "password" varchar(255) DEFAULT NULL, "name" varchar(255) DEFAULT NULL, "email" varchar(255) DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: no such table: votes: DROP TABLE votes[0m
+  [4;36;1mSQL (0.000916)[0m   [0;1mCREATE TABLE votes ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "story_id" integer DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL, "user_id" integer DEFAULT NULL) [0m
+  [4;35;1mSQL (0.000932)[0m   [0mCREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000726)[0m   [0;1mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;35;1mSQL (0.000696)[0m   [0mUPDATE schema_info SET version = 5[0m
+  [4;36;1mSQL (0.001024)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000171)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000137)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000133)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000132)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000129)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000147)[0m   [0mSELECT * FROM schema_info[0m
+  [4;36;1mSQL (0.000363)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000048)[0m   [0mPRAGMA index_list(stories)[0m
+  [4;36;1mSQL (0.000045)[0m   [0;1mPRAGMA index_list(users)[0m
+  [4;35;1mSQL (0.000045)[0m   [0mPRAGMA index_list(votes)[0m
+  [4;36;1mSQL (0.000148)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: no such table: stories: DROP TABLE stories[0m
+  [4;36;1mSQL (0.001604)[0m   [0;1mCREATE TABLE stories ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL, "link" varchar(255) DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL, "user_id" integer DEFAULT NULL, "votes_count" integer DEFAULT 0, "description" text DEFAULT NULL) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: no such table: users: DROP TABLE users[0m
+  [4;36;1mSQL (0.000878)[0m   [0;1mCREATE TABLE users ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255) DEFAULT NULL, "password" varchar(255) DEFAULT NULL, "name" varchar(255) DEFAULT NULL, "email" varchar(255) DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: no such table: votes: DROP TABLE votes[0m
+  [4;36;1mSQL (0.000924)[0m   [0;1mCREATE TABLE votes ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "story_id" integer DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL, "user_id" integer DEFAULT NULL) [0m
+  [4;35;1mSQL (0.000793)[0m   [0mCREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000680)[0m   [0;1mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;35;1mSQL (0.000914)[0m   [0mUPDATE schema_info SET version = 5[0m
+  [4;36;1mSQL (0.000639)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000165)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000138)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000120)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000480)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000124)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000133)[0m   [0mSELECT * FROM schema_info[0m
+  [4;36;1mSQL (0.000408)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000069)[0m   [0mPRAGMA index_list(stories)[0m
+  [4;36;1mSQL (0.000046)[0m   [0;1mPRAGMA index_list(users)[0m
+  [4;35;1mSQL (0.000046)[0m   [0mPRAGMA index_list(votes)[0m
+  [4;36;1mSQL (0.000142)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: no such table: stories: DROP TABLE stories[0m
+  [4;36;1mSQL (0.001442)[0m   [0;1mCREATE TABLE stories ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL, "link" varchar(255) DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL, "user_id" integer DEFAULT NULL, "votes_count" integer DEFAULT 0, "description" text DEFAULT NULL) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: no such table: users: DROP TABLE users[0m
+  [4;36;1mSQL (0.000876)[0m   [0;1mCREATE TABLE users ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255) DEFAULT NULL, "password" varchar(255) DEFAULT NULL, "name" varchar(255) DEFAULT NULL, "email" varchar(255) DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: no such table: votes: DROP TABLE votes[0m
+  [4;36;1mSQL (0.000899)[0m   [0;1mCREATE TABLE votes ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "story_id" integer DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL, "user_id" integer DEFAULT NULL) [0m
+  [4;35;1mSQL (0.000794)[0m   [0mCREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000755)[0m   [0;1mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;35;1mSQL (0.000703)[0m   [0mUPDATE schema_info SET version = 5[0m
+  [4;36;1mSQL (0.000891)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000180)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000137)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000133)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000131)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000130)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000147)[0m   [0mSELECT * FROM schema_info[0m
+  [4;36;1mSQL (0.000362)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000048)[0m   [0mPRAGMA index_list(stories)[0m
+  [4;36;1mSQL (0.000045)[0m   [0;1mPRAGMA index_list(users)[0m
+  [4;35;1mSQL (0.000052)[0m   [0mPRAGMA index_list(votes)[0m
+  [4;36;1mSQL (0.000138)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: no such table: stories: DROP TABLE stories[0m
+  [4;36;1mSQL (0.001880)[0m   [0;1mCREATE TABLE stories ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL, "link" varchar(255) DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL, "user_id" integer DEFAULT NULL, "votes_count" integer DEFAULT 0, "description" text DEFAULT NULL) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: no such table: users: DROP TABLE users[0m
+  [4;36;1mSQL (0.000829)[0m   [0;1mCREATE TABLE users ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255) DEFAULT NULL, "password" varchar(255) DEFAULT NULL, "name" varchar(255) DEFAULT NULL, "email" varchar(255) DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: no such table: votes: DROP TABLE votes[0m
+  [4;36;1mSQL (0.000929)[0m   [0;1mCREATE TABLE votes ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "story_id" integer DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL, "user_id" integer DEFAULT NULL) [0m
+  [4;35;1mSQL (0.000921)[0m   [0mCREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000748)[0m   [0;1mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;35;1mSQL (0.001098)[0m   [0mUPDATE schema_info SET version = 5[0m
