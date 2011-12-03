@@ -2,7 +2,7 @@ class StoriesController < ApplicationController
 
 	before_filter :login_required, :only => [ :new, :create ]
 	
-  def index
+  	def index
 		fetch_stories 'votes_count >= 5'
 	end
 	
@@ -33,7 +33,7 @@ class StoriesController < ApplicationController
 	def fetch_stories(conditions)
 		@stories = Story.find :all,
 			:order => 'id DESC',
-			:conditions => 'votes_count < 5'
+			:conditions => conditions
 	end
 
 end
