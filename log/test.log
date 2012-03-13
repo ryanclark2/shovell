@@ -6172,3 +6172,479 @@ Processing StoriesController#create (for 0.0.0.0 at 2011-11-06 14:28:12) [POST]
   [4;36;1mVote Update (0.000072)[0m   [0;1mUPDATE votes SET "created_at" = '2011-11-06 14:28:12', "story_id" = 996332878, "updated_at" = '2011-11-06 14:28:12', "user_id" = 885306178 WHERE "id" = 996332878[0m
 Redirected to http://test.host/stories
 Completed in 0.00467 (213 reqs/sec) | DB: 0.00160 (34%) | 302 Found [http://test.host/stories?story%5Blink%5D=http%3A%2Fwww.story-with-user.com%2F&story%5Bname%5D=story+with+user]
+  [4;36;1mUser Load (0.000274)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 885306178) [0m
+  [4;35;1mStory Load (0.000292)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;36;1mUser Load (0.000211)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 885306178) [0m
+  [4;35;1mStory Create (0.000234)[0m   [0mINSERT INTO stories ("name", "updated_at", "votes_count", "description", "link", "user_id", "created_at") VALUES('My test submission', '2011-12-03 12:41:08', 0, NULL, 'http://www.testsubmission.com/', NULL, '2011-12-03 12:41:08')[0m
+  [4;36;1mVote Create (0.000165)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2011-12-03 12:41:08', 996332878, NULL, '2011-12-03 12:41:08')[0m
+  [4;35;1mStory Load (0.000247)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 996332878) [0m
+  [4;36;1mStory Update (0.000126)[0m   [0;1mUPDATE stories SET "votes_count" = "votes_count" + 1 WHERE ("id" = 996332878) [0m
+  [4;35;1mVote Load (0.000195)[0m   [0mSELECT * FROM votes WHERE (votes.story_id = 996332878) [0m
+  [4;36;1mVote Update (0.000083)[0m   [0;1mUPDATE votes SET "created_at" = '2011-12-03 12:41:08', "story_id" = 996332878, "updated_at" = '2011-12-03 12:41:08', "user_id" = NULL WHERE "id" = 996332878[0m
+  [4;35;1mVote Load (0.000212)[0m   [0mSELECT * FROM votes WHERE (votes."id" = 953125641) [0m
+  [4;36;1mVote Load (0.000162)[0m   [0;1mSELECT * FROM votes WHERE (votes."id" = 996332877) [0m
+  [4;35;1mStory Load (0.000192)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;36;1mVote Load (0.000221)[0m   [0;1mSELECT * FROM votes WHERE (votes.story_id = 953125641) [0m
+  [4;35;1mStory Load (0.000214)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 996332877) [0m
+  [4;36;1mVote Create (0.000176)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2011-12-03 12:41:08', 996332877, NULL, '2011-12-03 12:41:08')[0m
+  [4;35;1mStory Load (0.000192)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 996332877) [0m
+  [4;36;1mStory Update (0.000092)[0m   [0;1mUPDATE stories SET "votes_count" = "votes_count" + 1 WHERE ("id" = 996332877) [0m
+  [4;35;1mStory Load (0.000188)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 996332877) [0m
+  [4;36;1mStory Load (0.000264)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;35;1mVote Create (0.000250)[0m   [0mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2011-12-03 12:41:08', 953125641, NULL, '2011-12-03 12:41:08')[0m
+  [4;36;1mStory Load (0.000236)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;35;1mStory Update (0.000107)[0m   [0mUPDATE stories SET "votes_count" = "votes_count" + 1 WHERE ("id" = 953125641) [0m
+  [4;36;1mVote Create (0.000070)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2011-12-03 12:41:08', 953125641, NULL, '2011-12-03 12:41:08')[0m
+  [4;35;1mStory Load (0.000190)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;36;1mStory Update (0.000067)[0m   [0;1mUPDATE stories SET "votes_count" = "votes_count" + 1 WHERE ("id" = 953125641) [0m
+  [4;35;1mVote Create (0.000069)[0m   [0mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2011-12-03 12:41:08', 953125641, NULL, '2011-12-03 12:41:08')[0m
+  [4;36;1mStory Load (0.000196)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;35;1mStory Update (0.000068)[0m   [0mUPDATE stories SET "votes_count" = "votes_count" + 1 WHERE ("id" = 953125641) [0m
+  [4;36;1mVote Create (0.000076)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2011-12-03 12:41:08', 953125641, NULL, '2011-12-03 12:41:08')[0m
+  [4;35;1mStory Load (0.000212)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;36;1mStory Update (0.000073)[0m   [0;1mUPDATE stories SET "votes_count" = "votes_count" + 1 WHERE ("id" = 953125641) [0m
+  [4;35;1mVote Create (0.000068)[0m   [0mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2011-12-03 12:41:08', 953125641, NULL, '2011-12-03 12:41:08')[0m
+  [4;36;1mStory Load (0.000218)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;35;1mStory Update (0.000075)[0m   [0mUPDATE stories SET "votes_count" = "votes_count" + 1 WHERE ("id" = 953125641) [0m
+  [4;36;1mVote Create (0.000069)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2011-12-03 12:41:08', 953125641, NULL, '2011-12-03 12:41:08')[0m
+  [4;35;1mStory Load (0.000220)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;36;1mStory Update (0.000069)[0m   [0;1mUPDATE stories SET "votes_count" = "votes_count" + 1 WHERE ("id" = 953125641) [0m
+  [4;35;1mVote Create (0.000069)[0m   [0mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2011-12-03 12:41:08', 953125641, NULL, '2011-12-03 12:41:08')[0m
+  [4;36;1mStory Load (0.000202)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;35;1mStory Update (0.000076)[0m   [0mUPDATE stories SET "votes_count" = "votes_count" + 1 WHERE ("id" = 953125641) [0m
+  [4;36;1mVote Create (0.000076)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2011-12-03 12:41:08', 953125641, NULL, '2011-12-03 12:41:08')[0m
+  [4;35;1mStory Load (0.000209)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;36;1mStory Update (0.000067)[0m   [0;1mUPDATE stories SET "votes_count" = "votes_count" + 1 WHERE ("id" = 953125641) [0m
+  [4;35;1mVote Create (0.000096)[0m   [0mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2011-12-03 12:41:08', 953125641, NULL, '2011-12-03 12:41:08')[0m
+  [4;36;1mStory Load (0.000236)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;35;1mStory Update (0.000070)[0m   [0mUPDATE stories SET "votes_count" = "votes_count" + 1 WHERE ("id" = 953125641) [0m
+  [4;36;1mVote Create (0.000070)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2011-12-03 12:41:08', 953125641, NULL, '2011-12-03 12:41:08')[0m
+  [4;35;1mStory Load (0.000191)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;36;1mStory Update (0.000067)[0m   [0;1mUPDATE stories SET "votes_count" = "votes_count" + 1 WHERE ("id" = 953125641) [0m
+  [4;35;1mVote Load (0.000359)[0m   [0mSELECT * FROM votes WHERE (votes.story_id = 953125641) ORDER BY id DESC LIMIT 3[0m
+  [4;36;1mVote Load (0.000218)[0m   [0;1mSELECT * FROM votes WHERE (votes."id" = 996332877) [0m
+  [4;35;1mStory Load (0.000205)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;36;1mVote Load (0.000260)[0m   [0;1mSELECT * FROM votes WHERE (votes.story_id = 953125641) ORDER BY id DESC LIMIT 3[0m
+  [4;35;1mUser Load (0.000224)[0m   [0mSELECT * FROM users WHERE (users."id" = 885306178) [0m
+  [4;36;1mSQL (0.000212)[0m   [0;1mSELECT count(*) AS count_all FROM stories WHERE (stories.user_id = 885306178) [0m
+  [4;35;1mStory Load (0.000211)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;36;1mStory Load (0.000302)[0m   [0;1mSELECT * FROM stories WHERE (stories.user_id = 885306178) [0m
+  [4;35;1mUser Load (0.000215)[0m   [0mSELECT * FROM users WHERE (users."id" = 885306178) [0m
+  [4;36;1mSQL (0.000125)[0m   [0;1mSELECT count(*) AS count_all FROM votes WHERE (votes.user_id = 885306178) [0m
+  [4;35;1mVote Load (0.000174)[0m   [0mSELECT * FROM votes WHERE (votes."id" = 996332877) [0m
+  [4;36;1mUser Load (0.000195)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 2126142491) [0m
+  [4;35;1mVote Load (0.000175)[0m   [0mSELECT * FROM votes WHERE (votes.user_id = 2126142491) [0m
+  [4;36;1mUser Load (0.000214)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 2126142491) [0m
+  [4;35;1mVote Load (0.000175)[0m   [0mSELECT * FROM votes WHERE (votes."id" = 996332877) [0m
+  [4;36;1mUser Load (0.000198)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 2126142491) [0m
+  [4;35;1mStory Load (0.000232)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;36;1mVote Load (0.000176)[0m   [0;1mSELECT * FROM votes WHERE (votes."id" = 953125641) [0m
+  [4;35;1mStory Load (0.000211)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+
+
+Processing SessionsController#create (for 0.0.0.0 at 2011-12-03 12:41:09) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"sessions", "password"=>"user", "login"=>"no such"}
+  [4;36;1mUser Load (0.000214)[0m   [0;1mSELECT * FROM users WHERE (users."login" = 'no such' AND users."password" = 'user') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 0.00591 (169 reqs/sec) | Rendering: 0.00364 (61%) | DB: 0.00021 (3%) | 200 OK [http://test.host/sessions/create?login=no+such&password=user]
+
+
+Processing SessionsController#create (for 0.0.0.0 at 2011-12-03 12:41:09) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"sessions", "password"=>"sekrit", "login"=>"patrick"}
+  [4;35;1mUser Load (0.000474)[0m   [0mSELECT * FROM users WHERE (users."login" = 'patrick' AND users."password" = 'sekrit') LIMIT 1[0m
+Redirected to http://test.host/stories
+Completed in 0.00116 (859 reqs/sec) | DB: 0.00047 (40%) | 302 Found [http://test.host/sessions/create?login=patrick&password=sekrit]
+
+
+Processing SessionsController#destroy (for 0.0.0.0 at 2011-12-03 12:41:09) [DELETE]
+  Session ID: 
+  Parameters: {"action"=>"destroy", "controller"=>"sessions"}
+  [4;36;1mUser Load (0.000198)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 885306178) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering sessions/destroy
+Completed in 0.00236 (424 reqs/sec) | Rendering: 0.00178 (75%) | DB: 0.00020 (8%) | 200 OK [http://test.host/sessions/create?login=patrick&password=sekrit]
+
+
+Processing SessionsController#create (for 0.0.0.0 at 2011-12-03 12:41:09) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"sessions", "password"=>"sekrit", "login"=>"patrick"}
+  [4;35;1mUser Load (0.000285)[0m   [0mSELECT * FROM users WHERE (users."login" = 'patrick' AND users."password" = 'sekrit') LIMIT 1[0m
+Redirected to http://test.host/stories
+Completed in 0.00073 (1364 reqs/sec) | DB: 0.00028 (38%) | 302 Found [http://test.host/sessions/create?login=patrick&password=sekrit]
+  [4;36;1mUser Load (0.000206)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 885306178) [0m
+
+
+Processing SessionsController#create (for 0.0.0.0 at 2011-12-03 12:41:09) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"sessions", "password"=>"sekrit", "login"=>"patrick"}
+  [4;35;1mUser Load (0.000250)[0m   [0mSELECT * FROM users WHERE (users."login" = 'patrick' AND users."password" = 'sekrit') LIMIT 1[0m
+Redirected to http://test.host/stories/new
+Completed in 0.00064 (1562 reqs/sec) | DB: 0.00046 (71%) | 302 Found [http://test.host/sessions/create?login=patrick&password=sekrit]
+
+
+Processing SessionsController#new (for 0.0.0.0 at 2011-12-03 12:41:09) [GET]
+  Session ID: 
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 0.00092 (1087 reqs/sec) | Rendering: 0.00085 (91%) | DB: 0.00000 (0%) | 200 OK [http://test.host/sessions/new]
+  [4;36;1mUser Load (0.000232)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 885306178) [0m
+
+
+Processing StoriesController#create (for 0.0.0.0 at 2011-12-03 12:41:09) [POST]
+  Session ID: 
+  Parameters: {"story"=>{"name"=>"test story", "link"=>"http://www.test.com/"}, "action"=>"create", "controller"=>"stories"}
+  [4;35;1mUser Load (0.000217)[0m   [0mSELECT * FROM users WHERE (users."id" = 885306178) LIMIT 1[0m
+  [4;36;1mStory Create (0.000281)[0m   [0;1mINSERT INTO stories ("name", "updated_at", "votes_count", "description", "link", "user_id", "created_at") VALUES('test story', '2011-12-03 12:41:09', 0, NULL, 'http://www.test.com/', 885306178, '2011-12-03 12:41:09')[0m
+  [4;35;1mUser Load (0.000225)[0m   [0mSELECT * FROM users WHERE (users."id" = 885306178) [0m
+  [4;36;1mVote Create (0.000108)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2011-12-03 12:41:09', 996332878, 885306178, '2011-12-03 12:41:09')[0m
+  [4;35;1mStory Load (0.000342)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 996332878) [0m
+  [4;36;1mStory Update (0.000109)[0m   [0;1mUPDATE stories SET "votes_count" = "votes_count" + 1 WHERE ("id" = 996332878) [0m
+  [4;35;1mVote Load (0.000181)[0m   [0mSELECT * FROM votes WHERE (votes.story_id = 996332878) [0m
+  [4;36;1mVote Update (0.000084)[0m   [0;1mUPDATE votes SET "created_at" = '2011-12-03 12:41:09', "story_id" = 996332878, "updated_at" = '2011-12-03 12:41:09', "user_id" = 885306178 WHERE "id" = 996332878[0m
+Redirected to http://test.host/stories
+Completed in 0.00890 (112 reqs/sec) | DB: 0.00178 (19%) | 302 Found [http://test.host/stories?story%5Blink%5D=http%3A%2F%2Fwww.test.com%2F&story%5Bname%5D=test+story]
+  [4;35;1mUser Load (0.000423)[0m   [0mSELECT * FROM users WHERE (users."id" = 885306178) [0m
+
+
+Processing StoriesController#index (for 0.0.0.0 at 2011-12-03 12:41:09) [GET]
+  Session ID: 
+  Parameters: {"action"=>"index", "controller"=>"stories"}
+  [4;36;1mUser Load (0.000218)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 885306178) LIMIT 1[0m
+  [4;35;1mStory Load (0.000165)[0m   [0mSELECT * FROM stories WHERE (votes_count >= 5) ORDER BY id DESC[0m
+Rendering template within layouts/application
+Rendering stories/index
+Completed in 0.00328 (304 reqs/sec) | Rendering: 0.00241 (73%) | DB: 0.00081 (24%) | 200 OK [http://test.host/]
+
+
+Processing StoriesController#index (for 0.0.0.0 at 2011-12-03 12:41:09) [GET]
+  Session ID: 
+  Parameters: {"action"=>"index", "controller"=>"stories"}
+  [4;36;1mStory Load (0.000145)[0m   [0;1mSELECT * FROM stories WHERE (votes_count >= 5) ORDER BY id DESC[0m
+Rendering template within layouts/application
+Rendering stories/index
+Completed in 0.00126 (793 reqs/sec) | Rendering: 0.00071 (56%) | DB: 0.00014 (11%) | 200 OK [http://test.host/]
+
+
+Processing StoriesController#new (for 0.0.0.0 at 2011-12-03 12:41:09) [GET]
+  Session ID: 
+  Parameters: {"action"=>"new", "controller"=>"stories"}
+Redirected to http://test.host/session/new
+Filter chain halted as [#<ActionController::Filters::ClassMethods::SymbolFilter:0x1089debb8 @filter=:login_required>] rendered_or_redirected.
+Completed in 0.00013 (7681 reqs/sec) | DB: 0.00000 (0%) | 302 Found [http://test.host/stories/new]
+  [4;35;1mUser Load (0.000267)[0m   [0mSELECT * FROM users WHERE (users."id" = 885306178) [0m
+
+
+Processing StoriesController#create (for 0.0.0.0 at 2011-12-03 12:41:09) [POST]
+  Session ID: 
+  Parameters: {"story"=>{"name"=>"story without a link"}, "action"=>"create", "controller"=>"stories"}
+  [4;36;1mUser Load (0.000235)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 885306178) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering stories/new
+Completed in 0.00407 (245 reqs/sec) | Rendering: 0.00306 (75%) | DB: 0.00050 (12%) | 200 OK [http://test.host/stories?story%5Bname%5D=story+without+a+link]
+
+
+Processing StoriesController#index (for 0.0.0.0 at 2011-12-03 12:41:09) [GET]
+  Session ID: 
+  Parameters: {"action"=>"index", "controller"=>"stories"}
+  [4;35;1mStory Load (0.000141)[0m   [0mSELECT * FROM stories WHERE (votes_count >= 5) ORDER BY id DESC[0m
+Rendering template within layouts/application
+Rendering stories/index
+Completed in 0.00128 (783 reqs/sec) | Rendering: 0.00088 (69%) | DB: 0.00014 (11%) | 200 OK [http://test.host/]
+
+
+Processing StoriesController#index (for 0.0.0.0 at 2011-12-03 12:41:09) [GET]
+  Session ID: 
+  Parameters: {"action"=>"index", "controller"=>"stories"}
+  [4;36;1mStory Load (0.000133)[0m   [0;1mSELECT * FROM stories WHERE (votes_count >= 5) ORDER BY id DESC[0m
+Rendering template within layouts/application
+Rendering stories/index
+Completed in 0.00108 (928 reqs/sec) | Rendering: 0.00069 (63%) | DB: 0.00013 (12%) | 200 OK [http://test.host/]
+  [4;35;1mUser Load (0.000246)[0m   [0mSELECT * FROM users WHERE (users."id" = 885306178) [0m
+
+
+Processing StoriesController#new (for 0.0.0.0 at 2011-12-03 12:41:09) [GET]
+  Session ID: 
+  Parameters: {"action"=>"new", "controller"=>"stories"}
+  [4;36;1mUser Load (0.000215)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 885306178) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering stories/new
+Completed in 0.00226 (442 reqs/sec) | Rendering: 0.00168 (74%) | DB: 0.00046 (20%) | 200 OK [http://test.host/stories/new]
+  [4;35;1mUser Load (0.000261)[0m   [0mSELECT * FROM users WHERE (users."id" = 885306178) [0m
+
+
+Processing StoriesController#new (for 0.0.0.0 at 2011-12-03 12:41:09) [GET]
+  Session ID: 
+  Parameters: {"action"=>"new", "controller"=>"stories"}
+  [4;36;1mUser Load (0.000209)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 885306178) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering stories/new
+Completed in 0.00179 (559 reqs/sec) | Rendering: 0.00121 (67%) | DB: 0.00047 (26%) | 200 OK [http://test.host/stories/new]
+  [4;35;1mStory Load (0.000290)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+
+
+Processing StoriesController#show (for 0.0.0.0 at 2011-12-03 12:41:09) [GET]
+  Session ID: 
+  Parameters: {"action"=>"show", "id"=>#<Story id: 953125641, name: "My shiny weblog", link: "http://poocs.net", created_at: "2011-12-03 12:41:09", updated_at: "2011-12-03 12:41:09", user_id: 885306178, votes_count: 0, description: nil>, "controller"=>"stories"}
+  [4;36;1mStory Load (0.000226)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+Rendering template within layouts/application
+Rendering stories/show
+  [4;35;1mUser Load (0.000211)[0m   [0mSELECT * FROM users WHERE (users."id" = 885306178) [0m
+Completed in 0.00369 (270 reqs/sec) | Rendering: 0.00292 (79%) | DB: 0.00073 (19%) | 200 OK [http://test.host/stories/953125641-my-shiny-weblog]
+  [4;36;1mUser Load (0.000230)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 885306178) [0m
+
+
+Processing StoriesController#create (for 0.0.0.0 at 2011-12-03 12:41:09) [POST]
+  Session ID: 
+  Parameters: {"story"=>{"name"=>"story with user", "link"=>"http:/www.story-with-user.com/"}, "action"=>"create", "controller"=>"stories"}
+  [4;35;1mUser Load (0.000188)[0m   [0mSELECT * FROM users WHERE (users."id" = 885306178) LIMIT 1[0m
+  [4;36;1mStory Create (0.000225)[0m   [0;1mINSERT INTO stories ("name", "updated_at", "votes_count", "description", "link", "user_id", "created_at") VALUES('story with user', '2011-12-03 12:41:09', 0, NULL, 'http:/www.story-with-user.com/', 885306178, '2011-12-03 12:41:09')[0m
+  [4;35;1mUser Load (0.000189)[0m   [0mSELECT * FROM users WHERE (users."id" = 885306178) [0m
+  [4;36;1mVote Create (0.000099)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2011-12-03 12:41:09', 996332878, 885306178, '2011-12-03 12:41:09')[0m
+  [4;35;1mStory Load (0.000194)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 996332878) [0m
+  [4;36;1mStory Update (0.000069)[0m   [0;1mUPDATE stories SET "votes_count" = "votes_count" + 1 WHERE ("id" = 996332878) [0m
+  [4;35;1mVote Load (0.000179)[0m   [0mSELECT * FROM votes WHERE (votes.story_id = 996332878) [0m
+  [4;36;1mVote Update (0.000079)[0m   [0;1mUPDATE votes SET "created_at" = '2011-12-03 12:41:09', "story_id" = 996332878, "updated_at" = '2011-12-03 12:41:09', "user_id" = 885306178 WHERE "id" = 996332878[0m
+Redirected to http://test.host/stories
+Completed in 0.00462 (216 reqs/sec) | DB: 0.00145 (31%) | 302 Found [http://test.host/stories?story%5Blink%5D=http%3A%2Fwww.story-with-user.com%2F&story%5Bname%5D=story+with+user]
+  [4;36;1mUser Load (0.000256)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 885306178) [0m
+  [4;35;1mStory Load (0.000329)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;36;1mUser Load (0.000202)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 885306178) [0m
+  [4;35;1mStory Create (0.000241)[0m   [0mINSERT INTO stories ("name", "updated_at", "votes_count", "description", "link", "user_id", "created_at") VALUES('My test submission', '2012-01-04 20:11:57', 0, NULL, 'http://www.testsubmission.com/', NULL, '2012-01-04 20:11:57')[0m
+  [4;36;1mVote Create (0.000125)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2012-01-04 20:11:57', 996332878, NULL, '2012-01-04 20:11:57')[0m
+  [4;35;1mStory Load (0.000234)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 996332878) [0m
+  [4;36;1mStory Update (0.000128)[0m   [0;1mUPDATE stories SET "votes_count" = "votes_count" + 1 WHERE ("id" = 996332878) [0m
+  [4;35;1mVote Load (0.000172)[0m   [0mSELECT * FROM votes WHERE (votes.story_id = 996332878) [0m
+  [4;36;1mVote Update (0.000074)[0m   [0;1mUPDATE votes SET "created_at" = '2012-01-04 20:11:57', "story_id" = 996332878, "updated_at" = '2012-01-04 20:11:57', "user_id" = NULL WHERE "id" = 996332878[0m
+  [4;35;1mVote Load (0.000237)[0m   [0mSELECT * FROM votes WHERE (votes."id" = 953125641) [0m
+  [4;36;1mVote Load (0.000188)[0m   [0;1mSELECT * FROM votes WHERE (votes."id" = 996332877) [0m
+  [4;35;1mStory Load (0.000188)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;36;1mVote Load (0.000317)[0m   [0;1mSELECT * FROM votes WHERE (votes.story_id = 953125641) [0m
+  [4;35;1mStory Load (0.000267)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 996332877) [0m
+  [4;36;1mVote Create (0.000179)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2012-01-04 20:11:57', 996332877, NULL, '2012-01-04 20:11:57')[0m
+  [4;35;1mStory Load (0.000188)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 996332877) [0m
+  [4;36;1mStory Update (0.000091)[0m   [0;1mUPDATE stories SET "votes_count" = "votes_count" + 1 WHERE ("id" = 996332877) [0m
+  [4;35;1mStory Load (0.000182)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 996332877) [0m
+  [4;36;1mStory Load (0.000279)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;35;1mVote Create (0.000208)[0m   [0mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2012-01-04 20:11:57', 953125641, NULL, '2012-01-04 20:11:57')[0m
+  [4;36;1mStory Load (0.000211)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;35;1mStory Update (0.000101)[0m   [0mUPDATE stories SET "votes_count" = "votes_count" + 1 WHERE ("id" = 953125641) [0m
+  [4;36;1mVote Create (0.000076)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2012-01-04 20:11:57', 953125641, NULL, '2012-01-04 20:11:57')[0m
+  [4;35;1mStory Load (0.000208)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;36;1mStory Update (0.000074)[0m   [0;1mUPDATE stories SET "votes_count" = "votes_count" + 1 WHERE ("id" = 953125641) [0m
+  [4;35;1mVote Create (0.000077)[0m   [0mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2012-01-04 20:11:57', 953125641, NULL, '2012-01-04 20:11:57')[0m
+  [4;36;1mStory Load (0.000217)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;35;1mStory Update (0.000076)[0m   [0mUPDATE stories SET "votes_count" = "votes_count" + 1 WHERE ("id" = 953125641) [0m
+  [4;36;1mVote Create (0.000077)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2012-01-04 20:11:57', 953125641, NULL, '2012-01-04 20:11:57')[0m
+  [4;35;1mStory Load (0.000205)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;36;1mStory Update (0.000074)[0m   [0;1mUPDATE stories SET "votes_count" = "votes_count" + 1 WHERE ("id" = 953125641) [0m
+  [4;35;1mVote Create (0.000076)[0m   [0mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2012-01-04 20:11:57', 953125641, NULL, '2012-01-04 20:11:57')[0m
+  [4;36;1mStory Load (0.000218)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;35;1mStory Update (0.000067)[0m   [0mUPDATE stories SET "votes_count" = "votes_count" + 1 WHERE ("id" = 953125641) [0m
+  [4;36;1mVote Create (0.000093)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2012-01-04 20:11:57', 953125641, NULL, '2012-01-04 20:11:57')[0m
+  [4;35;1mStory Load (0.000205)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;36;1mStory Update (0.000075)[0m   [0;1mUPDATE stories SET "votes_count" = "votes_count" + 1 WHERE ("id" = 953125641) [0m
+  [4;35;1mVote Create (0.000076)[0m   [0mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2012-01-04 20:11:57', 953125641, NULL, '2012-01-04 20:11:57')[0m
+  [4;36;1mStory Load (0.000209)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;35;1mStory Update (0.000076)[0m   [0mUPDATE stories SET "votes_count" = "votes_count" + 1 WHERE ("id" = 953125641) [0m
+  [4;36;1mVote Create (0.000075)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2012-01-04 20:11:57', 953125641, NULL, '2012-01-04 20:11:57')[0m
+  [4;35;1mStory Load (0.000204)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;36;1mStory Update (0.000073)[0m   [0;1mUPDATE stories SET "votes_count" = "votes_count" + 1 WHERE ("id" = 953125641) [0m
+  [4;35;1mVote Create (0.000074)[0m   [0mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2012-01-04 20:11:57', 953125641, NULL, '2012-01-04 20:11:57')[0m
+  [4;36;1mStory Load (0.000215)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;35;1mStory Update (0.000071)[0m   [0mUPDATE stories SET "votes_count" = "votes_count" + 1 WHERE ("id" = 953125641) [0m
+  [4;36;1mVote Create (0.000070)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2012-01-04 20:11:57', 953125641, NULL, '2012-01-04 20:11:57')[0m
+  [4;35;1mStory Load (0.000187)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;36;1mStory Update (0.000068)[0m   [0;1mUPDATE stories SET "votes_count" = "votes_count" + 1 WHERE ("id" = 953125641) [0m
+  [4;35;1mVote Load (0.000383)[0m   [0mSELECT * FROM votes WHERE (votes.story_id = 953125641) ORDER BY id DESC LIMIT 3[0m
+  [4;36;1mVote Load (0.000217)[0m   [0;1mSELECT * FROM votes WHERE (votes."id" = 996332877) [0m
+  [4;35;1mStory Load (0.000210)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;36;1mVote Load (0.000252)[0m   [0;1mSELECT * FROM votes WHERE (votes.story_id = 953125641) ORDER BY id DESC LIMIT 3[0m
+  [4;35;1mUser Load (0.000213)[0m   [0mSELECT * FROM users WHERE (users."id" = 885306178) [0m
+  [4;36;1mSQL (0.000241)[0m   [0;1mSELECT count(*) AS count_all FROM stories WHERE (stories.user_id = 885306178) [0m
+  [4;35;1mStory Load (0.000214)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;36;1mStory Load (0.000297)[0m   [0;1mSELECT * FROM stories WHERE (stories.user_id = 885306178) [0m
+  [4;35;1mUser Load (0.000302)[0m   [0mSELECT * FROM users WHERE (users."id" = 885306178) [0m
+  [4;36;1mSQL (0.000207)[0m   [0;1mSELECT count(*) AS count_all FROM votes WHERE (votes.user_id = 885306178) [0m
+  [4;35;1mVote Load (0.000206)[0m   [0mSELECT * FROM votes WHERE (votes."id" = 996332877) [0m
+  [4;36;1mUser Load (0.000211)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 2126142491) [0m
+  [4;35;1mVote Load (0.000158)[0m   [0mSELECT * FROM votes WHERE (votes.user_id = 2126142491) [0m
+  [4;36;1mUser Load (0.000221)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 2126142491) [0m
+  [4;35;1mVote Load (0.000172)[0m   [0mSELECT * FROM votes WHERE (votes."id" = 996332877) [0m
+  [4;36;1mUser Load (0.000194)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 2126142491) [0m
+  [4;35;1mStory Load (0.000227)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+  [4;36;1mVote Load (0.000171)[0m   [0;1mSELECT * FROM votes WHERE (votes."id" = 953125641) [0m
+  [4;35;1mStory Load (0.000206)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+
+
+Processing SessionsController#create (for 0.0.0.0 at 2012-01-04 20:11:58) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"sessions", "password"=>"user", "login"=>"no such"}
+  [4;36;1mUser Load (0.000219)[0m   [0;1mSELECT * FROM users WHERE (users."login" = 'no such' AND users."password" = 'user') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 0.00583 (171 reqs/sec) | Rendering: 0.00359 (61%) | DB: 0.00022 (3%) | 200 OK [http://test.host/sessions/create?login=no+such&password=user]
+
+
+Processing SessionsController#create (for 0.0.0.0 at 2012-01-04 20:11:58) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"sessions", "password"=>"sekrit", "login"=>"patrick"}
+  [4;35;1mUser Load (0.000284)[0m   [0mSELECT * FROM users WHERE (users."login" = 'patrick' AND users."password" = 'sekrit') LIMIT 1[0m
+Redirected to http://test.host/stories
+Completed in 0.00082 (1225 reqs/sec) | DB: 0.00028 (34%) | 302 Found [http://test.host/sessions/create?login=patrick&password=sekrit]
+
+
+Processing SessionsController#destroy (for 0.0.0.0 at 2012-01-04 20:11:58) [DELETE]
+  Session ID: 
+  Parameters: {"action"=>"destroy", "controller"=>"sessions"}
+  [4;36;1mUser Load (0.000217)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 885306178) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering sessions/destroy
+Completed in 0.00150 (665 reqs/sec) | Rendering: 0.00089 (58%) | DB: 0.00022 (14%) | 200 OK [http://test.host/sessions/create?login=patrick&password=sekrit]
+
+
+Processing SessionsController#create (for 0.0.0.0 at 2012-01-04 20:11:58) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"sessions", "password"=>"sekrit", "login"=>"patrick"}
+  [4;35;1mUser Load (0.000261)[0m   [0mSELECT * FROM users WHERE (users."login" = 'patrick' AND users."password" = 'sekrit') LIMIT 1[0m
+Redirected to http://test.host/stories
+Completed in 0.00065 (1528 reqs/sec) | DB: 0.00026 (39%) | 302 Found [http://test.host/sessions/create?login=patrick&password=sekrit]
+  [4;36;1mUser Load (0.000239)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 885306178) [0m
+
+
+Processing SessionsController#create (for 0.0.0.0 at 2012-01-04 20:11:58) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"sessions", "password"=>"sekrit", "login"=>"patrick"}
+  [4;35;1mUser Load (0.000240)[0m   [0mSELECT * FROM users WHERE (users."login" = 'patrick' AND users."password" = 'sekrit') LIMIT 1[0m
+Redirected to http://test.host/stories/new
+Completed in 0.00060 (1661 reqs/sec) | DB: 0.00048 (79%) | 302 Found [http://test.host/sessions/create?login=patrick&password=sekrit]
+
+
+Processing SessionsController#new (for 0.0.0.0 at 2012-01-04 20:11:58) [GET]
+  Session ID: 
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 0.00093 (1077 reqs/sec) | Rendering: 0.00086 (92%) | DB: 0.00000 (0%) | 200 OK [http://test.host/sessions/new]
+  [4;36;1mUser Load (0.000252)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 885306178) [0m
+
+
+Processing StoriesController#create (for 0.0.0.0 at 2012-01-04 20:11:58) [POST]
+  Session ID: 
+  Parameters: {"story"=>{"name"=>"test story", "link"=>"http://www.test.com/"}, "action"=>"create", "controller"=>"stories"}
+  [4;35;1mUser Load (0.000215)[0m   [0mSELECT * FROM users WHERE (users."id" = 885306178) LIMIT 1[0m
+  [4;36;1mStory Create (0.000287)[0m   [0;1mINSERT INTO stories ("name", "updated_at", "votes_count", "description", "link", "user_id", "created_at") VALUES('test story', '2012-01-04 20:11:58', 0, NULL, 'http://www.test.com/', 885306178, '2012-01-04 20:11:58')[0m
+  [4;35;1mUser Load (0.000238)[0m   [0mSELECT * FROM users WHERE (users."id" = 885306178) [0m
+  [4;36;1mVote Create (0.000128)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2012-01-04 20:11:58', 996332878, 885306178, '2012-01-04 20:11:58')[0m
+  [4;35;1mStory Load (0.000385)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 996332878) [0m
+  [4;36;1mStory Update (0.000100)[0m   [0;1mUPDATE stories SET "votes_count" = "votes_count" + 1 WHERE ("id" = 996332878) [0m
+  [4;35;1mVote Load (0.000161)[0m   [0mSELECT * FROM votes WHERE (votes.story_id = 996332878) [0m
+  [4;36;1mVote Update (0.000079)[0m   [0;1mUPDATE votes SET "created_at" = '2012-01-04 20:11:58', "story_id" = 996332878, "updated_at" = '2012-01-04 20:11:58', "user_id" = 885306178 WHERE "id" = 996332878[0m
+Redirected to http://test.host/stories
+Completed in 0.00886 (112 reqs/sec) | DB: 0.00184 (20%) | 302 Found [http://test.host/stories?story%5Blink%5D=http%3A%2F%2Fwww.test.com%2F&story%5Bname%5D=test+story]
+  [4;35;1mUser Load (0.000235)[0m   [0mSELECT * FROM users WHERE (users."id" = 885306178) [0m
+
+
+Processing StoriesController#index (for 0.0.0.0 at 2012-01-04 20:11:58) [GET]
+  Session ID: 
+  Parameters: {"action"=>"index", "controller"=>"stories"}
+  [4;36;1mUser Load (0.000189)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 885306178) LIMIT 1[0m
+  [4;35;1mStory Load (0.000143)[0m   [0mSELECT * FROM stories WHERE (votes_count >= 5) ORDER BY id DESC[0m
+Rendering template within layouts/application
+Rendering stories/index
+Completed in 0.00289 (346 reqs/sec) | Rendering: 0.00211 (72%) | DB: 0.00057 (19%) | 200 OK [http://test.host/]
+
+
+Processing StoriesController#index (for 0.0.0.0 at 2012-01-04 20:11:58) [GET]
+  Session ID: 
+  Parameters: {"action"=>"index", "controller"=>"stories"}
+  [4;36;1mStory Load (0.000141)[0m   [0;1mSELECT * FROM stories WHERE (votes_count >= 5) ORDER BY id DESC[0m
+Rendering template within layouts/application
+Rendering stories/index
+Completed in 0.00106 (943 reqs/sec) | Rendering: 0.00068 (64%) | DB: 0.00014 (13%) | 200 OK [http://test.host/]
+
+
+Processing StoriesController#new (for 0.0.0.0 at 2012-01-04 20:11:58) [GET]
+  Session ID: 
+  Parameters: {"action"=>"new", "controller"=>"stories"}
+Redirected to http://test.host/session/new
+Filter chain halted as [#<ActionController::Filters::ClassMethods::SymbolFilter:0x103f607a8 @filter=:login_required>] rendered_or_redirected.
+Completed in 0.00013 (7530 reqs/sec) | DB: 0.00000 (0%) | 302 Found [http://test.host/stories/new]
+  [4;35;1mUser Load (0.000271)[0m   [0mSELECT * FROM users WHERE (users."id" = 885306178) [0m
+
+
+Processing StoriesController#create (for 0.0.0.0 at 2012-01-04 20:11:58) [POST]
+  Session ID: 
+  Parameters: {"story"=>{"name"=>"story without a link"}, "action"=>"create", "controller"=>"stories"}
+  [4;36;1mUser Load (0.000210)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 885306178) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering stories/new
+Completed in 0.00321 (311 reqs/sec) | Rendering: 0.00229 (71%) | DB: 0.00048 (14%) | 200 OK [http://test.host/stories?story%5Bname%5D=story+without+a+link]
+
+
+Processing StoriesController#index (for 0.0.0.0 at 2012-01-04 20:11:58) [GET]
+  Session ID: 
+  Parameters: {"action"=>"index", "controller"=>"stories"}
+  [4;35;1mStory Load (0.000200)[0m   [0mSELECT * FROM stories WHERE (votes_count >= 5) ORDER BY id DESC[0m
+Rendering template within layouts/application
+Rendering stories/index
+Completed in 0.00118 (849 reqs/sec) | Rendering: 0.00068 (57%) | DB: 0.00020 (16%) | 200 OK [http://test.host/]
+
+
+Processing StoriesController#index (for 0.0.0.0 at 2012-01-04 20:11:58) [GET]
+  Session ID: 
+  Parameters: {"action"=>"index", "controller"=>"stories"}
+  [4;36;1mStory Load (0.000143)[0m   [0;1mSELECT * FROM stories WHERE (votes_count >= 5) ORDER BY id DESC[0m
+Rendering template within layouts/application
+Rendering stories/index
+Completed in 0.00116 (859 reqs/sec) | Rendering: 0.00074 (63%) | DB: 0.00014 (12%) | 200 OK [http://test.host/]
+  [4;35;1mUser Load (0.000246)[0m   [0mSELECT * FROM users WHERE (users."id" = 885306178) [0m
+
+
+Processing StoriesController#new (for 0.0.0.0 at 2012-01-04 20:11:58) [GET]
+  Session ID: 
+  Parameters: {"action"=>"new", "controller"=>"stories"}
+  [4;36;1mUser Load (0.000309)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 885306178) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering stories/new
+Completed in 0.00221 (452 reqs/sec) | Rendering: 0.00141 (63%) | DB: 0.00056 (25%) | 200 OK [http://test.host/stories/new]
+  [4;35;1mUser Load (0.000238)[0m   [0mSELECT * FROM users WHERE (users."id" = 885306178) [0m
+
+
+Processing StoriesController#new (for 0.0.0.0 at 2012-01-04 20:11:58) [GET]
+  Session ID: 
+  Parameters: {"action"=>"new", "controller"=>"stories"}
+  [4;36;1mUser Load (0.000198)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 885306178) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering stories/new
+Completed in 0.00171 (584 reqs/sec) | Rendering: 0.00116 (68%) | DB: 0.00044 (25%) | 200 OK [http://test.host/stories/new]
+  [4;35;1mStory Load (0.000285)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+
+
+Processing StoriesController#show (for 0.0.0.0 at 2012-01-04 20:11:58) [GET]
+  Session ID: 
+  Parameters: {"action"=>"show", "id"=>#<Story id: 953125641, name: "My shiny weblog", link: "http://poocs.net", created_at: "2012-01-04 20:11:58", updated_at: "2012-01-04 20:11:58", user_id: 885306178, votes_count: 0, description: nil>, "controller"=>"stories"}
+  [4;36;1mStory Load (0.000232)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 953125641) [0m
+Rendering template within layouts/application
+Rendering stories/show
+  [4;35;1mUser Load (0.000215)[0m   [0mSELECT * FROM users WHERE (users."id" = 885306178) [0m
+Completed in 0.00319 (313 reqs/sec) | Rendering: 0.00240 (75%) | DB: 0.00073 (22%) | 200 OK [http://test.host/stories/953125641-my-shiny-weblog]
+  [4;36;1mUser Load (0.000247)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 885306178) [0m
+
+
+Processing StoriesController#create (for 0.0.0.0 at 2012-01-04 20:11:58) [POST]
+  Session ID: 
+  Parameters: {"story"=>{"name"=>"story with user", "link"=>"http:/www.story-with-user.com/"}, "action"=>"create", "controller"=>"stories"}
+  [4;35;1mUser Load (0.000215)[0m   [0mSELECT * FROM users WHERE (users."id" = 885306178) LIMIT 1[0m
+  [4;36;1mStory Create (0.000256)[0m   [0;1mINSERT INTO stories ("name", "updated_at", "votes_count", "description", "link", "user_id", "created_at") VALUES('story with user', '2012-01-04 20:11:58', 0, NULL, 'http:/www.story-with-user.com/', 885306178, '2012-01-04 20:11:58')[0m
+  [4;35;1mUser Load (0.000215)[0m   [0mSELECT * FROM users WHERE (users."id" = 885306178) [0m
+  [4;36;1mVote Create (0.000108)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2012-01-04 20:11:58', 996332878, 885306178, '2012-01-04 20:11:58')[0m
+  [4;35;1mStory Load (0.000223)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 996332878) [0m
+  [4;36;1mStory Update (0.000090)[0m   [0;1mUPDATE stories SET "votes_count" = "votes_count" + 1 WHERE ("id" = 996332878) [0m
+  [4;35;1mVote Load (0.000165)[0m   [0mSELECT * FROM votes WHERE (votes.story_id = 996332878) [0m
+  [4;36;1mVote Update (0.000073)[0m   [0;1mUPDATE votes SET "created_at" = '2012-01-04 20:11:58', "story_id" = 996332878, "updated_at" = '2012-01-04 20:11:58', "user_id" = 885306178 WHERE "id" = 996332878[0m
+Redirected to http://test.host/stories
+Completed in 0.00494 (202 reqs/sec) | DB: 0.00159 (32%) | 302 Found [http://test.host/stories?story%5Blink%5D=http%3A%2Fwww.story-with-user.com%2F&story%5Bname%5D=story+with+user]

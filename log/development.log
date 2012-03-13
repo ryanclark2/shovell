@@ -10565,3 +10565,464 @@ Completed in 0.00844 (118 reqs/sec) | Rendering: 0.00141 (16%) | DB: 0.00026 (3%
   [4;35;1mSQL (0.000921)[0m   [0mCREATE TABLE schema_info (version integer)[0m
   [4;36;1mSQL (0.000748)[0m   [0;1mINSERT INTO schema_info (version) VALUES(0)[0m
   [4;35;1mSQL (0.001098)[0m   [0mUPDATE schema_info SET version = 5[0m
+  [4;36;1mSQL (0.005279)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000188)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000127)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000119)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000168)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000122)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000160)[0m   [0mSELECT * FROM schema_info[0m
+  [4;36;1mSQL (0.000324)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000054)[0m   [0mPRAGMA index_list(stories)[0m
+  [4;36;1mSQL (0.000041)[0m   [0;1mPRAGMA index_list(users)[0m
+  [4;35;1mSQL (0.000042)[0m   [0mPRAGMA index_list(votes)[0m
+  [4;36;1mSQL (0.000225)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: no such table: stories: DROP TABLE stories[0m
+  [4;36;1mSQL (0.002443)[0m   [0;1mCREATE TABLE stories ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL, "link" varchar(255) DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL, "user_id" integer DEFAULT NULL, "votes_count" integer DEFAULT 0, "description" text DEFAULT NULL) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: no such table: users: DROP TABLE users[0m
+  [4;36;1mSQL (0.000830)[0m   [0;1mCREATE TABLE users ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255) DEFAULT NULL, "password" varchar(255) DEFAULT NULL, "name" varchar(255) DEFAULT NULL, "email" varchar(255) DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: no such table: votes: DROP TABLE votes[0m
+  [4;36;1mSQL (0.000855)[0m   [0;1mCREATE TABLE votes ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "story_id" integer DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL, "user_id" integer DEFAULT NULL) [0m
+  [4;35;1mSQL (0.000952)[0m   [0mCREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.001042)[0m   [0;1mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;35;1mSQL (0.000993)[0m   [0mUPDATE schema_info SET version = 5[0m
+
+
+Processing StoriesController#index (for 127.0.0.1 at 2012-01-04 20:10:07) [GET]
+  Session ID: e7c45ba56bce860e67211017f025e71c
+  Parameters: {"action"=>"index", "controller"=>"stories"}
+  [4;36;1mStory Load (0.008062)[0m   [0;1mSELECT * FROM stories WHERE (votes_count >= 5) ORDER BY id DESC[0m
+Rendering template within layouts/application
+Rendering stories/index
+Completed in 0.01754 (57 reqs/sec) | Rendering: 0.00436 (24%) | DB: 0.00806 (45%) | 200 OK [http://localhost/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2012-01-04 20:10:15) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--3af36bdb6a0ef76fd25cfa456d38501c234d2298
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 0.00390 (256 reqs/sec) | Rendering: 0.00246 (63%) | DB: 0.00000 (0%) | 200 OK [http://localhost/session/new]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2012-01-04 20:10:17) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZmJkZTY1ODYwMjgyZmVmOGUyZjQ1OTY5MzNjYzg5%0ANDciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--b62299c4bd26776ed18de56655e937b9e9889fcf
+  Parameters: {"commit"=>"login", "authenticity_token"=>"179b408f7c4635d5ad185459826b8d95500c92a7", "action"=>"create", "controller"=>"sessions", "password"=>"butterd0g", "login"=>"iamryo"}
+  [4;35;1mUser Load (0.000435)[0m   [0mSELECT * FROM users WHERE (users."password" = 'butterd0g' AND users."login" = 'iamryo') LIMIT 1[0m
+Redirected to http://localhost:3000/stories
+Completed in 0.00996 (100 reqs/sec) | DB: 0.00044 (4%) | 302 Found [http://localhost/session]
+
+
+Processing StoriesController#index (for 127.0.0.1 at 2012-01-04 20:10:17) [GET]
+  Session ID: BAh7CDoMdXNlcl9pZGkGOgxjc3JmX2lkIiVmYmRlNjU4NjAyODJmZWY4ZTJm%0ANDU5NjkzM2NjODk0NyIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh%0Ac2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--b2554c72f4ffd5c1f4162257fbcc0aee91dbba6d
+  Parameters: {"action"=>"index", "controller"=>"stories"}
+  [4;36;1mUser Load (0.000290)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;35;1mStory Load (0.000157)[0m   [0mSELECT * FROM stories WHERE (votes_count >= 5) ORDER BY id DESC[0m
+Rendering template within layouts/application
+Rendering stories/index
+Completed in 0.01135 (88 reqs/sec) | Rendering: 0.00217 (19%) | DB: 0.00045 (3%) | 200 OK [http://localhost/stories]
+
+
+Processing StoriesController#new (for 127.0.0.1 at 2012-01-04 20:10:24) [GET]
+  Session ID: BAh7CDoMdXNlcl9pZGkGOgxjc3JmX2lkIiVmYmRlNjU4NjAyODJmZWY4ZTJm%0ANDU5NjkzM2NjODk0NyIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh%0Ac2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--b2554c72f4ffd5c1f4162257fbcc0aee91dbba6d
+  Parameters: {"action"=>"new", "controller"=>"stories"}
+  [4;36;1mUser Load (0.000242)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering stories/new
+Completed in 0.01526 (65 reqs/sec) | Rendering: 0.00594 (38%) | DB: 0.00024 (1%) | 200 OK [http://localhost/stories/new]
+
+
+Processing StoriesController#create (for 127.0.0.1 at 2012-01-04 20:10:40) [POST]
+  Session ID: BAh7CDoMdXNlcl9pZGkGOgxjc3JmX2lkIiVmYmRlNjU4NjAyODJmZWY4ZTJm%0ANDU5NjkzM2NjODk0NyIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh%0Ac2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--b2554c72f4ffd5c1f4162257fbcc0aee91dbba6d
+  Parameters: {"commit"=>"Create", "story"=>{"name"=>"Some website", "description"=>"Search", "link"=>"www.google.com"}, "authenticity_token"=>"179b408f7c4635d5ad185459826b8d95500c92a7", "action"=>"create", "controller"=>"stories"}
+  [4;35;1mUser Load (0.000210)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;36;1mStory Create (0.002120)[0m   [0;1mINSERT INTO stories ("name", "updated_at", "votes_count", "description", "link", "user_id", "created_at") VALUES('Some website', '2012-01-04 20:10:40', 0, 'Search', 'www.google.com', 1, '2012-01-04 20:10:40')[0m
+  [4;35;1mUser Load (0.000277)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) [0m
+  [4;36;1mVote Create (0.000532)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2012-01-04 20:10:40', 16, 1, '2012-01-04 20:10:40')[0m
+  [4;35;1mStory Load (0.000254)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 16) [0m
+  [4;36;1mStory Update (0.000166)[0m   [0;1mUPDATE stories SET "votes_count" = "votes_count" + 1 WHERE ("id" = 16) [0m
+  [4;35;1mVote Load (0.000209)[0m   [0mSELECT * FROM votes WHERE (votes.story_id = 16) [0m
+  [4;36;1mVote Update (0.000082)[0m   [0;1mUPDATE votes SET "created_at" = '2012-01-04 20:10:40', "story_id" = 16, "updated_at" = '2012-01-04 20:10:40', "user_id" = 1 WHERE "id" = 68[0m
+Redirected to http://localhost:3000/stories
+Completed in 0.02230 (44 reqs/sec) | DB: 0.00385 (17%) | 302 Found [http://localhost/stories]
+
+
+Processing StoriesController#index (for 127.0.0.1 at 2012-01-04 20:10:40) [GET]
+  Session ID: BAh7CDoMdXNlcl9pZGkGOgxjc3JmX2lkIiVmYmRlNjU4NjAyODJmZWY4ZTJm%0ANDU5NjkzM2NjODk0NyIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh%0Ac2g6OkZsYXNoSGFzaHsGOgtub3RpY2UiH1N0b3J5IHN1Ym1pc3Npb24gc3Vj%0AY2VlZGVkBjoKQHVzZWR7BjsIVA%3D%3D--d1192203d5aa8a230d47137fe835d69fad10a69c
+  Parameters: {"action"=>"index", "controller"=>"stories"}
+  [4;35;1mUser Load (0.000237)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;36;1mStory Load (0.000167)[0m   [0;1mSELECT * FROM stories WHERE (votes_count >= 5) ORDER BY id DESC[0m
+Rendering template within layouts/application
+Rendering stories/index
+Completed in 0.01073 (93 reqs/sec) | Rendering: 0.00185 (17%) | DB: 0.00040 (3%) | 200 OK [http://localhost/stories]
+
+
+Processing StoriesController#index (for 127.0.0.1 at 2012-01-04 20:10:44) [GET]
+  Session ID: BAh7CDoMdXNlcl9pZGkGOgxjc3JmX2lkIiVmYmRlNjU4NjAyODJmZWY4ZTJm%0ANDU5NjkzM2NjODk0NyIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh%0Ac2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--b2554c72f4ffd5c1f4162257fbcc0aee91dbba6d
+  Parameters: {"action"=>"index", "controller"=>"stories"}
+  [4;35;1mUser Load (0.000283)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;36;1mStory Load (0.000162)[0m   [0;1mSELECT * FROM stories WHERE (votes_count >= 5) ORDER BY id DESC[0m
+Rendering template within layouts/application
+Rendering stories/index
+Completed in 0.01022 (97 reqs/sec) | Rendering: 0.00183 (17%) | DB: 0.00045 (4%) | 200 OK [http://localhost/stories]
+
+
+Processing StoriesController#bin (for 127.0.0.1 at 2012-01-04 20:10:46) [GET]
+  Session ID: BAh7CDoMdXNlcl9pZGkGOgxjc3JmX2lkIiVmYmRlNjU4NjAyODJmZWY4ZTJm%0ANDU5NjkzM2NjODk0NyIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh%0Ac2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--b2554c72f4ffd5c1f4162257fbcc0aee91dbba6d
+  Parameters: {"action"=>"bin", "controller"=>"stories"}
+  [4;35;1mUser Load (0.000230)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;36;1mStory Load (0.000658)[0m   [0;1mSELECT * FROM stories WHERE (votes_count < 5) ORDER BY id DESC[0m
+Rendering template within layouts/application
+Rendering stories/index
+  [4;35;1mUser Load (0.000240)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) [0m
+Rendered stories/_story (0.00536)
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) [0m
+Rendered stories/_story (0.00053)
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) [0m
+Rendered stories/_story (0.00048)
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) [0m
+Rendered stories/_story (0.00048)
+Completed in 0.01803 (55 reqs/sec) | Rendering: 0.00847 (46%) | DB: 0.00113 (6%) | 200 OK [http://localhost/stories/bin]
+
+
+Processing StoriesController#show (for 127.0.0.1 at 2012-01-04 20:10:50) [GET]
+  Session ID: BAh7CDoMdXNlcl9pZGkGOgxjc3JmX2lkIiVmYmRlNjU4NjAyODJmZWY4ZTJm%0ANDU5NjkzM2NjODk0NyIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh%0Ac2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--b2554c72f4ffd5c1f4162257fbcc0aee91dbba6d
+  Parameters: {"action"=>"show", "id"=>"16-some-website", "controller"=>"stories"}
+  [4;35;1mUser Load (0.000234)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;36;1mStory Load (0.000264)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 16) [0m
+Rendering template within layouts/application
+Rendering stories/show
+  [4;35;1mVote Load (0.000354)[0m   [0mSELECT * FROM votes WHERE (votes.story_id = 16) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.00214)
+  [4;36;1mUser Load (0.000224)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) [0m
+Completed in 0.02123 (47 reqs/sec) | Rendering: 0.01142 (53%) | DB: 0.00108 (5%) | 200 OK [http://localhost/stories/16-some-website]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2012-01-04 20:10:52) [POST]
+  Session ID: BAh7CDoMdXNlcl9pZGkGOgxjc3JmX2lkIiVmYmRlNjU4NjAyODJmZWY4ZTJm%0ANDU5NjkzM2NjODk0NyIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh%0Ac2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--b2554c72f4ffd5c1f4162257fbcc0aee91dbba6d
+  Parameters: {"commit"=>"shove it", "authenticity_token"=>"179b408f7c4635d5ad185459826b8d95500c92a7", "action"=>"create", "story_id"=>"16-some-website", "controller"=>"votes"}
+  [4;35;1mUser Load (0.000213)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;36;1mStory Load (0.000258)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 16) [0m
+  [4;35;1mVote Create (0.000248)[0m   [0mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2012-01-04 20:10:52', 16, 1, '2012-01-04 20:10:52')[0m
+  [4;36;1mStory Load (0.000204)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 16) [0m
+  [4;35;1mStory Update (0.000096)[0m   [0mUPDATE stories SET "votes_count" = "votes_count" + 1 WHERE ("id" = 16) [0m
+Rendering votes/create
+  [4;36;1mStory Load (0.000304)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 16) [0m
+  [4;35;1mVote Load (0.000493)[0m   [0mSELECT * FROM votes WHERE (votes.story_id = 16) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.00021)
+Rendered votes/_vote (0.00013)
+Completed in 0.02165 (46 reqs/sec) | Rendering: 0.00445 (20%) | DB: 0.00182 (8%) | 200 OK [http://localhost/stories/16-some-website/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2012-01-04 20:10:53) [POST]
+  Session ID: BAh7CDoMdXNlcl9pZGkGOgxjc3JmX2lkIiVmYmRlNjU4NjAyODJmZWY4ZTJm%0ANDU5NjkzM2NjODk0NyIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh%0Ac2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--b2554c72f4ffd5c1f4162257fbcc0aee91dbba6d
+  Parameters: {"commit"=>"shove it", "authenticity_token"=>"179b408f7c4635d5ad185459826b8d95500c92a7", "action"=>"create", "story_id"=>"16-some-website", "controller"=>"votes"}
+  [4;36;1mUser Load (0.000213)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;35;1mStory Load (0.000228)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 16) [0m
+  [4;36;1mVote Create (0.000279)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2012-01-04 20:10:53', 16, 1, '2012-01-04 20:10:53')[0m
+  [4;35;1mStory Load (0.000220)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 16) [0m
+  [4;36;1mStory Update (0.000099)[0m   [0;1mUPDATE stories SET "votes_count" = "votes_count" + 1 WHERE ("id" = 16) [0m
+Rendering votes/create
+  [4;35;1mStory Load (0.000299)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 16) [0m
+  [4;36;1mVote Load (0.000347)[0m   [0;1mSELECT * FROM votes WHERE (votes.story_id = 16) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.00019)
+Rendered votes/_vote (0.00013)
+Rendered votes/_vote (0.00013)
+Completed in 0.02239 (44 reqs/sec) | Rendering: 0.00403 (17%) | DB: 0.00169 (7%) | 200 OK [http://localhost/stories/16-some-website/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2012-01-04 20:10:54) [POST]
+  Session ID: BAh7CDoMdXNlcl9pZGkGOgxjc3JmX2lkIiVmYmRlNjU4NjAyODJmZWY4ZTJm%0ANDU5NjkzM2NjODk0NyIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh%0Ac2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--b2554c72f4ffd5c1f4162257fbcc0aee91dbba6d
+  Parameters: {"commit"=>"shove it", "authenticity_token"=>"179b408f7c4635d5ad185459826b8d95500c92a7", "action"=>"create", "story_id"=>"16-some-website", "controller"=>"votes"}
+  [4;35;1mUser Load (0.000237)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;36;1mStory Load (0.000267)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 16) [0m
+  [4;35;1mVote Create (0.000285)[0m   [0mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2012-01-04 20:10:54', 16, 1, '2012-01-04 20:10:54')[0m
+  [4;36;1mStory Load (0.000227)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 16) [0m
+  [4;35;1mStory Update (0.000110)[0m   [0mUPDATE stories SET "votes_count" = "votes_count" + 1 WHERE ("id" = 16) [0m
+Rendering votes/create
+  [4;36;1mStory Load (0.000314)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 16) [0m
+  [4;35;1mVote Load (0.000354)[0m   [0mSELECT * FROM votes WHERE (votes.story_id = 16) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.00020)
+Rendered votes/_vote (0.00014)
+Rendered votes/_vote (0.00013)
+Completed in 0.02330 (42 reqs/sec) | Rendering: 0.00410 (17%) | DB: 0.00179 (7%) | 200 OK [http://localhost/stories/16-some-website/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2012-01-04 20:10:54) [POST]
+  Session ID: BAh7CDoMdXNlcl9pZGkGOgxjc3JmX2lkIiVmYmRlNjU4NjAyODJmZWY4ZTJm%0ANDU5NjkzM2NjODk0NyIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh%0Ac2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--b2554c72f4ffd5c1f4162257fbcc0aee91dbba6d
+  Parameters: {"commit"=>"shove it", "authenticity_token"=>"179b408f7c4635d5ad185459826b8d95500c92a7", "action"=>"create", "story_id"=>"16-some-website", "controller"=>"votes"}
+  [4;36;1mUser Load (0.000272)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;35;1mStory Load (0.000260)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 16) [0m
+  [4;36;1mVote Create (0.000419)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2012-01-04 20:10:54', 16, 1, '2012-01-04 20:10:54')[0m
+  [4;35;1mStory Load (0.000222)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 16) [0m
+  [4;36;1mStory Update (0.000104)[0m   [0;1mUPDATE stories SET "votes_count" = "votes_count" + 1 WHERE ("id" = 16) [0m
+Rendering votes/create
+  [4;35;1mStory Load (0.000325)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 16) [0m
+  [4;36;1mVote Load (0.000358)[0m   [0;1mSELECT * FROM votes WHERE (votes.story_id = 16) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.00021)
+Rendered votes/_vote (0.00023)
+Rendered votes/_vote (0.00013)
+Completed in 0.05882 (16 reqs/sec) | Rendering: 0.00438 (7%) | DB: 0.00196 (3%) | 200 OK [http://localhost/stories/16-some-website/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2012-01-04 20:10:54) [POST]
+  Session ID: BAh7CDoMdXNlcl9pZGkGOgxjc3JmX2lkIiVmYmRlNjU4NjAyODJmZWY4ZTJm%0ANDU5NjkzM2NjODk0NyIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh%0Ac2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--b2554c72f4ffd5c1f4162257fbcc0aee91dbba6d
+  Parameters: {"commit"=>"shove it", "authenticity_token"=>"179b408f7c4635d5ad185459826b8d95500c92a7", "action"=>"create", "story_id"=>"16-some-website", "controller"=>"votes"}
+  [4;35;1mUser Load (0.000251)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;36;1mStory Load (0.000230)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 16) [0m
+  [4;35;1mVote Create (0.000272)[0m   [0mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2012-01-04 20:10:55', 16, 1, '2012-01-04 20:10:55')[0m
+  [4;36;1mStory Load (0.000222)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 16) [0m
+  [4;35;1mStory Update (0.000107)[0m   [0mUPDATE stories SET "votes_count" = "votes_count" + 1 WHERE ("id" = 16) [0m
+Rendering votes/create
+  [4;36;1mStory Load (0.000342)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 16) [0m
+  [4;35;1mVote Load (0.000317)[0m   [0mSELECT * FROM votes WHERE (votes.story_id = 16) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.00018)
+Rendered votes/_vote (0.00012)
+Rendered votes/_vote (0.00011)
+Completed in 0.02273 (43 reqs/sec) | Rendering: 0.00411 (18%) | DB: 0.00174 (7%) | 200 OK [http://localhost/stories/16-some-website/votes]
+
+
+Processing StoriesController#index (for 127.0.0.1 at 2012-01-04 20:10:58) [GET]
+  Session ID: BAh7CDoMdXNlcl9pZGkGOgxjc3JmX2lkIiVmYmRlNjU4NjAyODJmZWY4ZTJm%0ANDU5NjkzM2NjODk0NyIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh%0Ac2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--b2554c72f4ffd5c1f4162257fbcc0aee91dbba6d
+  Parameters: {"action"=>"index", "controller"=>"stories"}
+  [4;36;1mUser Load (0.000234)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;35;1mStory Load (0.000297)[0m   [0mSELECT * FROM stories WHERE (votes_count >= 5) ORDER BY id DESC[0m
+Rendering template within layouts/application
+Rendering stories/index
+  [4;36;1mUser Load (0.000262)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) [0m
+Rendered stories/_story (0.00330)
+Completed in 0.01377 (72 reqs/sec) | Rendering: 0.00443 (32%) | DB: 0.00079 (5%) | 200 OK [http://localhost/stories]
+
+
+Processing StoriesController#show (for 127.0.0.1 at 2012-01-04 20:11:00) [GET]
+  Session ID: BAh7CDoMdXNlcl9pZGkGOgxjc3JmX2lkIiVmYmRlNjU4NjAyODJmZWY4ZTJm%0ANDU5NjkzM2NjODk0NyIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh%0Ac2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--b2554c72f4ffd5c1f4162257fbcc0aee91dbba6d
+  Parameters: {"action"=>"show", "id"=>"16-some-website", "controller"=>"stories"}
+  [4;35;1mUser Load (0.000264)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;36;1mStory Load (0.000275)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 16) [0m
+Rendering template within layouts/application
+Rendering stories/show
+  [4;35;1mVote Load (0.000400)[0m   [0mSELECT * FROM votes WHERE (votes.story_id = 16) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.00149)
+Rendered votes/_vote (0.00016)
+Rendered votes/_vote (0.00012)
+  [4;36;1mUser Load (0.000227)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) [0m
+Completed in 0.05221 (19 reqs/sec) | Rendering: 0.04159 (79%) | DB: 0.00117 (2%) | 200 OK [http://localhost/stories/16-some-website]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2012-01-04 20:11:01) [POST]
+  Session ID: BAh7CDoMdXNlcl9pZGkGOgxjc3JmX2lkIiVmYmRlNjU4NjAyODJmZWY4ZTJm%0ANDU5NjkzM2NjODk0NyIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh%0Ac2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--b2554c72f4ffd5c1f4162257fbcc0aee91dbba6d
+  Parameters: {"commit"=>"shove it", "authenticity_token"=>"179b408f7c4635d5ad185459826b8d95500c92a7", "action"=>"create", "story_id"=>"16-some-website", "controller"=>"votes"}
+  [4;35;1mUser Load (0.000276)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;36;1mStory Load (0.000232)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 16) [0m
+  [4;35;1mVote Create (0.000250)[0m   [0mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2012-01-04 20:11:02', 16, 1, '2012-01-04 20:11:02')[0m
+  [4;36;1mStory Load (0.000204)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 16) [0m
+  [4;35;1mStory Update (0.000097)[0m   [0mUPDATE stories SET "votes_count" = "votes_count" + 1 WHERE ("id" = 16) [0m
+Rendering votes/create
+  [4;36;1mStory Load (0.000343)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 16) [0m
+  [4;35;1mVote Load (0.000347)[0m   [0mSELECT * FROM votes WHERE (votes.story_id = 16) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.00019)
+Rendered votes/_vote (0.00015)
+Rendered votes/_vote (0.00014)
+Completed in 0.02200 (45 reqs/sec) | Rendering: 0.00421 (19%) | DB: 0.00175 (7%) | 200 OK [http://localhost/stories/16-some-website/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2012-01-04 20:11:02) [POST]
+  Session ID: BAh7CDoMdXNlcl9pZGkGOgxjc3JmX2lkIiVmYmRlNjU4NjAyODJmZWY4ZTJm%0ANDU5NjkzM2NjODk0NyIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh%0Ac2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--b2554c72f4ffd5c1f4162257fbcc0aee91dbba6d
+  Parameters: {"commit"=>"shove it", "authenticity_token"=>"179b408f7c4635d5ad185459826b8d95500c92a7", "action"=>"create", "story_id"=>"16-some-website", "controller"=>"votes"}
+  [4;36;1mUser Load (0.000222)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;35;1mStory Load (0.000289)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 16) [0m
+  [4;36;1mVote Create (0.000263)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2012-01-04 20:11:02', 16, 1, '2012-01-04 20:11:02')[0m
+  [4;35;1mStory Load (0.000215)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 16) [0m
+  [4;36;1mStory Update (0.000095)[0m   [0;1mUPDATE stories SET "votes_count" = "votes_count" + 1 WHERE ("id" = 16) [0m
+Rendering votes/create
+  [4;35;1mStory Load (0.000290)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 16) [0m
+  [4;36;1mVote Load (0.000350)[0m   [0;1mSELECT * FROM votes WHERE (votes.story_id = 16) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.00018)
+Rendered votes/_vote (0.00012)
+Rendered votes/_vote (0.00011)
+Completed in 0.02129 (46 reqs/sec) | Rendering: 0.00393 (18%) | DB: 0.00172 (8%) | 200 OK [http://localhost/stories/16-some-website/votes]
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2012-01-04 20:11:04) [DELETE]
+  Session ID: BAh7CDoMdXNlcl9pZGkGOgxjc3JmX2lkIiVmYmRlNjU4NjAyODJmZWY4ZTJm%0ANDU5NjkzM2NjODk0NyIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh%0Ac2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--b2554c72f4ffd5c1f4162257fbcc0aee91dbba6d
+  Parameters: {"authenticity_token"=>"179b408f7c4635d5ad185459826b8d95500c92a7", "_method"=>"delete", "action"=>"destroy", "controller"=>"sessions"}
+  [4;35;1mUser Load (0.000248)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering sessions/destroy
+Completed in 0.00977 (102 reqs/sec) | Rendering: 0.00394 (40%) | DB: 0.00025 (2%) | 200 OK [http://localhost/session]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2012-01-04 20:11:16) [GET]
+  Session ID: BAh7CDoMdXNlcl9pZDA6DGNzcmZfaWQiJWZiZGU2NTg2MDI4MmZlZjhlMmY0%0ANTk2OTMzY2M4OTQ3IgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFz%0AaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--5bd9e650a56799dc7dc09c7a2fea479577a7b58a
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 0.00269 (371 reqs/sec) | Rendering: 0.00129 (48%) | DB: 0.00000 (0%) | 200 OK [http://localhost/session/new]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2012-01-04 20:11:19) [POST]
+  Session ID: BAh7CDoMdXNlcl9pZDA6DGNzcmZfaWQiJWZiZGU2NTg2MDI4MmZlZjhlMmY0%0ANTk2OTMzY2M4OTQ3IgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFz%0AaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--5bd9e650a56799dc7dc09c7a2fea479577a7b58a
+  Parameters: {"commit"=>"login", "authenticity_token"=>"179b408f7c4635d5ad185459826b8d95500c92a7", "action"=>"create", "controller"=>"sessions", "password"=>"butterd0g", "login"=>"iamryo"}
+  [4;36;1mUser Load (0.000301)[0m   [0;1mSELECT * FROM users WHERE (users."password" = 'butterd0g' AND users."login" = 'iamryo') LIMIT 1[0m
+Redirected to http://localhost:3000/stories
+Completed in 0.00610 (164 reqs/sec) | DB: 0.00030 (4%) | 302 Found [http://localhost/session]
+
+
+Processing StoriesController#index (for 127.0.0.1 at 2012-01-04 20:11:19) [GET]
+  Session ID: BAh7CDoMdXNlcl9pZGkGOgxjc3JmX2lkIiVmYmRlNjU4NjAyODJmZWY4ZTJm%0ANDU5NjkzM2NjODk0NyIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh%0Ac2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--b2554c72f4ffd5c1f4162257fbcc0aee91dbba6d
+  Parameters: {"action"=>"index", "controller"=>"stories"}
+  [4;35;1mUser Load (0.000236)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;36;1mStory Load (0.000280)[0m   [0;1mSELECT * FROM stories WHERE (votes_count >= 5) ORDER BY id DESC[0m
+Rendering template within layouts/application
+Rendering stories/index
+  [4;35;1mUser Load (0.000249)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) [0m
+Rendered stories/_story (0.00349)
+Completed in 0.01362 (73 reqs/sec) | Rendering: 0.00505 (37%) | DB: 0.00077 (5%) | 200 OK [http://localhost/stories]
+
+
+Processing StoriesController#bin (for 127.0.0.1 at 2012-01-04 20:11:22) [GET]
+  Session ID: BAh7CDoMdXNlcl9pZGkGOgxjc3JmX2lkIiVmYmRlNjU4NjAyODJmZWY4ZTJm%0ANDU5NjkzM2NjODk0NyIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh%0Ac2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--b2554c72f4ffd5c1f4162257fbcc0aee91dbba6d
+  Parameters: {"action"=>"bin", "controller"=>"stories"}
+  [4;36;1mUser Load (0.000232)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;35;1mStory Load (0.000489)[0m   [0mSELECT * FROM stories WHERE (votes_count < 5) ORDER BY id DESC[0m
+Rendering template within layouts/application
+Rendering stories/index
+  [4;36;1mUser Load (0.000248)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) [0m
+Rendered stories/_story (0.00347)
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) [0m
+Rendered stories/_story (0.00051)
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) [0m
+Rendered stories/_story (0.00051)
+Completed in 0.04801 (20 reqs/sec) | Rendering: 0.00606 (12%) | DB: 0.00097 (2%) | 200 OK [http://localhost/stories/bin]
+
+
+Processing StoriesController#index (for 127.0.0.1 at 2012-01-04 20:11:29) [GET]
+  Session ID: BAh7CDoMdXNlcl9pZGkGOgxjc3JmX2lkIiVmYmRlNjU4NjAyODJmZWY4ZTJm%0ANDU5NjkzM2NjODk0NyIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh%0Ac2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--b2554c72f4ffd5c1f4162257fbcc0aee91dbba6d
+  Parameters: {"action"=>"index", "controller"=>"stories"}
+  [4;35;1mUser Load (0.000220)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;36;1mStory Load (0.000259)[0m   [0;1mSELECT * FROM stories WHERE (votes_count >= 5) ORDER BY id DESC[0m
+Rendering template within layouts/application
+Rendering stories/index
+  [4;35;1mUser Load (0.000272)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) [0m
+Rendered stories/_story (0.00336)
+Completed in 0.01315 (76 reqs/sec) | Rendering: 0.00445 (33%) | DB: 0.00075 (5%) | 200 OK [http://localhost/stories]
+
+
+Processing StoriesController#bin (for 127.0.0.1 at 2012-01-04 20:11:33) [GET]
+  Session ID: BAh7CDoMdXNlcl9pZGkGOgxjc3JmX2lkIiVmYmRlNjU4NjAyODJmZWY4ZTJm%0ANDU5NjkzM2NjODk0NyIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh%0Ac2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--b2554c72f4ffd5c1f4162257fbcc0aee91dbba6d
+  Parameters: {"action"=>"bin", "controller"=>"stories"}
+  [4;36;1mUser Load (0.000306)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;35;1mStory Load (0.000625)[0m   [0mSELECT * FROM stories WHERE (votes_count < 5) ORDER BY id DESC[0m
+Rendering template within layouts/application
+Rendering stories/index
+  [4;36;1mUser Load (0.000246)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) [0m
+Rendered stories/_story (0.00332)
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) [0m
+Rendered stories/_story (0.00056)
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) [0m
+Rendered stories/_story (0.00047)
+Completed in 0.01565 (63 reqs/sec) | Rendering: 0.00576 (36%) | DB: 0.00118 (7%) | 200 OK [http://localhost/stories/bin]
+
+
+Processing StoriesController#show (for 127.0.0.1 at 2012-01-04 20:11:34) [GET]
+  Session ID: BAh7CDoMdXNlcl9pZGkGOgxjc3JmX2lkIiVmYmRlNjU4NjAyODJmZWY4ZTJm%0ANDU5NjkzM2NjODk0NyIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh%0Ac2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--b2554c72f4ffd5c1f4162257fbcc0aee91dbba6d
+  Parameters: {"action"=>"show", "id"=>"13-a-link", "controller"=>"stories"}
+  [4;35;1mUser Load (0.000243)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;36;1mStory Load (0.000280)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 13) [0m
+Rendering template within layouts/application
+Rendering stories/show
+  [4;35;1mVote Load (0.000457)[0m   [0mSELECT * FROM votes WHERE (votes.story_id = 13) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.00132)
+Rendered votes/_vote (0.00017)
+Rendered votes/_vote (0.00013)
+  [4;36;1mUser Load (0.000240)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) [0m
+Completed in 0.05208 (19 reqs/sec) | Rendering: 0.04190 (80%) | DB: 0.00122 (2%) | 200 OK [http://localhost/stories/13-a-link]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2012-01-04 20:11:35) [POST]
+  Session ID: BAh7CDoMdXNlcl9pZGkGOgxjc3JmX2lkIiVmYmRlNjU4NjAyODJmZWY4ZTJm%0ANDU5NjkzM2NjODk0NyIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh%0Ac2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--b2554c72f4ffd5c1f4162257fbcc0aee91dbba6d
+  Parameters: {"commit"=>"shove it", "authenticity_token"=>"179b408f7c4635d5ad185459826b8d95500c92a7", "action"=>"create", "story_id"=>"13-a-link", "controller"=>"votes"}
+  [4;35;1mUser Load (0.000237)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;36;1mStory Load (0.000261)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 13) [0m
+  [4;35;1mVote Create (0.000264)[0m   [0mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2012-01-04 20:11:35', 13, 1, '2012-01-04 20:11:35')[0m
+  [4;36;1mStory Load (0.000222)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 13) [0m
+  [4;35;1mStory Update (0.000107)[0m   [0mUPDATE stories SET "votes_count" = "votes_count" + 1 WHERE ("id" = 13) [0m
+Rendering votes/create
+  [4;36;1mStory Load (0.000321)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 13) [0m
+  [4;35;1mVote Load (0.000369)[0m   [0mSELECT * FROM votes WHERE (votes.story_id = 13) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.00019)
+Rendered votes/_vote (0.00013)
+Rendered votes/_vote (0.00013)
+Completed in 0.02251 (44 reqs/sec) | Rendering: 0.00405 (17%) | DB: 0.00178 (7%) | 200 OK [http://localhost/stories/13-a-link/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2012-01-04 20:11:36) [POST]
+  Session ID: BAh7CDoMdXNlcl9pZGkGOgxjc3JmX2lkIiVmYmRlNjU4NjAyODJmZWY4ZTJm%0ANDU5NjkzM2NjODk0NyIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh%0Ac2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--b2554c72f4ffd5c1f4162257fbcc0aee91dbba6d
+  Parameters: {"commit"=>"shove it", "authenticity_token"=>"179b408f7c4635d5ad185459826b8d95500c92a7", "action"=>"create", "story_id"=>"13-a-link", "controller"=>"votes"}
+  [4;36;1mUser Load (0.000238)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;35;1mStory Load (0.000266)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 13) [0m
+  [4;36;1mVote Create (0.000304)[0m   [0;1mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2012-01-04 20:11:36', 13, 1, '2012-01-04 20:11:36')[0m
+  [4;35;1mStory Load (0.000215)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 13) [0m
+  [4;36;1mStory Update (0.000098)[0m   [0;1mUPDATE stories SET "votes_count" = "votes_count" + 1 WHERE ("id" = 13) [0m
+Rendering votes/create
+  [4;35;1mStory Load (0.000355)[0m   [0mSELECT * FROM stories WHERE (stories."id" = 13) [0m
+  [4;36;1mVote Load (0.000364)[0m   [0;1mSELECT * FROM votes WHERE (votes.story_id = 13) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.00019)
+Rendered votes/_vote (0.00013)
+Rendered votes/_vote (0.00013)
+Completed in 0.02327 (42 reqs/sec) | Rendering: 0.00413 (17%) | DB: 0.00184 (7%) | 200 OK [http://localhost/stories/13-a-link/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2012-01-04 20:11:36) [POST]
+  Session ID: BAh7CDoMdXNlcl9pZGkGOgxjc3JmX2lkIiVmYmRlNjU4NjAyODJmZWY4ZTJm%0ANDU5NjkzM2NjODk0NyIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh%0Ac2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--b2554c72f4ffd5c1f4162257fbcc0aee91dbba6d
+  Parameters: {"commit"=>"shove it", "authenticity_token"=>"179b408f7c4635d5ad185459826b8d95500c92a7", "action"=>"create", "story_id"=>"13-a-link", "controller"=>"votes"}
+  [4;35;1mUser Load (0.000251)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;36;1mStory Load (0.000245)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 13) [0m
+  [4;35;1mVote Create (0.000306)[0m   [0mINSERT INTO votes ("updated_at", "story_id", "user_id", "created_at") VALUES('2012-01-04 20:11:36', 13, 1, '2012-01-04 20:11:36')[0m
+  [4;36;1mStory Load (0.000240)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 13) [0m
+  [4;35;1mStory Update (0.000110)[0m   [0mUPDATE stories SET "votes_count" = "votes_count" + 1 WHERE ("id" = 13) [0m
+Rendering votes/create
+  [4;36;1mStory Load (0.000315)[0m   [0;1mSELECT * FROM stories WHERE (stories."id" = 13) [0m
+  [4;35;1mVote Load (0.000347)[0m   [0mSELECT * FROM votes WHERE (votes.story_id = 13) ORDER BY id DESC LIMIT 3[0m
+Rendered votes/_vote (0.00019)
+Rendered votes/_vote (0.00013)
+Rendered votes/_vote (0.00013)
+Completed in 0.05691 (17 reqs/sec) | Rendering: 0.00402 (7%) | DB: 0.00181 (3%) | 200 OK [http://localhost/stories/13-a-link/votes]
+
+
+Processing StoriesController#new (for 127.0.0.1 at 2012-01-04 20:11:39) [GET]
+  Session ID: BAh7CDoMdXNlcl9pZGkGOgxjc3JmX2lkIiVmYmRlNjU4NjAyODJmZWY4ZTJm%0ANDU5NjkzM2NjODk0NyIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh%0Ac2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--b2554c72f4ffd5c1f4162257fbcc0aee91dbba6d
+  Parameters: {"action"=>"new", "controller"=>"stories"}
+  [4;36;1mUser Load (0.000210)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering stories/new
+Completed in 0.01298 (77 reqs/sec) | Rendering: 0.00360 (27%) | DB: 0.00021 (1%) | 200 OK [http://localhost/stories/new]
+  [4;36;1mSQL (0.000677)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000295)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000147)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000135)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000132)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000132)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000142)[0m   [0mSELECT * FROM schema_info[0m
+  [4;36;1mSQL (0.000331)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000043)[0m   [0mPRAGMA index_list(stories)[0m
+  [4;36;1mSQL (0.000042)[0m   [0;1mPRAGMA index_list(users)[0m
+  [4;35;1mSQL (0.000042)[0m   [0mPRAGMA index_list(votes)[0m
+  [4;36;1mSQL (0.000135)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: no such table: stories: DROP TABLE stories[0m
+  [4;36;1mSQL (0.001615)[0m   [0;1mCREATE TABLE stories ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL, "link" varchar(255) DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL, "user_id" integer DEFAULT NULL, "votes_count" integer DEFAULT 0, "description" text DEFAULT NULL) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: no such table: users: DROP TABLE users[0m
+  [4;36;1mSQL (0.001681)[0m   [0;1mCREATE TABLE users ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255) DEFAULT NULL, "password" varchar(255) DEFAULT NULL, "name" varchar(255) DEFAULT NULL, "email" varchar(255) DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: no such table: votes: DROP TABLE votes[0m
+  [4;36;1mSQL (0.001132)[0m   [0;1mCREATE TABLE votes ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "story_id" integer DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL, "user_id" integer DEFAULT NULL) [0m
+  [4;35;1mSQL (0.001060)[0m   [0mCREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000969)[0m   [0;1mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;35;1mSQL (0.001105)[0m   [0mUPDATE schema_info SET version = 5[0m
