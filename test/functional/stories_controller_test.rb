@@ -15,7 +15,7 @@ class StoriesControllerTest < ActionController::TestCase
 	end
 	def test_should_show_new_form
 		get_with_user :new
-		assert_select 'form p', :count => 3
+		assert_select 'form p', :count => 4
 	end
 	def test_should_add_story
 		post_with_user :create, :story => {
@@ -41,7 +41,7 @@ class StoriesControllerTest < ActionController::TestCase
 
 	def test_should_show_navigation_menu
 		get :index
-		assert_select '#navigation li', 2
+		assert_select '#navigation li', 3
 	end
 	def test_should_indicate_logged_in_user
 		get_with_user :index
