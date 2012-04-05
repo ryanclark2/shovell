@@ -32,6 +32,6 @@ class StoryTest < ActiveSupport::TestCase
 	def test_should_increment_votes_counter_cache
 		stories(:two).votes.create
 		stories(:two).reload
-		assert_equal 1, stories(:two).attributes['votes_count']
+		assert_equal 6, stories(:two).attributes['votes_count']
 	end
 end
